@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" class="no-js">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,302 +11,268 @@
 <meta property="og:site_name" content="Arvut" />
 <meta property="og:title" content="Arvut — Buchhaltungsproduktion für Schweizer Treuhandgesellschaften" />
 <meta property="og:description" content="Gleiches Team. Doppelt so viele Mandate. Die Buchhaltung Ihrer Mandate führt das Arvut-Team — Sie prüfen, unterschreiben und behalten den Kunden." />
-
+<script>document.documentElement.className='js';</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ============ TOKENS ============ */
+/* ======================= TOKENS ======================= */
 :root{
-  --cream:#FBF8F4;
-  --cream-2:#F4EEE4;
-  --cream-3:#EFE7D9;
-  --ink:#1f1f1f;
-  --gray:#333333;
-  --gray-soft:#555;
-  --gray-mute:#7a766e;
-  --teal:#009B9F;
-  --teal-700:#067e81;
-  --teal-deep:#0c2a2b;
-  --teal-deep-2:#0a2122;
-  --line:rgba(20,20,20,.10);
-  --line-soft:rgba(20,20,20,.06);
-  --shadow-sm:0 1px 2px rgba(20,30,30,.04),0 6px 18px rgba(20,40,40,.05);
-  --shadow-md:0 2px 6px rgba(15,40,40,.06),0 24px 60px -22px rgba(10,42,43,.30);
-  --shadow-lg:0 40px 90px -30px rgba(10,42,43,.45);
-  --maxw:1200px;
-  --ease:cubic-bezier(.22,.61,.36,1);
+  --paper:#FBF8F4;            /* brand cream */
+  --paper-2:#F2ECE1;          /* deeper paper for insets/bands */
+  --paper-3:#EAE2D3;
+  --ink:#1a1c1b;              /* near-black headings */
+  --gray:#333333;            /* brand body gray */
+  --gray-2:#6a665f;          /* muted */
+  --teal:#009B9F;            /* brand accent */
+  --teal-ink:#0a6063;        /* readable teal for small text/links */
+  --dark:#0c1f20;            /* dark section */
+  --dark-2:#0a1819;
+  --rule:rgba(26,28,27,.16);
+  --rule-soft:rgba(26,28,27,.09);
+  --rule-light:rgba(255,255,255,.16);
+  --container:1200px;
+  --gut:clamp(20px,4.2vw,40px);
+  --e-out:cubic-bezier(.2,.7,.2,1);
+  --step: clamp(64px,9vw,124px);  /* vertical section rhythm */
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{-webkit-text-size-adjust:100%}
 body{
-  margin:0;background:var(--cream);color:var(--gray);
+  margin:0;background:var(--paper);color:var(--gray);
   font-family:"Hanken Grotesk",system-ui,sans-serif;
-  font-weight:400;font-size:17px;line-height:1.65;
+  font-weight:400;font-size:clamp(16px,1.05vw,17.5px);line-height:1.62;
+  font-feature-settings:"tnum" 0;
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
   overflow-x:hidden;
 }
-h1,h2,h3,h4{font-family:"Space Grotesk",sans-serif;color:var(--ink);font-weight:600;line-height:1.08;letter-spacing:-.018em;margin:0}
-p{margin:0}
+h1,h2,h3,h4{font-family:"Schibsted Grotesk",sans-serif;color:var(--ink);font-weight:600;line-height:1.04;letter-spacing:-.02em;margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
 a{color:inherit;text-decoration:none}
-.mono{font-family:"JetBrains Mono",monospace;font-feature-settings:"tnum" 1;}
-.serif{font-family:"Newsreader",serif;font-style:italic;font-weight:400}
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-::selection{background:rgba(0,155,159,.22)}
+img{display:block;max-width:100%}
+.num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum" 1}
+::selection{background:rgba(0,155,159,.20)}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:2px}
 
-/* ============ KICKER / LABELS ============ */
-.kicker{
-  font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:500;
-  letter-spacing:.22em;text-transform:uppercase;color:var(--teal-700);
-  display:inline-flex;align-items:center;gap:10px;
-}
-.kicker::before{content:"";width:26px;height:1px;background:var(--teal);opacity:.7}
+.wrap{max-width:var(--container);margin:0 auto;padding-inline:var(--gut)}
+.rule{height:1px;background:var(--rule);border:0;margin:0}
 
-/* ============ BUTTONS ============ */
-.btn{
-  display:inline-flex;align-items:center;gap:9px;cursor:pointer;
-  font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:15px;
-  padding:13px 22px;border-radius:999px;border:1px solid transparent;
-  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s,color .25s,border-color .25s;
-  white-space:nowrap;
-}
-.btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
-.btn-primary{background:var(--teal);color:#fff;box-shadow:0 10px 26px -10px rgba(0,155,159,.65)}
-.btn-primary:hover{background:var(--teal-700);transform:translateY(-2px);box-shadow:0 16px 34px -10px rgba(0,155,159,.7)}
+/* section header device (Swiss editorial grid — NOT an eyebrow) */
+.sec{padding-block:var(--step)}
+.sec-rule{border-top:1px solid var(--rule);padding-top:30px}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
+.sec-head h2{font-size:clamp(30px,4vw,52px);font-weight:600}
+.sec-head .intro{color:var(--gray);font-size:clamp(17px,1.4vw,19.5px);line-height:1.62;max-width:46ch}
+.em{color:var(--teal-ink);font-weight:500}
+.label{font-family:"Schibsted Grotesk";font-size:13px;font-weight:600;color:var(--teal-ink);letter-spacing:.01em}
+
+/* ======================= BUTTONS ======================= */
+.btn{display:inline-flex;align-items:center;gap:10px;cursor:pointer;font-family:"Schibsted Grotesk";
+  font-weight:500;font-size:15px;line-height:1;padding:14px 22px;border:1px solid transparent;border-radius:2px;
+  transition:background .22s var(--e-out),color .22s,border-color .22s,transform .22s var(--e-out)}
+.btn svg{width:15px;height:15px;transition:transform .3s var(--e-out)}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:#00868a;transform:translateY(-1px)}
 .btn-primary:hover svg{transform:translateX(4px)}
-.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
-.btn-ghost:hover{border-color:var(--teal);color:var(--teal-700);transform:translateY(-2px)}
-.btn-light{background:#fff;color:var(--teal-deep)}
-.btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
-.btn-outline-light{border-color:rgba(255,255,255,.3);color:#fff}
-.btn-outline-light:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.btn-line{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn-line:hover{border-color:var(--ink);transform:translateY(-1px)}
+.btn-onDark{background:#fff;color:var(--dark)}
+.btn-onDark:hover{background:#eafafa;transform:translateY(-1px)}
+.btn-lineDark{border-color:var(--rule-light);color:#fff}
+.btn-lineDark:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.tlink{display:inline-flex;align-items:center;gap:9px;color:var(--teal-ink);font-family:"Schibsted Grotesk";font-weight:500;font-size:15px}
+.tlink svg{width:15px;height:15px;transition:transform .3s var(--e-out)}
+.tlink:hover svg{transform:translateX(4px)}
 
-/* ============ HEADER ============ */
-header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,box-shadow .35s,backdrop-filter .35s}
-header.scrolled{background:rgba(251,248,244,.82);backdrop-filter:saturate(160%) blur(14px);box-shadow:0 1px 0 var(--line-soft)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
-.logo{display:flex;align-items:center}
-.logo img{height:30px;width:auto;display:block}
-.nav-links{display:flex;align-items:center;gap:34px}
-.nav-links a{font-size:15px;color:var(--gray-soft);font-weight:400;position:relative;transition:color .2s}
-.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1.5px;width:0;background:var(--teal);transition:width .3s var(--ease)}
+/* ======================= HEADER ======================= */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+header.solid{background:rgba(251,248,244,.86);backdrop-filter:saturate(150%) blur(12px);border-bottom-color:var(--rule-soft)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
+.brand img{height:26px;width:auto}
+.nav-links{display:flex;gap:30px}
+.nav-links a{font-size:15px;color:var(--gray);position:relative;padding-block:4px}
+.nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1.5px;background:var(--teal);transition:right .28s var(--e-out)}
 .nav-links a:hover{color:var(--ink)}
-.nav-links a:hover::after{width:100%}
-.nav-right{display:flex;align-items:center;gap:20px}
-.lang{display:flex;align-items:center;gap:2px;font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.04em}
-.lang a{padding:4px 6px;color:var(--gray-mute);border-radius:6px;transition:color .2s,background .2s}
-.lang a.active{color:var(--teal-700);font-weight:600}
-.lang a:hover{color:var(--ink);background:var(--cream-3)}
-.lang span{color:var(--line)}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
-.burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
+.nav-links a:hover::after{right:0}
+.nav-right{display:flex;align-items:center;gap:22px}
+.lang{display:flex;gap:3px;font-family:"Schibsted Grotesk";font-size:13px}
+.lang a{color:var(--gray-2);padding:3px 5px;transition:color .2s}
+.lang a.on{color:var(--teal-ink);font-weight:600}
+.lang a:hover{color:var(--ink)}
+.lang i{color:var(--rule);font-style:normal}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;margin:-8px}
+.burger span{width:24px;height:2px;background:var(--ink);transition:.3s var(--e-out)}
 
-/* ============ HERO ============ */
-.hero{position:relative;padding:158px 0 86px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.03em}
-.hero h1 .accent{color:var(--teal);display:block}
-.hero-lead{font-size:clamp(18px,1.5vw,20.5px);color:var(--gray-soft);max-width:30em;margin-top:26px;line-height:1.6}
-.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
-.hero-meta{margin-top:34px;display:flex;gap:26px;flex-wrap:wrap;align-items:center;color:var(--gray-mute);font-size:13.5px}
-.hero-meta .dot{display:inline-flex;align-items:center;gap:8px}
-.hero-meta .dot::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
+/* ======================= HERO ======================= */
+.hero{padding-top:clamp(116px,15vh,168px);padding-bottom:var(--step)}
+.hero-grid{display:grid;grid-template-columns:1.22fr .9fr;gap:clamp(32px,5vw,76px);align-items:start}
+.hero h1{font-size:clamp(42px,6.6vw,86px);font-weight:700;letter-spacing:-.035em;line-height:.98}
+.hero h1 .accent{color:var(--teal)}
+.hero .lead{margin-top:clamp(22px,2.4vw,30px);font-size:clamp(18px,1.55vw,21px);color:var(--gray);max-width:34ch;line-height:1.55}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(28px,3vw,38px)}
+.spec-inline{list-style:none;display:flex;flex-wrap:wrap;gap:10px 0;margin:clamp(30px,3.4vw,42px) 0 0;padding-top:20px;border-top:1px solid var(--rule)}
+.spec-inline li{font-size:13.5px;color:var(--gray-2);padding-inline:18px;position:relative}
+.spec-inline li:first-child{padding-left:0}
+.spec-inline li:not(:first-child)::before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);width:1px;height:13px;background:var(--rule)}
 
-/* guilloché bg */
-.hero-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
-.hero-bg svg{position:absolute;right:-12%;top:-18%;width:78vw;max-width:1100px;opacity:.5}
-.hero-bg .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5}
-.hero-bg .b1{width:520px;height:520px;background:radial-gradient(circle,rgba(0,155,159,.16),transparent 70%);top:-160px;right:-120px}
-.hero-bg .b2{width:420px;height:420px;background:radial-gradient(circle,rgba(0,155,159,.08),transparent 70%);bottom:-140px;left:-120px}
+/* hero product panel — flat, on grid, precise (no glass/tilt/glow) */
+.panel{background:#fff;border:1px solid var(--rule);border-radius:3px}
+.panel-top{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--rule-soft)}
+.panel-top .t{font-family:"Schibsted Grotesk";font-weight:600;color:var(--ink);font-size:14px}
+.panel-top .st{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--teal-ink);font-weight:500;font-family:"Schibsted Grotesk"}
+.panel-top .st i{width:7px;height:7px;border-radius:50%;background:var(--teal);font-style:normal}
+.prow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 16px;padding:14px 20px;border-bottom:1px solid var(--rule-soft);align-items:baseline}
+.prow .pl{font-size:14px;color:var(--gray)}
+.prow .ps{font-size:11.5px;color:var(--gray-2);letter-spacing:.02em}
+.prow .pa{grid-column:2;grid-row:1 / span 2;font-family:"Schibsted Grotesk";font-weight:500;font-size:15px;color:var(--ink);text-align:right;align-self:center}
+.panel-foot{display:flex;align-items:center;justify-content:space-between;padding:18px 20px}
+.panel-foot .fl{font-size:13.5px;color:var(--gray-2)}
+.panel-foot .fr{font-family:"Schibsted Grotesk";font-weight:600;color:var(--teal-ink);font-size:16px}
+.panel-cap{margin-top:14px;font-size:12.5px;color:var(--gray-2);display:flex;gap:8px;align-items:center}
+.panel-cap i{width:14px;height:1px;background:var(--teal);font-style:normal}
 
-/* ledger card */
-.ledger{position:relative;background:#fff;border:1px solid var(--line-soft);border-radius:20px;
-  box-shadow:var(--shadow-lg);padding:26px 26px 22px;}
-.ledger::before{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;
-  background:linear-gradient(150deg,rgba(0,155,159,.45),transparent 40%);
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-.ledger-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid var(--line-soft)}
-.ledger-head .t{font-family:"Space Grotesk";font-weight:600;color:var(--ink);font-size:15px}
-.ledger-head .badge{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-700);background:rgba(0,155,159,.10);padding:5px 10px;border-radius:999px}
-.row{display:grid;grid-template-columns:minmax(0,1fr) auto auto 18px;gap:14px;align-items:center;padding:13px 2px;border-bottom:1px solid var(--line-soft)}
-.row .lbl{font-size:13.5px;color:var(--gray-soft)}
-.row .src{font-family:"JetBrains Mono";font-size:11px;color:var(--gray-mute);letter-spacing:.02em}
-.row .amt{font-family:"JetBrains Mono";font-size:14px;font-weight:500;color:var(--ink);text-align:right;min-width:96px}
-.row .chk{width:16px;height:16px;color:var(--teal);opacity:0;transform:scale(.6);transition:opacity .4s,transform .4s var(--ease)}
-.row.ok .chk{opacity:1;transform:scale(1)}
-.ledger-foot{display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px}
-.ledger-foot .lab{font-size:13px;color:var(--gray-soft)}
-.ledger-foot .val{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk";font-weight:600;color:var(--teal-700);font-size:15px}
-.ledger-foot .val .pill{display:inline-flex;align-items:center;gap:6px;background:rgba(0,155,159,.10);color:var(--teal-700);font-family:"JetBrains Mono";font-size:11px;letter-spacing:.08em;padding:5px 10px;border-radius:999px}
-.float-chip{position:absolute;background:#fff;border:1px solid var(--line-soft);border-radius:12px;box-shadow:var(--shadow-md);padding:11px 14px;display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--gray-soft)}
-.float-chip .ic{width:24px;height:24px;border-radius:7px;background:rgba(0,155,159,.10);color:var(--teal-700);display:grid;place-items:center}
-.float-chip .ic svg{width:13px;height:13px}
-.fc1{top:-22px;right:18px;animation:floaty 6s var(--ease) infinite}
-.fc2{bottom:-20px;left:-26px;animation:floaty 7s var(--ease) infinite .8s}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+/* ======================= CAPACITY ======================= */
+.enum{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:clamp(40px,5vw,64px);border-top:1px solid var(--rule)}
+.enum > div{padding:26px 28px 26px 0;border-right:1px solid var(--rule-soft)}
+.enum > div:last-child{border-right:0}
+.enum .ix{font-family:"Schibsted Grotesk";font-weight:600;color:var(--teal-ink);font-size:13px;font-variant-numeric:tabular-nums}
+.enum h3{font-size:clamp(19px,1.7vw,23px);margin:14px 0 8px;font-weight:600}
+.enum p{font-size:15px;color:var(--gray)}
 
-/* ============ MARQUEE ============ */
-.marquee{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);background:var(--cream-2);overflow:hidden;padding:18px 0}
-.marquee-track{display:flex;gap:0;white-space:nowrap;width:max-content;animation:scroll 32s linear infinite}
-.marquee-track .item{display:inline-flex;align-items:center;gap:14px;padding:0 38px;font-family:"Space Grotesk";font-weight:500;font-size:15px;color:var(--gray-soft)}
-.marquee-track .item .s{color:var(--teal);font-size:9px}
-@keyframes scroll{to{transform:translateX(-50%)}}
-.marquee:hover .marquee-track{animation-play-state:paused}
+/* ======================= SERVICES (index list) ======================= */
+.idx{margin-top:clamp(40px,5vw,60px);border-top:1px solid var(--rule)}
+.idx-row{display:grid;grid-template-columns:54px minmax(0,1fr) minmax(0,1.3fr);gap:24px;align-items:baseline;
+  padding:28px 0;border-bottom:1px solid var(--rule-soft)}
+.idx-row .ix{font-family:"Schibsted Grotesk";font-weight:600;color:var(--teal-ink);font-size:14px;font-variant-numeric:tabular-nums}
+.idx-row h3{font-size:clamp(22px,2.1vw,30px);font-weight:600}
+.idx-row p{font-size:15.5px;color:var(--gray);max-width:48ch}
+.idx-row:hover h3{color:var(--teal-ink)}
+.idx-row h3{transition:color .25s}
 
-/* ============ SECTIONS ============ */
-section{position:relative}
-.sec{padding:96px 0}
-.sec-head{max-width:760px}
-.sec-head h2{font-size:clamp(28px,3.6vw,46px);margin-top:18px;letter-spacing:-.025em}
-.sec-head .lead{margin-top:20px;font-size:18.5px;color:var(--gray-soft);line-height:1.7}
+/* precision split */
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center;margin-top:clamp(48px,6vw,80px)}
+.split .pt h3{font-size:clamp(26px,3vw,38px);margin-bottom:18px}
+.split .pt p{color:var(--gray);font-size:17px;max-width:46ch}
 
-/* capacity */
-.cap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-.cap-visual{position:relative}
-.team-stat{background:linear-gradient(160deg,#fff,#fdfbf7);border:1px solid var(--line-soft);border-radius:18px;padding:32px;box-shadow:var(--shadow-md)}
-.team-stat .big{font-family:"Space Grotesk";font-weight:700;font-size:64px;color:var(--teal);letter-spacing:-.04em;line-height:1}
-.team-stat .big small{font-size:34px;color:var(--ink)}
-.team-stat .cap-l{margin-top:8px;color:var(--gray-soft);font-size:15px}
-.bar-row{display:flex;align-items:flex-end;gap:14px;margin-top:30px;height:120px}
-.bar{flex:1;border-radius:8px 8px 0 0;position:relative;display:flex;flex-direction:column;justify-content:flex-end}
-.bar .fill{border-radius:8px 8px 0 0;width:100%;transform-origin:bottom;transform:scaleY(0);transition:transform 1.1s var(--ease)}
-.bar.show .fill{transform:scaleY(1)}
-.bar .t{position:absolute;top:-22px;left:0;right:0;text-align:center;font-family:"JetBrains Mono";font-size:12px;color:var(--gray-mute)}
-.bar .c{text-align:center;margin-top:8px;font-size:11.5px;color:var(--gray-mute);font-family:"JetBrains Mono"}
+/* ======================= DARK SECTION ======================= */
+.band-dark{background:var(--dark);color:#e8efee}
+.band-dark .wrap{padding-block:var(--step)}
+.band-dark h2{color:#fff;font-size:clamp(30px,4.4vw,58px);max-width:15ch;font-weight:700;letter-spacing:-.03em}
+.band-dark .note{margin-top:26px;font-size:clamp(18px,1.8vw,22px);color:#a9c6c5;max-width:30ch;font-family:"Schibsted Grotesk";font-weight:400;line-height:1.4}
+.dark-body{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);margin-top:clamp(44px,5vw,66px);align-items:start}
+.dark-body p{color:#b9d0cf;font-size:17px;line-height:1.72}
+.dark-body p b{color:#6fe0e2;font-weight:500}
+.dark-body .note{margin-top:0}
+.dark-pull{margin-top:clamp(40px,5vw,60px);padding-top:30px;border-top:1px solid var(--rule-light);
+  font-family:"Schibsted Grotesk";font-weight:500;font-size:clamp(20px,2.3vw,28px);color:#fff;max-width:30ch;line-height:1.3}
+.dark-spec{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--rule-light)}
+.dark-spec .ds{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule-light)}
+.dark-spec .ds .k{color:#dfeceb;font-size:15.5px}
+.dark-spec .ds .v{color:#6fe0e2;font-family:"Schibsted Grotesk";font-size:13px;font-weight:500}
 
-/* feature cards */
-.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:8px}
-.card{background:#fff;border:1px solid var(--line-soft);border-radius:18px;padding:34px;box-shadow:var(--shadow-sm);
-  transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s}
-.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:rgba(0,155,159,.28)}
-.card .ic{width:50px;height:50px;border-radius:13px;background:rgba(0,155,159,.10);color:var(--teal-700);display:grid;place-items:center;margin-bottom:22px}
-.card .ic svg{width:24px;height:24px}
-.card h3{font-size:21px;margin-bottom:12px;font-weight:600}
-.card p{color:var(--gray-soft);font-size:15.5px;line-height:1.65}
+/* ======================= PROCESS ======================= */
+.proc-top{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:end}
+.proc-top h2{font-size:clamp(30px,4vw,52px);max-width:13ch}
+.proc-note{font-family:"Schibsted Grotesk";font-weight:500;font-size:clamp(18px,1.7vw,22px);color:var(--ink);line-height:1.35}
+.proc-note b{color:var(--teal-ink);font-weight:500}
+.proc-note a{margin-top:18px;display:inline-flex}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3vw,44px);margin-top:clamp(46px,5vw,68px);border-top:1px solid var(--rule);padding-top:34px}
+.step .ix{font-family:"Schibsted Grotesk";font-weight:700;font-size:clamp(34px,4vw,52px);color:var(--paper-3);line-height:1;letter-spacing:-.04em;-webkit-text-stroke:1px var(--rule);font-variant-numeric:tabular-nums;transition:color .4s var(--e-out)}
+.step.lit .ix{color:var(--teal)}
+.step h3{font-size:clamp(19px,1.8vw,23px);margin:18px 0 10px}
+.step p{font-size:15.5px;color:var(--gray)}
 
-/* dark excel section */
-.dark{background:radial-gradient(120% 130% at 80% -10%,#11393a 0%,var(--teal-deep) 45%,var(--teal-deep-2) 100%);color:#e9efee;border-radius:32px;margin:0 auto;max-width:1320px;overflow:hidden;position:relative}
-.dark::after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 39.5H40M39.5 0V40' stroke='%23ffffff' stroke-opacity='0.04'/%3E%3C/svg%3E");pointer-events:none}
-.dark-inner{padding:84px 64px;position:relative;z-index:1}
-.dark .kicker{color:#5fd8da}
-.dark .kicker::before{background:#5fd8da}
-.dark h2{color:#fff;font-size:clamp(30px,4vw,52px);max-width:14em}
-.dark .quote{font-family:"Newsreader";font-style:italic;font-size:clamp(22px,2.6vw,30px);color:#bfe6e6;line-height:1.4;max-width:20em;margin:26px 0 0}
-.dark-cols{display:grid;grid-template-columns:1.15fr 1fr;gap:54px;margin-top:46px;align-items:start}
-.dark p.body{color:#bcd2d1;font-size:17px;line-height:1.75}
-.find-list{display:flex;flex-direction:column;gap:2px}
-.find-item{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.find-item .n{font-family:"JetBrains Mono";font-size:13px;color:#5fd8da;min-width:30px}
-.find-item .x{margin-left:auto;font-family:"JetBrains Mono";font-size:12px;color:#7fa3a2;display:flex;align-items:center;gap:7px}
-.find-item .x .d{width:7px;height:7px;border-radius:50%;background:#5fd8da;box-shadow:0 0 12px #5fd8da}
-.pull{margin-top:42px;padding-top:30px;border-top:1px solid rgba(255,255,255,.12);font-family:"Space Grotesk";font-weight:500;font-size:clamp(18px,2vw,23px);color:#fff;max-width:30em;line-height:1.4}
+/* ======================= SECURITY / facade ======================= */
+.sec-spec{margin-top:clamp(40px,5vw,60px);border-top:1px solid var(--rule)}
+.sec-spec .sr{display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--rule-soft)}
+.sec-spec .sr .k{font-family:"Schibsted Grotesk";font-weight:600;color:var(--ink);font-size:clamp(17px,1.6vw,20px);min-width:200px}
+.sec-spec .sr .d{font-size:15px;color:var(--gray-2)}
+.facade{position:relative;margin-top:clamp(44px,5vw,64px);border-radius:3px;overflow:hidden;border:1px solid var(--rule)}
+.facade img{width:100%;height:clamp(220px,32vw,360px);object-fit:cover;object-position:center 35%;filter:saturate(.78) contrast(1.02)}
+.facade::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,24,25,.82),rgba(8,24,25,.34) 60%,rgba(8,24,25,.12))}
+.facade .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(24px,4vw,44px);gap:14px}
+.facade .ov .h{color:#fff;font-family:"Schibsted Grotesk";font-weight:600;font-size:clamp(20px,2.2vw,28px);max-width:18ch}
+.facade .ov .row{display:flex;flex-wrap:wrap;gap:10px 22px}
+.facade .ov .row span{color:#cfe6e5;font-size:13.5px;display:inline-flex;align-items:center;gap:8px}
+.facade .ov .row span::before{content:"";width:6px;height:6px;background:var(--teal);border-radius:50%}
 
-/* process timeline */
-.proc{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
-.proc-sticky{position:sticky;top:120px}
-.steps{display:flex;flex-direction:column}
-.step{position:relative;padding:0 0 44px 56px;border-left:1.5px solid var(--line)}
-.step:last-child{border-left-color:transparent;padding-bottom:0}
-.step .num{position:absolute;left:-21px;top:-4px;width:42px;height:42px;border-radius:50%;background:var(--cream);border:1.5px solid var(--teal);color:var(--teal-700);font-family:"JetBrains Mono";font-weight:600;font-size:15px;display:grid;place-items:center;transition:background .4s,color .4s,transform .4s var(--ease)}
-.step.show .num{background:var(--teal);color:#fff;transform:scale(1.05)}
-.step h3{font-size:21px;margin-bottom:10px}
-.step p{color:var(--gray-soft);font-size:15.5px}
-.proc-note{margin-top:30px;background:var(--cream-2);border:1px solid var(--line-soft);border-radius:16px;padding:26px 28px}
-.proc-note .big{font-family:"Space Grotesk";font-weight:600;font-size:20px;color:var(--ink);line-height:1.35}
-.proc-note .big b{color:var(--teal-700);font-weight:600}
-.link-arrow{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--teal-700);font-family:"Space Grotesk";font-weight:500;font-size:15px}
-.link-arrow svg{width:15px;height:15px;transition:transform .3s var(--ease)}
-.link-arrow:hover svg{transform:translateX(4px)}
+/* ======================= PILOT ======================= */
+.pilot{text-align:left}
+.pilot-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:end;border-top:1px solid var(--rule);padding-top:clamp(36px,4vw,52px)}
+.pilot h2{font-size:clamp(34px,5.2vw,68px);font-weight:700;letter-spacing:-.03em;line-height:1}
+.pilot p{margin-top:22px;color:var(--gray);font-size:18px;max-width:42ch}
+.pilot .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-start}
 
-/* trust */
-.trust{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.trust-card{background:#fff;border:1px solid var(--line-soft);border-radius:18px;padding:30px;box-shadow:var(--shadow-sm);margin-bottom:20px}
-.trust-card:last-child{margin-bottom:0}
-.trust-card .h{display:flex;align-items:center;gap:14px;margin-bottom:12px}
-.trust-card .h .ic{width:40px;height:40px;border-radius:11px;background:rgba(0,155,159,.10);color:var(--teal-700);display:grid;place-items:center}
-.trust-card .h .ic svg{width:20px;height:20px}
-.trust-card .h h3{font-size:18px}
-.trust-card p{color:var(--gray-soft);font-size:15.5px}
-.badges{display:flex;flex-direction:column;gap:16px}
-.badge-row{display:flex;align-items:center;gap:18px;background:#fff;border:1px solid var(--line-soft);border-radius:14px;padding:20px 24px;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),border-color .3s}
-.badge-row:hover{transform:translateX(6px);border-color:rgba(0,155,159,.3)}
-.badge-row .ic{width:46px;height:46px;border-radius:12px;background:var(--teal-deep);color:#5fd8da;display:grid;place-items:center;flex:none}
-.badge-row .ic svg{width:22px;height:22px}
-.badge-row .t .l{font-family:"Space Grotesk";font-weight:600;color:var(--ink);font-size:17px}
-.badge-row .t .s{font-size:13px;color:var(--gray-mute);font-family:"JetBrains Mono";letter-spacing:.03em;margin-top:2px}
-
-/* pilot cta */
-.pilot{text-align:center;background:linear-gradient(165deg,#11393a,var(--teal-deep) 60%,var(--teal-deep-2));border-radius:32px;color:#fff;padding:88px 32px;position:relative;overflow:hidden;max-width:1320px;margin:0 auto}
-.pilot::before{content:"";position:absolute;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(0,155,159,.35),transparent 65%);top:-340px;left:50%;transform:translateX(-50%);filter:blur(30px)}
-.pilot-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
-.pilot h2{color:#fff;font-size:clamp(32px,4.4vw,54px)}
-.pilot p{margin:22px auto 0;color:#bcd2d1;font-size:18px;max-width:34em;line-height:1.7}
-.pilot .hero-cta{justify-content:center;margin-top:38px}
-
-/* footer */
-footer{background:var(--cream-2);border-top:1px solid var(--line-soft);margin-top:96px;padding:70px 0 36px}
-.foot-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:50px;align-items:start}
-.foot-brand img{height:30px;margin-bottom:20px}
-.foot-brand p{color:var(--gray-soft);font-size:15.5px;max-width:30em;line-height:1.65}
-.foot-nav{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
-.foot-nav a{color:var(--gray-soft);font-size:15px;transition:color .2s}
-.foot-nav a:hover{color:var(--teal-700)}
-.foot-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:48px;padding-top:26px;border-top:1px solid var(--line-soft);font-size:13.5px;color:var(--gray-mute)}
+/* ======================= FOOTER ======================= */
+footer{border-top:1px solid var(--rule);margin-top:var(--step);padding-block:clamp(48px,6vw,72px) 36px}
+.foot{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.foot .brand img{height:26px;margin-bottom:18px}
+.foot .brand p{color:var(--gray-2);font-size:15.5px;max-width:38ch}
+.foot nav{display:flex;flex-wrap:wrap;gap:14px 26px;justify-content:flex-end}
+.foot nav a{color:var(--gray);font-size:15px;transition:color .2s}
+.foot nav a:hover{color:var(--teal-ink)}
+.foot-bottom{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;
+  margin-top:clamp(40px,5vw,60px);padding-top:24px;border-top:1px solid var(--rule-soft);font-size:13.5px;color:var(--gray-2)}
 .foot-bottom .legal{display:flex;gap:22px}
-.foot-bottom a:hover{color:var(--teal-700)}
-.foot-bottom .mono{font-family:"JetBrains Mono";font-size:12.5px}
+.foot-bottom a:hover{color:var(--teal-ink)}
 
-/* reveal */
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+/* ======================= MOTION ======================= */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--e-out),transform .7s var(--e-out)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv-d1{transition-delay:.07s}.js .rv-d2{transition-delay:.14s}.js .rv-d3{transition-delay:.21s}
+.js .drawrule{transform:scaleX(0);transform-origin:left;transition:transform .8s var(--e-out)}
+.js .drawrule.in{transform:scaleX(1)}
+.js .clip h1 span,.js .clip > span{display:inline-block}
+.js .hero h1{overflow:hidden}
+.js .hero h1 .ln{display:block;transform:translateY(106%);transition:transform .9s var(--e-out)}
+.js .hero.in h1 .ln{transform:none}
+.js .hero.in h1 .ln:nth-child(2){transition-delay:.08s}
+.js .hero.in h1 .ln:nth-child(3){transition-delay:.16s}
 
-/* ============ RESPONSIVE ============ */
-@media(max-width:980px){
-  .nav-links{display:none}
+/* ======================= MOBILE MENU ======================= */
+.overlay{position:fixed;inset:0;background:rgba(12,31,32,.4);z-index:60;opacity:0;pointer-events:none;transition:opacity .35s}
+.overlay.show{opacity:1;pointer-events:auto}
+.mmenu{position:fixed;inset:0 0 0 auto;width:min(85vw,340px);background:var(--paper);z-index:70;transform:translateX(100%);transition:transform .4s var(--e-out);padding:26px 24px;display:flex;flex-direction:column;border-left:1px solid var(--rule)}
+.mmenu.open{transform:none}
+.mmenu .x{align-self:flex-end;background:none;border:0;font-size:30px;line-height:1;cursor:pointer;color:var(--ink)}
+.mmenu a{padding:15px 0;font-family:"Schibsted Grotesk";font-size:20px;color:var(--ink);border-bottom:1px solid var(--rule-soft)}
+.mmenu .langs{display:flex;gap:8px;margin-top:22px}
+.mmenu .langs a{border:1px solid var(--rule);padding:8px 14px;font-size:14px;font-family:"Schibsted Grotesk"}
+.mmenu .btn{margin-top:22px;justify-content:center}
+
+/* ======================= RESPONSIVE ======================= */
+@media(max-width:960px){
+  .nav-links,.nav-right .lang{display:none}
+  .nav-right .btn-primary{display:none}
   .burger{display:flex}
-  .hero-grid,.cap,.dark-cols,.proc,.trust,.foot-grid{grid-template-columns:1fr}
-  .hero{padding-top:128px}
-  .hero-grid{gap:48px}
-  .ledger{max-width:460px}
-  .feat-grid{grid-template-columns:1fr}
-  .dark-inner{padding:60px 32px}
-  .proc-sticky{position:static}
-  .foot-nav{justify-content:flex-start}
-  .nav-right .lang{display:none}
-  header .nav-right .btn-primary{display:none}
-  .nav{height:68px}
+  .nav{height:64px}
+  .hero-grid,.sec-head,.split,.dark-body,.proc-top,.pilot-grid,.foot,.idx-row{grid-template-columns:1fr}
+  .hero-grid{gap:44px}
+  .hero .lead{max-width:42ch}
+  .enum{grid-template-columns:1fr;border-top:0}
+  .enum > div{border-right:0;border-top:1px solid var(--rule-soft);padding:22px 0}
+  .idx-row{grid-template-columns:40px 1fr;gap:8px 18px}
+  .idx-row p{grid-column:2}
+  .steps{grid-template-columns:1fr;gap:0}
+  .step{padding:26px 0;border-bottom:1px solid var(--rule-soft)}
+  .step:first-child{padding-top:0}
+  .proc-top{align-items:start}
+  .pilot-grid{align-items:start}
+  .foot nav{justify-content:flex-start}
+  .sec-spec .sr{grid-template-columns:1fr;gap:6px}
+  .sec-spec .sr .k{min-width:0}
 }
 @media(max-width:560px){
-  body{font-size:16px}
-  .wrap{padding:0 20px}
-  .hero h1{font-size:clamp(34px,9vw,46px)}
-  .hero-meta{gap:8px 16px;font-size:12.5px}
-  .hero-cta .btn-primary{font-size:14px;padding:14px 18px}
-  .kicker{letter-spacing:.16em;font-size:11px}
-  .sec{padding:68px 0}
-  .dark{border-radius:22px}.pilot{border-radius:22px;padding:64px 24px}
-  .team-stat .big{font-size:52px}
-  .float-chip{display:none}
-  .hero-cta .btn,.pilot .btn{width:100%;justify-content:center}
-  .foot-bottom{flex-direction:column;align-items:flex-start}
+  .hero h1{font-size:clamp(38px,11vw,52px)}
+  .actions .btn,.pilot .actions .btn{width:100%;justify-content:center}
+  .foot-bottom{flex-direction:column;align-items:flex-start;gap:10px}
+  .foot-bottom .legal{flex-wrap:wrap}
 }
-
-/* mobile menu */
-.mobile-menu{position:fixed;inset:0 0 0 auto;width:min(86vw,360px);background:var(--cream);z-index:200;transform:translateX(100%);transition:transform .4s var(--ease);box-shadow:var(--shadow-lg);padding:30px 28px;display:flex;flex-direction:column}
-.mobile-menu.open{transform:none}
-.mobile-menu .x{align-self:flex-end;background:none;border:0;font-size:26px;cursor:pointer;color:var(--ink);line-height:1}
-.mobile-menu a{padding:15px 0;font-family:"Space Grotesk";font-size:20px;color:var(--ink);border-bottom:1px solid var(--line-soft)}
-.mobile-menu .langs{display:flex;gap:8px;margin-top:24px}
-.mobile-menu .langs a{border:1px solid var(--line);border-radius:8px;padding:8px 14px;font-family:"JetBrains Mono";font-size:13px;border-bottom:1px solid var(--line)}
-.mobile-menu .btn{margin-top:24px;justify-content:center}
-.overlay{position:fixed;inset:0;background:rgba(12,42,43,.4);z-index:150;opacity:0;pointer-events:none;transition:opacity .4s}
-.overlay.show{opacity:1;pointer-events:auto}
-
 @media(prefers-reduced-motion:reduce){
-  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto}
-  .reveal{opacity:1;transform:none}
+  *{animation:none!important;transition-duration:.001ms!important}
+  .js .rv{opacity:1;transform:none}
+  .js .hero h1 .ln{transform:none}
+  .js .drawrule{transform:none}
 }
 </style>
 </head>
@@ -315,7 +281,7 @@ footer{background:var(--cream-2);border-top:1px solid var(--line-soft);margin-to
 <!-- HEADER -->
 <header id="hdr">
   <div class="wrap nav">
-    <a href="https://arvut.ch/de" class="logo" aria-label="Arvut"><img src="images/logo.png" alt="Arvut"></a>
+    <a href="https://arvut.ch/de" class="brand" aria-label="Arvut"><img src="images/logo.png" alt="Arvut"></a>
     <nav class="nav-links" aria-label="Hauptnavigation">
       <a href="https://arvut.ch/de/so-funktionierts">So funktioniert's</a>
       <a href="https://arvut.ch/de/leistungen">Leistungen</a>
@@ -325,263 +291,155 @@ footer{background:var(--cream-2);border-top:1px solid var(--line-soft);margin-to
     </nav>
     <div class="nav-right">
       <div class="lang" aria-label="Sprache">
-        <a href="https://arvut.ch/de" class="active">DE</a><span>·</span>
-        <a href="https://arvut.ch/fr">FR</a><span>·</span>
-        <a href="https://arvut.ch/it">IT</a><span>·</span>
-        <a href="https://arvut.ch/en">EN</a>
+        <a href="https://arvut.ch/de" class="on">DE</a><i>·</i><a href="https://arvut.ch/fr">FR</a><i>·</i><a href="https://arvut.ch/it">IT</a><i>·</i><a href="https://arvut.ch/en">EN</a>
       </div>
       <a href="https://arvut.ch/de/kontakt" class="btn btn-primary">Pilot starten
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+      <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <!-- MOBILE MENU -->
-<div class="overlay" id="overlay"></div>
-<div class="mobile-menu" id="mobileMenu">
-  <button class="x" id="closeMenu" aria-label="Menü schliessen">×</button>
+<div class="overlay" id="ov"></div>
+<aside class="mmenu" id="mm">
+  <button class="x" id="mmx" aria-label="Schliessen">×</button>
   <a href="https://arvut.ch/de/so-funktionierts">So funktioniert's</a>
   <a href="https://arvut.ch/de/leistungen">Leistungen</a>
   <a href="https://arvut.ch/de/preise">Preise</a>
   <a href="https://arvut.ch/de/sicherheit-vertrauen">Sicherheit</a>
   <a href="https://arvut.ch/de/unternehmen">Unternehmen</a>
-  <div class="langs">
-    <a href="https://arvut.ch/de">DE</a><a href="https://arvut.ch/fr">FR</a><a href="https://arvut.ch/it">IT</a><a href="https://arvut.ch/en">EN</a>
-  </div>
+  <div class="langs"><a href="https://arvut.ch/de">DE</a><a href="https://arvut.ch/fr">FR</a><a href="https://arvut.ch/it">IT</a><a href="https://arvut.ch/en">EN</a></div>
   <a href="https://arvut.ch/de/kontakt" class="btn btn-primary">Pilot starten</a>
-</div>
+</aside>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <span class="blob b1"></span><span class="blob b2"></span>
-    <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g stroke="#009B9F" stroke-opacity="0.18" fill="none">
-        <circle cx="300" cy="300" r="60"/><circle cx="300" cy="300" r="110"/>
-        <circle cx="300" cy="300" r="160"/><circle cx="300" cy="300" r="210"/>
-        <circle cx="300" cy="300" r="260"/>
-        <ellipse cx="300" cy="300" rx="260" ry="120"/>
-        <ellipse cx="300" cy="300" rx="120" ry="260"/>
-        <ellipse cx="300" cy="300" rx="230" ry="180" transform="rotate(45 300 300)"/>
-        <ellipse cx="300" cy="300" rx="230" ry="180" transform="rotate(-45 300 300)"/>
-      </g>
-    </svg>
-  </div>
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <span class="kicker reveal">Buchhaltungsproduktion · White-Label</span>
-      <h1 class="reveal d1" style="margin-top:24px">Gleiches Team.<span class="accent">Doppelt so viele Mandate.</span></h1>
-      <p class="hero-lead reveal d2">Die Buchhaltung Ihrer Mandate führt das Arvut-Team — Sie prüfen, unterschreiben und behalten den Kunden. Vertraglich: Non‑Poaching.</p>
-      <div class="hero-cta reveal d3">
+<section class="hero wrap" id="hero">
+  <div class="hero-grid">
+    <div class="hero-main">
+      <h1 class="clip"><span class="ln">Gleiches Team.</span><span class="ln">Doppelt so viele</span><span class="ln"><span class="accent">Mandate.</span></span></h1>
+      <p class="lead rv rv-d1">Die Buchhaltung Ihrer Mandate führt das Arvut-Team — Sie prüfen, unterschreiben und behalten den Kunden. Vertraglich: Non‑Poaching.</p>
+      <div class="actions rv rv-d2">
         <a href="https://arvut.ch/de/preise#pilot" class="btn btn-primary">Pilot starten — 90 Tage auf echten Büchern
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="https://arvut.ch/de/kontakt" class="btn btn-ghost">Gespräch vereinbaren</a>
+        <a href="https://arvut.ch/de/kontakt" class="btn btn-line">Gespräch vereinbaren</a>
       </div>
-      <div class="hero-meta reveal d4">
-        <span class="dot">Swiss-hosted</span>
-        <span class="dot">Mandats-Isolation</span>
-        <span class="dot">Non‑Poaching</span>
-      </div>
+      <ul class="spec-inline rv rv-d3">
+        <li>Swiss-hosted</li><li>Mandats-Isolation</li><li>Non‑Poaching</li>
+      </ul>
     </div>
-
-    <!-- ledger visual -->
-    <div class="hero-visual reveal d2">
-      <div class="ledger" id="ledger">
-        <div class="float-chip fc1">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l9 6 9-6M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8M3 8l9-5 9 5"/></svg></span>
-          Beleg-Inbox
+    <aside class="hero-side rv rv-d2" aria-hidden="true">
+      <div class="panel" id="panel">
+        <div class="panel-top">
+          <span class="t">Abstimmung — 06 / 2026</span>
+          <span class="st"><i></i>abgestimmt</span>
         </div>
-        <div class="float-chip fc2">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></span>
-          Auf den Rappen
-        </div>
-        <div class="ledger-head">
-          <span class="t">Abstimmung · Periode 06/2026</span>
-          <span class="badge">Live</span>
-        </div>
-        <div class="row" data-row><span class="lbl">Bankauszug</span><span class="src">CH93 · UBS</span><span class="amt">128'440.00</span>
-          <svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-        <div class="row" data-row><span class="lbl">MWST-Register</span><span class="src">7.7% · ESTV</span><span class="amt">9'889.88</span>
-          <svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-        <div class="row" data-row><span class="lbl">Lohnabrechnung</span><span class="src">AHV · BVG</span><span class="amt">42'310.55</span>
-          <svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-        <div class="row" data-row style="border-bottom:none"><span class="lbl">Kreditoren / Debitoren</span><span class="src">EUR ↔ CHF</span><span class="amt">17'205.10</span>
-          <svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></div>
-        <div class="ledger-foot">
-          <span class="lab">Differenz zur Quelle</span>
-          <span class="val"><span class="pill">CHF 0.00</span> abgestimmt</span>
-        </div>
+        <div class="prow"><span class="pl">Bankauszug</span><span class="ps">CH93 · UBS</span><span class="pa num">128'440.00</span></div>
+        <div class="prow"><span class="pl">MWST-Register</span><span class="ps">7.7% · ESTV</span><span class="pa num">9'889.88</span></div>
+        <div class="prow"><span class="pl">Lohnabrechnung</span><span class="ps">AHV · BVG</span><span class="pa num">42'310.55</span></div>
+        <div class="prow"><span class="pl">Kreditoren / Debitoren</span><span class="ps">EUR ↔ CHF</span><span class="pa num">17'205.10</span></div>
+        <div class="panel-foot"><span class="fl">Differenz zur Quelle</span><span class="fr num">CHF 0.00</span></div>
       </div>
-    </div>
+      <p class="panel-cap"><i></i>Auf den Rappen.</p>
+    </aside>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="item">Swiss-hosted <span class="s">◆</span></span>
-    <span class="item">Mandats-Isolation <span class="s">◆</span></span>
-    <span class="item">10-Jahres-Archiv (OR 958f) <span class="s">◆</span></span>
-    <span class="item">Non‑Poaching <span class="s">◆</span></span>
-    <span class="item">White-Label <span class="s">◆</span></span>
-    <span class="item">Auf den Rappen abgestimmt <span class="s">◆</span></span>
-    <span class="item">Swiss-hosted <span class="s">◆</span></span>
-    <span class="item">Mandats-Isolation <span class="s">◆</span></span>
-    <span class="item">10-Jahres-Archiv (OR 958f) <span class="s">◆</span></span>
-    <span class="item">Non‑Poaching <span class="s">◆</span></span>
-    <span class="item">White-Label <span class="s">◆</span></span>
-    <span class="item">Auf den Rappen abgestimmt <span class="s">◆</span></span>
-  </div>
-</div>
-
 <!-- CAPACITY -->
-<section class="sec">
-  <div class="wrap cap">
-    <div class="cap-copy reveal">
-      <span class="kicker">Kapazität</span>
-      <h2 style="font-size:clamp(28px,3.6vw,46px);margin-top:18px;letter-spacing:-.025em">Kapazität ohne neue Stellen</h2>
-      <p class="lead" style="margin-top:22px;font-size:18.5px;color:var(--gray-soft);line-height:1.7">Qualifizierte Buchhalterinnen und Buchhalter sind auf dem Markt kaum zu finden — und das wird so bleiben. Arvut nimmt Ihrem Team die Produktion ab: Buchungen, Abstimmungen, Deklarationsentwürfe. Ihre Mitarbeitenden prüfen, beraten und pflegen die Kundenbeziehungen. Gleiches Team — mehr Mandate.</p>
-    </div>
-    <div class="cap-visual reveal d2">
-      <div class="team-stat">
-        <div class="big">×<span data-count="2">2</span></div>
-        <div class="cap-l">Mandate pro Team — ohne neue Stellen</div>
-        <div class="bar-row" id="barRow">
-          <div class="bar"><span class="t">heute</span><span class="fill" style="height:50%;background:var(--cream-3)"></span><span class="c">Team</span></div>
-          <div class="bar"><span class="t">mit Arvut</span><span class="fill" style="height:100%;background:linear-gradient(180deg,#00b3b7,var(--teal))"></span><span class="c">Team</span></div>
-        </div>
-      </div>
-    </div>
+<section class="sec wrap" id="kapazitaet">
+  <div class="sec-head sec-rule">
+    <h2 class="rv">Kapazität ohne neue Stellen</h2>
+    <p class="intro rv rv-d1">Qualifizierte Buchhalterinnen und Buchhalter sind auf dem Markt kaum zu finden — und das wird so bleiben. Arvut nimmt Ihrem Team die Produktion ab: <span class="em">Buchungen, Abstimmungen, Deklarationsentwürfe</span>. Ihre Mitarbeitenden prüfen, beraten und pflegen die Kundenbeziehungen. Gleiches Team — mehr Mandate.</p>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section class="sec" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">Leistungen</span>
-      <h2>Neue Services unter Ihrer Marke</h2>
-      <p class="lead">Echtzeit-Bücher, Beleg-Inbox (E‑Mail oder Foto — und der Beleg wird zum Buchungsentwurf), Kundenportal. Alles unter Ihrer Marke und Ihrem Logo. Ihre Kunden sehen Sie, nicht uns.</p>
+<section class="sec wrap" id="leistungen">
+  <div class="sec-head sec-rule">
+    <h2 class="rv">Neue Services unter Ihrer Marke</h2>
+    <p class="intro rv rv-d1">Alles unter Ihrer Marke und Ihrem Logo. Ihre Kunden sehen Sie, nicht uns.</p>
+  </div>
+  <div class="idx">
+    <div class="idx-row rv"><span class="ix num">01</span><h3>Echtzeit-Bücher</h3><p></p></div>
+    <div class="idx-row rv rv-d1"><span class="ix num">02</span><h3>Beleg-Inbox</h3><p>E‑Mail oder Foto — und der Beleg wird zum Buchungsentwurf.</p></div>
+    <div class="idx-row rv rv-d2"><span class="ix num">03</span><h3>Kundenportal</h3><p></p></div>
+  </div>
+  <div class="split">
+    <div class="pt rv">
+      <h3>Präzision unter Ihrer Kontrolle</h3>
+      <p>Jede Zahl wird gegen die Quelle abgestimmt: Bankauszug, MWST-Register, Lohnabrechnung — auf den Rappen. Jede Periode geht zur Prüfung und Unterschrift an Sie. Einreichung der Deklarationen und Unterschrift der Berichte bleiben bei Ihrer Treuhand.</p>
     </div>
-    <div class="feat-grid">
-      <div class="card reveal d1">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>
-        <h3>Echtzeit-Bücher</h3>
-        <p>Die Bücher Ihrer Mandate, jederzeit aktuell — kein Warten auf den Periodenabschluss.</p>
-      </div>
-      <div class="card reveal d2">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9 6 9-6M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8M3 8l9-5 9 5"/><path d="M9 13l2 2 4-4" stroke-opacity=".55"/></svg></span>
-        <h3>Beleg-Inbox</h3>
-        <p>E‑Mail oder Foto — und der Beleg wird zum Buchungsentwurf. Ohne manuelles Erfassen.</p>
-      </div>
-      <div class="card reveal d3">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M7 14h5"/></svg></span>
-        <h3>Kundenportal</h3>
-        <p>Alles unter Ihrer Marke und Ihrem Logo. Ihre Kunden sehen Sie, nicht uns.</p>
-      </div>
-      <div class="card reveal d4">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
-        <h3>Präzision unter Ihrer Kontrolle</h3>
-        <p>Jede Zahl wird gegen die Quelle abgestimmt: Bankauszug, MWST-Register, Lohnabrechnung — auf den Rappen. Jede Periode geht zur Prüfung und Unterschrift an Sie. Einreichung der Deklarationen und Unterschrift der Berichte bleiben bei Ihrer Treuhand.</p>
+    <div class="pg rv rv-d1">
+      <div class="panel">
+        <div class="panel-top"><span class="t">Prüfung & Freigabe</span><span class="st"><i></i>bei Ihnen</span></div>
+        <div class="prow"><span class="pl">Bankauszug</span><span class="ps">Quelle</span><span class="pa num">✓</span></div>
+        <div class="prow"><span class="pl">MWST-Register</span><span class="ps">Quelle</span><span class="pa num">✓</span></div>
+        <div class="prow"><span class="pl">Lohnabrechnung</span><span class="ps">Quelle</span><span class="pa num">✓</span></div>
+        <div class="panel-foot"><span class="fl">Unterschrift & Einreichung</span><span class="fr">Ihre Treuhand</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- DARK: EXCEL -->
-<section class="sec" style="padding-top:0">
-  <div class="dark reveal">
-    <div class="dark-inner">
-      <span class="kicker">Datenqualität</span>
-      <h2 style="margin-top:18px">Wir finden, was Excel übersieht.</h2>
-      <p class="quote">„Kundennamen publizieren wir nicht — Schweizer Norm, und genau so funktioniert White-Label."</p>
-      <div class="dark-cols">
-        <p class="body">Die Abstimmung gegen die Quelle bringt zum Vorschein, was manuelle und Excel-Prozesse übersehen: doppelt erfasste Umsätze, verlorene MWST, Erkennungsfehler — bevor sie in die Deklaration gelangen. Mehrwährung führen wir real, mit parallelen Büchern in EUR/CHF, und Konten rekonstruieren wir bei Bedarf aus den Originalbelegen — alles auf den Rappen abgestimmt.</p>
-        <div class="find-list">
-          <div class="find-item"><span class="n">01</span><span>Doppelt erfasste Umsätze</span><span class="x"><span class="d"></span>erkannt</span></div>
-          <div class="find-item"><span class="n">02</span><span>Verlorene MWST</span><span class="x"><span class="d"></span>erkannt</span></div>
-          <div class="find-item"><span class="n">03</span><span>Erkennungsfehler</span><span class="x"><span class="d"></span>erkannt</span></div>
-          <div class="find-item"><span class="n">04</span><span>Mehrwährung EUR / CHF</span><span class="x"><span class="d"></span>real geführt</span></div>
-        </div>
-      </div>
-      <p class="pull">Die Deklaration reicht die Treuhand ein. Die Zahlen produziert und stimmt Arvut ab.</p>
+<section class="band-dark" id="qualitaet">
+  <div class="wrap">
+    <h2 class="rv">Wir finden, was Excel übersieht.</h2>
+    <div class="dark-body">
+      <p class="rv">Die Abstimmung gegen die Quelle bringt zum Vorschein, was manuelle und Excel-Prozesse übersehen: <b>doppelt erfasste Umsätze</b>, <b>verlorene MWST</b>, <b>Erkennungsfehler</b> — bevor sie in die Deklaration gelangen. Mehrwährung führen wir real, mit parallelen Büchern in EUR/CHF, und Konten rekonstruieren wir bei Bedarf aus den Originalbelegen — alles auf den Rappen abgestimmt.</p>
+      <p class="note rv rv-d1">Kundennamen publizieren wir nicht — Schweizer Norm, und genau so funktioniert White-Label.</p>
     </div>
+    <p class="dark-pull rv">Die Deklaration reicht die Treuhand ein. Die Zahlen produziert und stimmt Arvut ab.</p>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section class="sec" id="prozess">
-  <div class="wrap proc">
-    <div class="proc-sticky reveal">
-      <span class="kicker">So funktioniert's</span>
-      <h2 style="font-size:clamp(28px,3.6vw,46px);margin-top:18px;letter-spacing:-.025em;max-width:9em">Die Produktion bei uns. Die Unterschrift bei Ihnen.</h2>
-      <div class="proc-note">
-        <p class="big">Arvut ersetzt die Treuhand nicht. <b>Arvut macht sie profitabler.</b></p>
-        <a href="https://arvut.ch/de/so-funktionierts" class="link-arrow">Mehr zum Prozess
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
+<section class="sec wrap" id="prozess">
+  <div class="proc-top sec-rule">
+    <h2 class="rv">Die Produktion bei uns. Die Unterschrift bei Ihnen.</h2>
+    <div class="proc-note rv rv-d1">
+      <span>Arvut ersetzt die Treuhand nicht. <b>Arvut macht sie profitabler.</b></span>
+      <a href="https://arvut.ch/de/so-funktionierts" class="tlink">Mehr zum Prozess
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
-    <div class="steps">
-      <div class="step reveal"><span class="num">1</span>
-        <h3>Sie oder Ihre Kunden laden hoch.</h3>
-        <p>Die Belege des Mandats — wie es passt: E-Mail-Inbox, Foto, PDF-Bankauszüge. Der Kunde kann selbst über das Portal unter Ihrer Marke hochladen — das nimmt Ihnen auch das Sammeln der Belege ab. Keine Software-Einführung bei Ihnen, kein Umschulen des Teams.</p>
-      </div>
-      <div class="step reveal d1"><span class="num">2</span>
-        <h3>Wir produzieren.</h3>
-        <p>Arvut-Team und ABM-Plattform: Buchungen, Kreditoren und Debitoren, Zahlungsabgleich, MWST-Deklarationsentwurf, Verbuchung der Löhne aus Ihren Lohnabrechnungen. Mit Qualitäts-Checkpoints.</p>
-      </div>
-      <div class="step reveal d2"><span class="num">3</span>
-        <h3>Sie prüfen und unterschreiben.</h3>
-        <p>Entwürfe der Deklarationen und Berichte kommen zur Freigabe zu Ihnen. Unterschrift, Einreichung, Kundenkommunikation — Ihre.</p>
-      </div>
-    </div>
+  </div>
+  <div class="steps">
+    <div class="step rv"><div class="ix num">01</div><h3>Sie oder Ihre Kunden laden hoch.</h3><p>Die Belege des Mandats — wie es passt: E-Mail-Inbox, Foto, PDF-Bankauszüge. Der Kunde kann selbst über das Portal unter Ihrer Marke hochladen — das nimmt Ihnen auch das Sammeln der Belege ab. Keine Software-Einführung bei Ihnen, kein Umschulen des Teams.</p></div>
+    <div class="step rv rv-d1"><div class="ix num">02</div><h3>Wir produzieren.</h3><p>Arvut-Team und ABM-Plattform: Buchungen, Kreditoren und Debitoren, Zahlungsabgleich, MWST-Deklarationsentwurf, Verbuchung der Löhne aus Ihren Lohnabrechnungen. Mit Qualitäts-Checkpoints.</p></div>
+    <div class="step rv rv-d2"><div class="ix num">03</div><h3>Sie prüfen und unterschreiben.</h3><p>Entwürfe der Deklarationen und Berichte kommen zur Freigabe zu Ihnen. Unterschrift, Einreichung, Kundenkommunikation — Ihre.</p></div>
   </div>
 </section>
 
-<!-- TRUST -->
-<section class="sec" style="padding-top:0">
-  <div class="wrap trust">
-    <div class="reveal">
-      <span class="kicker">Sicherheit & Vertrauen</span>
-      <h2 style="font-size:clamp(28px,3.6vw,42px);margin:18px 0 26px;letter-spacing:-.025em">Ihre Kunden bleiben Ihre Kunden.</h2>
-      <div class="trust-card">
-        <div class="h"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></span><h3>Non‑Poaching, vertraglich</h3></div>
-        <p>Ihre Kunden bleiben Ihre Kunden. Non‑Poaching ist vertraglich verankert; für den Endkunden ist Arvut unsichtbar.</p>
-      </div>
-      <div class="trust-card">
-        <div class="h"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span><h3>Schweizer Hosting & Isolation</h3></div>
-        <p>Die Daten sind in der Schweiz gehostet. Mandate sind voneinander isoliert; Belege werden 10 Jahre aufbewahrt (OR 958f).</p>
-      </div>
-    </div>
-    <div class="badges reveal d2">
-      <div class="badge-row">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20" stroke-opacity=".4"/><path d="M9 4h6v4l-3 2-3-2V4z" fill="currentColor" stroke="none"/></svg></span>
-        <div class="t"><div class="l">Swiss-hosted</div><div class="s">Daten in der Schweiz</div></div>
-      </div>
-      <div class="badge-row">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/></svg></span>
-        <div class="t"><div class="l">Mandats-Isolation</div><div class="s">Voneinander getrennt</div></div>
-      </div>
-      <div class="badge-row">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M6 7v12a2 2 0 002 2h8a2 2 0 002-2V7M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"/></svg></span>
-        <div class="t"><div class="l">10-Jahres-Archiv</div><div class="s">OR 958f</div></div>
-      </div>
-    </div>
+<!-- SECURITY -->
+<section class="sec wrap" id="sicherheit">
+  <div class="sec-rule">
+    <h2 class="rv" style="font-size:clamp(30px,4.4vw,56px);max-width:16ch">Ihre Kunden bleiben Ihre Kunden.</h2>
   </div>
+  <div class="sec-spec">
+    <div class="sr rv"><span class="k">Non‑Poaching</span><span class="d">Non‑Poaching ist vertraglich verankert; für den Endkunden ist Arvut unsichtbar.</span></div>
+    <div class="sr rv rv-d1"><span class="k">Mandats-Isolation</span><span class="d">Mandate sind voneinander isoliert.</span></div>
+    <div class="sr rv rv-d2"><span class="k">10-Jahres-Archiv</span><span class="d">Belege werden 10 Jahre aufbewahrt (OR 958f).</span></div>
+  </div>
+  <figure class="facade rv">
+    <img src="images/facade-band.png" alt="Fassade eines Schweizer Institutsgebäudes — Daten in der Schweiz gehostet">
+    <figcaption class="ov">
+      <div class="h">Die Daten sind in der Schweiz gehostet.</div>
+    </figcaption>
+  </figure>
 </section>
 
-<!-- PILOT CTA -->
-<section class="sec" style="padding-top:0">
-  <div class="pilot reveal">
-    <div class="pilot-inner">
-      <span class="kicker" style="color:#5fd8da;justify-content:center;display:inline-flex">Pilot · 90 Tage</span>
-      <h2 style="margin-top:18px">90 Tage auf echten Büchern.</h2>
-      <p>Wählen Sie ein bis zwei Mandate. Wir führen die Bücher, Sie prüfen jede Zahl. Die Entscheidung über die Fortsetzung fällt, nachdem Sie die Qualität auf den eigenen Daten gesehen haben.</p>
-      <div class="hero-cta">
-        <a href="https://arvut.ch/de/preise#pilot" class="btn btn-light">Pilot starten
+<!-- PILOT -->
+<section class="sec wrap pilot" id="pilot">
+  <div class="pilot-grid">
+    <div>
+      <h2 class="rv">90 Tage auf<br>echten Büchern.</h2>
+    </div>
+    <div>
+      <p class="rv rv-d1">Wählen Sie ein bis zwei Mandate. Wir führen die Bücher, Sie prüfen jede Zahl. Die Entscheidung über die Fortsetzung fällt, nachdem Sie die Qualität auf den eigenen Daten gesehen haben.</p>
+      <div class="actions rv rv-d2" style="margin-top:28px">
+        <a href="https://arvut.ch/de/preise#pilot" class="btn btn-primary">Pilot starten
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="https://arvut.ch/de/kontakt" class="btn btn-outline-light">Gespräch vereinbaren</a>
+        <a href="https://arvut.ch/de/kontakt" class="btn btn-line">Gespräch vereinbaren</a>
       </div>
     </div>
   </div>
@@ -590,12 +448,12 @@ footer{background:var(--cream-2);border-top:1px solid var(--line-soft);margin-to
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-brand">
+    <div class="foot">
+      <div class="brand">
         <img src="images/logo.png" alt="Arvut">
         <p>Buchhaltungsproduktion für Schweizer Treuhandgesellschaften. Sie prüfen, unterschreiben und behalten den Kunden.</p>
       </div>
-      <nav class="foot-nav" aria-label="Footer">
+      <nav aria-label="Footer">
         <a href="https://arvut.ch/de/so-funktionierts">So funktioniert's</a>
         <a href="https://arvut.ch/de/preise">Preise</a>
         <a href="https://arvut.ch/de/leistungen">Leistungen</a>
@@ -604,7 +462,7 @@ footer{background:var(--cream-2);border-top:1px solid var(--line-soft);margin-to
       </nav>
     </div>
     <div class="foot-bottom">
-      <span class="mono">© 2026 Arvut GmbH · Untermüli 9, 6300 Zug · <a href="https://www.zefix.ch/en/search/entity/list/firm/1536195">CHE-192.778.668</a></span>
+      <span class="num">© 2026 Arvut GmbH · Untermüli 9, 6300 Zug · <a href="https://www.zefix.ch/en/search/entity/list/firm/1536195">CHE-192.778.668</a></span>
       <span class="legal">
         <a href="https://arvut.ch/de/impressum">Impressum</a>
         <a href="https://arvut.ch/de/datenschutz">Datenschutzerklärung</a>
@@ -614,42 +472,22 @@ footer{background:var(--cream-2);border-top:1px solid var(--line-soft);margin-to
 </footer>
 
 <script>
-// header scroll
+// header solidify
 const hdr=document.getElementById('hdr');
-const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>14);
-onScroll();addEventListener('scroll',onScroll,{passive:true});
-
+const sc=()=>hdr.classList.toggle('solid',scrollY>12); sc(); addEventListener('scroll',sc,{passive:true});
+// hero load
+requestAnimationFrame(()=>requestAnimationFrame(()=>document.getElementById('hero').classList.add('in')));
+// reveal
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.18,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv,.drawrule').forEach(el=>io.observe(el));
+// process numbers light up
+const pio=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('lit')}}),{threshold:.6});
+document.querySelectorAll('.step').forEach(s=>pio.observe(s));
 // mobile menu
-const mm=document.getElementById('mobileMenu'),ov=document.getElementById('overlay');
-const openMM=()=>{mm.classList.add('open');ov.classList.add('show')};
-const closeMM=()=>{mm.classList.remove('open');ov.classList.remove('show')};
-document.getElementById('burger').onclick=openMM;
-document.getElementById('closeMenu').onclick=closeMM;
-ov.onclick=closeMM;
-mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMM));
-
-// reveal on scroll
-const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.16,rootMargin:'0px 0px -8% 0px'});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-// ledger rows tick in sequence when visible
-const ledger=document.getElementById('ledger');
-const lio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
-  const rows=ledger.querySelectorAll('[data-row]');
-  rows.forEach((r,i)=>setTimeout(()=>r.classList.add('ok'),350+i*260));
-  lio.unobserve(e.target);
-}})},{threshold:.4});
-if(ledger)lio.observe(ledger);
-
-// bars
-const barRow=document.getElementById('barRow');
-if(barRow){const bio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
-  barRow.querySelectorAll('.bar').forEach((b,i)=>setTimeout(()=>b.classList.add('show'),i*200));bio.unobserve(e.target)}})},{threshold:.5});bio.observe(barRow);}
-
-// process steps active
-const steps=document.querySelectorAll('.step');
-const sio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})},{threshold:.5});
-steps.forEach(s=>sio.observe(s));
+const mm=document.getElementById('mm'),ov=document.getElementById('ov');
+const open=()=>{mm.classList.add('open');ov.classList.add('show')},close=()=>{mm.classList.remove('open');ov.classList.remove('show')};
+document.getElementById('burger').onclick=open;document.getElementById('mmx').onclick=close;ov.onclick=close;
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
 </script>
 </body>
 </html>
