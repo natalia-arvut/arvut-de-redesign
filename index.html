@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#009b9f" />
+<meta name="theme-color" content="#fcfaf4" />
 <title>Arvut — Buchhaltungsproduktion für Schweizer Treuhandgesellschaften</title>
 <meta name="description" content="Das Arvut-Team führt die Bücher Ihrer Mandate: Buchungen, MWST, Abstimmungen — auf den Rappen. Sie prüfen und unterschreiben. Mehr Mandate ohne neue Stellen. White-Label, Swiss-hosted, Non-Poaching." />
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -11,279 +11,252 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Arvut" />
 <meta property="og:title" content="Arvut — Buchhaltungsproduktion für Schweizer Treuhandgesellschaften" />
-<meta property="og:description" content="Gleiches Team. Doppelt so viele Mandate. Die Buchhaltung Ihrer Mandate führt das Arvut-Team — Sie prüfen, unterschreiben und behalten den Kunden." />
+<meta property="og:description" content="Gleiches Team. Doppelt so viele Mandate. Sie prüfen, unterschreiben und behalten den Kunden." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,470;9..144,560&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <script>document.documentElement.className='js';</script>
 <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 
-<!-- ============ HEADER ============ -->
 <header class="site-head">
   <div class="wrap nav">
-    <a class="brand" href="index.html" aria-label="Arvut Accounting — Startseite">
-      <img src="assets/logo-arvut.png" alt="Arvut Accounting" />
-    </a>
-    <nav class="nav-links" aria-label="Hauptnavigation">
-      <a href="so-funktionierts.html">So funktioniert's</a>
-      <a href="leistungen.html">Leistungen</a>
-      <a href="preise.html">Preise</a>
-      <a href="sicherheit.html">Sicherheit</a>
-      <a href="unternehmen.html">Unternehmen</a>
+    <a class="brand" href="#top" aria-label="Arvut Accounting"><img src="assets/logo-arvut.png" alt="Arvut Accounting" /></a>
+    <nav class="nav-links" aria-label="Navigation">
+      <a href="#prozess">Prozess</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#preise">Preise</a>
+      <a href="#sicherheit">Sicherheit</a>
     </nav>
     <div class="nav-right">
-      <div class="lang" aria-label="Sprache">
-        <a class="on" href="index.html">de</a>
-        <a href="https://arvut.ch/fr">fr</a>
-        <a href="https://arvut.ch/it">it</a>
-        <a href="https://arvut.ch/en">en</a>
-      </div>
-      <a class="btn" href="preise.html#pilot">Pilot starten</a>
+      <div class="lang"><a class="on" href="#top">de</a><a href="https://arvut.ch/fr">fr</a><a href="https://arvut.ch/it">it</a><a href="https://arvut.ch/en">en</a></div>
+      <a class="btn" href="#pilot">Pilot starten</a>
     </div>
     <button class="burger" aria-label="Menü" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
-
-<!-- Mobile-Menü -->
 <div class="m-menu" id="mmenu">
-  <a href="so-funktionierts.html">So funktioniert's</a>
-  <a href="leistungen.html">Leistungen</a>
-  <a href="preise.html">Preise</a>
-  <a href="sicherheit.html">Sicherheit</a>
-  <a href="unternehmen.html">Unternehmen</a>
-  <a href="team.html">Team</a>
-  <a href="karriere.html">Karriere</a>
-  <a class="btn btn--lg" href="preise.html#pilot">Pilot starten</a>
-  <div class="m-lang"><a href="index.html">DE</a><a href="https://arvut.ch/fr">FR</a><a href="https://arvut.ch/it">IT</a><a href="https://arvut.ch/en">EN</a></div>
+  <a href="#prozess">Prozess</a><a href="#leistungen">Leistungen</a><a href="#preise">Preise</a><a href="#sicherheit">Sicherheit</a>
+  <a class="btn" href="#pilot">Pilot starten</a>
+  <div class="m-lang"><a href="#top">DE</a><a href="https://arvut.ch/fr">FR</a><a href="https://arvut.ch/it">IT</a><a href="https://arvut.ch/en">EN</a></div>
 </div>
 
-<main>
-<!-- ============ HERO ============ -->
+<main id="top">
+
+<!-- ============ HERO — typografisches Plakat ============ -->
 <section class="hero">
   <div class="wrap hero-inner">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow">Buchhaltungsproduktion · White-Label</span>
-        <h1 class="h-display">Gleiches Team.<br>Doppelt so viele<br>Mandate.</h1>
-        <p class="lead">Die Buchhaltung Ihrer Mandate führt das Arvut-Team — Sie prüfen, unterschreiben und behalten den Kunden. Vertraglich: Non‑Poaching.</p>
-        <div class="hero-cta">
-          <a class="btn btn--lg" href="preise.html#pilot">Pilot starten — 90 Tage auf echten Büchern</a>
-          <a class="btn btn--lg btn--ghost" href="mailto:hello@arvut.ch">Gespräch vereinbaren</a>
-        </div>
-        <p class="hero-note"><span class="dot"></span> Swiss-hosted · Mandats-Isolation · Non‑Poaching vertraglich verankert</p>
-      </div>
+    <div class="masthead">
+      <span class="meta meta-teal"><span class="dot"></span> Buchhaltungsproduktion</span>
+      <span class="meta">White-Label für Treuhandgesellschaften</span>
+      <span class="meta" style="margin-left:auto">Zug, CH — CHE-192.778.668</span>
+    </div>
 
-      <!-- Ledger-Karte: die Rollenteilung als zentrale Idee -->
-      <aside class="ledger" aria-label="Rollenteilung: Ihre Treuhand und Arvut">
-        <div class="ledger-top">
-          <span class="t">Rollenteilung</span>
-          <span class="t">Mandat&nbsp;·&nbsp;2026</span>
-        </div>
-        <div class="ledger-row"><span>Kundenbeziehung &amp; Beratung</span><span class="who"></span><span class="tag you">Ihre Treuhand</span></div>
-        <div class="ledger-row"><span>Buchungen &amp; Abstimmungen</span><span class="who"></span><span class="tag arvut">Arvut</span></div>
-        <div class="ledger-row"><span>MWST-Deklarationsentwurf</span><span class="who"></span><span class="tag arvut">Arvut</span></div>
-        <div class="ledger-row"><span>White-Label-Portal &amp; Archiv</span><span class="who"></span><span class="tag arvut">Arvut</span></div>
-        <div class="ledger-row"><span>Prüfung &amp; Unterschrift</span><span class="who"></span><span class="tag you">Ihre Treuhand</span></div>
-        <div class="ledger-foot"><span>Jede Zahl gegen die Quelle</span><span>auf den Rappen</span></div>
-      </aside>
+    <div class="hero-mid">
+      <h1 class="display">Gleiches Team.<br><span class="tl">Doppelt</span> so viele<br><span class="out">Mandate</span>.</h1>
+      <div class="seal" aria-hidden="true">Abgestimmt<b>0.00</b>auf den Rappen</div>
+    </div>
+
+    <div class="hero-foot">
+      <p class="lead">Die Buchhaltung Ihrer Mandate führt das Arvut-Team — Sie prüfen, unterschreiben und behalten den Kunden. Vertraglich: Non‑Poaching.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#pilot">Pilot starten — 90 Tage</a>
+        <a class="btn btn--out" href="mailto:hello@arvut.ch">Gespräch vereinbaren</a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ WARUM / DREI WERTE ============ -->
-<section class="section paper-2">
+<!-- ============ TEAL-BAND — Aussage ============ -->
+<section class="band bleed">
   <div class="wrap">
-    <div class="s-head reveal">
-      <span class="eyebrow">Warum Arvut</span>
-      <h2 class="h2">Kapazität, die Sie nicht einstellen müssen.</h2>
+    <span class="meta" style="display:block; margin-bottom:1.4rem">Die Arbeitsteilung</span>
+    <p class="band-statement">Die Produktion bei uns.<br><em>Die Unterschrift</em> bei Ihnen.</p>
+  </div>
+</section>
+
+<!-- ============ 01 — WARUM (Index) ============ -->
+<section class="section" id="warum">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="s-no">01 — Warum Arvut</span>
+      <div><h2 class="h1">Kapazität, die Sie nicht einstellen müssen.</h2></div>
     </div>
-    <div class="grid grid-3" style="margin-top:clamp(2rem,4vw,3.5rem)">
-      <article class="card reveal" data-d="1">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6"/></svg></div>
-        <span class="ix">01</span>
-        <h3>Kapazität ohne neue Stellen</h3>
-        <p>Qualifizierte Buchhalterinnen und Buchhalter sind auf dem Markt kaum zu finden — und das wird so bleiben. Arvut nimmt Ihrem Team die Produktion ab: Buchungen, Abstimmungen, Deklarationsentwürfe. Ihre Mitarbeitenden prüfen, beraten und pflegen die Kundenbeziehungen. Gleiches Team — mehr Mandate.</p>
-      </article>
-      <article class="card reveal" data-d="2">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h5"/></svg></div>
-        <span class="ix">02</span>
-        <h3>Neue Services unter Ihrer Marke</h3>
-        <p>Echtzeit-Bücher, Beleg-Inbox (E‑Mail oder Foto — und der Beleg wird zum Buchungsentwurf), Kundenportal. Alles unter Ihrer Marke und Ihrem Logo. Ihre Kunden sehen Sie, nicht uns.</p>
-      </article>
-      <article class="card reveal" data-d="3">
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
-        <span class="ix">03</span>
-        <h3>Präzision unter Ihrer Kontrolle</h3>
-        <p>Jede Zahl wird gegen die Quelle abgestimmt: Bankauszug, MWST-Register, Lohnabrechnung — auf den Rappen. Jede Periode geht zur Prüfung und Unterschrift an Sie. Einreichung der Deklarationen und Unterschrift der Berichte bleiben bei Ihrer Treuhand.</p>
-      </article>
+    <div class="index">
+      <div class="item reveal">
+        <span class="no">01</span>
+        <div class="it-main">
+          <h3>Kapazität ohne neue Stellen</h3>
+          <p>Qualifizierte Buchhalterinnen und Buchhalter sind auf dem Markt kaum zu finden — und das wird so bleiben. Arvut nimmt Ihrem Team die Produktion ab: Buchungen, Abstimmungen, Deklarationsentwürfe. Ihre Mitarbeitenden prüfen, beraten und pflegen die Kundenbeziehungen. Gleiches Team — mehr Mandate.</p>
+        </div>
+      </div>
+      <div class="item reveal">
+        <span class="no">02</span>
+        <div class="it-main">
+          <h3>Neue Services unter Ihrer Marke</h3>
+          <p>Echtzeit-Bücher, Beleg-Inbox (E‑Mail oder Foto — und der Beleg wird zum Buchungsentwurf), Kundenportal. Alles unter Ihrer Marke und Ihrem Logo. Ihre Kunden sehen Sie, nicht uns.</p>
+        </div>
+      </div>
+      <div class="item reveal">
+        <span class="no">03</span>
+        <div class="it-main">
+          <h3>Präzision unter Ihrer Kontrolle</h3>
+          <p>Jede Zahl wird gegen die Quelle abgestimmt: Bankauszug, MWST-Register, Lohnabrechnung — auf den Rappen. Jede Periode geht zur Prüfung und Unterschrift an Sie. Einreichung der Deklarationen und Unterschrift der Berichte bleiben bei Ihrer Treuhand.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ DARK: WAS EXCEL ÜBERSIEHT ============ -->
-<section class="section dark">
+<!-- ============ STATS ============ -->
+<section class="bleed" id="sicherheit">
+  <div class="wrap" style="padding-inline:0">
+    <div class="stats">
+      <div class="st"><div class="v">CH</div><div class="k">Swiss-hosted</div></div>
+      <div class="st"><div class="v">Isoliert</div><div class="k">Mandats-Isolation</div></div>
+      <div class="st"><div class="v tnum">10 <span class="u">Jahre</span></div><div class="k">Archiv · OR 958f</div></div>
+      <div class="st"><div class="v tnum">0.00 <span class="u">CHF</span></div><div class="k">Differenz — auf den Rappen</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 — PROZESS (Flow) ============ -->
+<section class="section" id="prozess">
   <div class="wrap">
-    <div class="grid grid-2" style="align-items:center; gap:clamp(2rem,5vw,5rem)">
-      <div class="reveal">
-        <span class="eyebrow">Abstimmung gegen die Quelle</span>
-        <h2 class="h2">Wir finden, was Excel übersieht.</h2>
-        <p class="lead" style="margin-top:1.2rem">Die Abstimmung gegen die Quelle bringt zum Vorschein, was manuelle und Excel-Prozesse übersehen: doppelt erfasste Umsätze, verlorene MWST, Erkennungsfehler — bevor sie in die Deklaration gelangen.</p>
-        <p style="color:color-mix(in srgb,var(--on-teal) 72%,transparent)">Mehrwährung führen wir real, mit parallelen Büchern in EUR/CHF, und Konten rekonstruieren wir bei Bedarf aus den Originalbelegen — alles auf den Rappen abgestimmt.</p>
+    <div class="s-head">
+      <span class="s-no">02 — So funktioniert's</span>
+      <div>
+        <h2 class="h1">Sie laden hoch. Wir produzieren. Sie unterschreiben.</h2>
+        <p class="lead sub">Keine Software-Einführung bei Ihnen, kein Umschulen des Teams.</p>
       </div>
-      <div class="reveal" data-d="1">
-        <ul class="checks" style="gap:1.2rem">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5 9-10"/></svg><span style="color:var(--on-teal)"><strong style="color:var(--on-teal)">Doppelt erfasste Umsätze</strong> — erkannt, bevor sie in die Deklaration gelangen.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5 9-10"/></svg><span style="color:var(--on-teal)"><strong style="color:var(--on-teal)">Verlorene MWST</strong> — Zeile für Zeile gegen das Quellregister abgestimmt.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5 9-10"/></svg><span style="color:var(--on-teal)"><strong style="color:var(--on-teal)">Mehrwährung real geführt</strong> — parallele Bücher EUR/CHF mit ESTV-Kursen.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l5 5 9-10"/></svg><span style="color:var(--on-teal)"><strong style="color:var(--on-teal)">Konten rekonstruiert</strong> — aus den Originalbelegen, auf den Rappen.</span></li>
+    </div>
+    <div class="flow reveal">
+      <div class="st">
+        <div class="n">1</div>
+        <h3>Sie oder Ihre Kunden laden hoch</h3>
+        <p>Die Belege des Mandats — wie es passt: E-Mail-Inbox, Foto, PDF-Bankauszüge. Der Kunde kann selbst über das Portal unter Ihrer Marke hochladen. Jeder Beleg wird erkannt, verknüpft und 10 Jahre archiviert (OR 958f).</p>
+      </div>
+      <div class="st">
+        <div class="n">2</div>
+        <h3>Wir produzieren</h3>
+        <p>Arvut-Team und ABM-Plattform: Buchungen, Kreditoren und Debitoren, Zahlungsabgleich, MWST-Deklarationsentwurf, Verbuchung der Löhne — mit Qualitäts-Checkpoints. Jede Zahl gegen die Quelle abgestimmt.</p>
+      </div>
+      <div class="st">
+        <div class="n">3</div>
+        <h3>Sie prüfen und unterschreiben</h3>
+        <p>Entwürfe der Deklarationen und Berichte kommen zur Freigabe zu Ihnen. Hinter jeder Zahl der Quellbeleg — die Prüfung dauert Minuten, nicht Tage. Unterschrift, Einreichung, Kundenkommunikation — Ihre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROLLEN-TAFEL ============ -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="roles reveal">
+      <div class="c you">
+        <h4>Ihre Treuhand</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12l5 5 9-11"/></svg><span>Kundenbeziehung &amp; Beratung</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12l5 5 9-11"/></svg><span>Prüfung &amp; Freigabe jeder Periode</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12l5 5 9-11"/></svg><span>Unterschrift &amp; Einreichung der Deklarationen</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12l5 5 9-11"/></svg><span>Beratung &amp; Advisory für den Kunden</span></li>
         </ul>
-        <p class="mono" style="margin-top:1.6rem; font-size:.82rem; color:#9fd9da; letter-spacing:.02em">Kundennamen publizieren wir nicht — Schweizer Norm, und genau so funktioniert White-Label.</p>
       </div>
+      <div class="c arvut">
+        <h4>Arvut</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12l5 5 9-11"/></svg><span><strong>Buchungen &amp; Abstimmungen</strong></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12l5 5 9-11"/></svg><span><strong>Entwürfe</strong> der Deklarationen und Berichte</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12l5 5 9-11"/></svg><span><strong>Qualitätskontrolle</strong> der Produktion</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12l5 5 9-11"/></svg><span><strong>Plattform, Portal, Archiv,</strong> Infrastruktur</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="meta" style="margin-top:1.4rem">Der Endkunde sieht Ihre Treuhand — Logo, Farben, Name. Arvut ist für ihn unsichtbar. Vertraglich: Non‑Poaching.</p>
+  </div>
+</section>
+
+<!-- ============ 03 — LEISTUNGEN (Index) ============ -->
+<section class="section" id="leistungen">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="s-no">03 — Leistungen</span>
+      <div>
+        <h2 class="h1">Sechs Bereiche. Ein Preis.</h2>
+        <p class="lead sub">Alles enthalten in <span class="tnum" style="color:var(--teal-d)">CHF 500/Jahr pro Mandat + CHF 1.50 pro Buchung</span> — ohne Module, ohne Zuschläge.</p>
+      </div>
+    </div>
+    <div class="index">
+      <div class="item reveal"><span class="no">01</span><div class="it-main"><h3>Finanzbuchhaltung</h3><p>Hauptbuch mit Quellbeleg, Kontenplan, Saldenliste. Mehrwährung inklusive paralleler Bücher (EUR/CHF) mit ESTV-Kursen. Entwürfe des Jahresabschlusses — zu Ihrer Prüfung und Unterschrift.</p></div></div>
+      <div class="item reveal"><span class="no">02</span><div class="it-main"><h3>Kreditoren &amp; Debitoren</h3><p>Erfassung der Ein- und Ausgangsrechnungen, Zahlungsfristen und Aging, automatischer Abgleich der Zahlungen, Verarbeitung von Gutschriften. Wer wem was schuldet — jederzeit.</p></div></div>
+      <div class="item reveal"><span class="no">03</span><div class="it-main"><h3>MWST</h3><p>Deklarationsentwurf pro Periode: mehrere Sätze, Mehrwährung in CHF, Kontrolle nach Ziffern. Automatischer Gesundheitscheck — fehlende Steuer, Satz-Abweichungen, Anomalien — bevor er zu Ihrer Unterschrift geht.</p></div></div>
+      <div class="item reveal"><span class="no">04</span><div class="it-main"><h3>Lohnverbuchung</h3><p>Aus Ihren fertigen Lohnabrechnungen: Brutto/Netto und Sozialabzüge als Buchungen, Auszahlungen auf den Rappen abgestimmt, Abschluss der Lohnkonten der Periode.</p></div></div>
+      <div class="item reveal"><span class="no">05</span><div class="it-main"><h3>Belege &amp; Dokumente</h3><p>Die Inbox des Mandats: E-Mail weiterleiten oder Foto machen — der Beleg wird erkannt und zum Buchungsentwurf. Jeder Beleg mit seiner Buchung verknüpft, 10 Jahre aufbewahrt (OR 958f).</p></div></div>
+      <div class="item reveal"><span class="no">06</span><div class="it-main"><h3>Reporting &amp; Kundenportal</h3><p>Bilanz und Erfolgsrechnung — vergleichend, mehrsprachig, jederzeit statt einmal im Jahr. White-Label-Portal: Bücher in Echtzeit, Beleg-Upload vom Handy, Zahlungsstatus — unter Ihrer Marke.</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- ============ SO FUNKTIONIERT'S (3 Schritte) ============ -->
-<section class="section">
+<!-- ============ 04 — PREISE ============ -->
+<section class="section" id="preise" style="padding-top:0">
   <div class="wrap">
-    <div class="s-head reveal">
-      <span class="eyebrow">In drei Schritten</span>
-      <h2 class="h2">Die Produktion bei uns.<br>Die Unterschrift bei Ihnen.</h2>
+    <div class="s-head">
+      <span class="s-no">04 — Preise</span>
+      <div><h2 class="h1">Zwei Zahlen. Der ganze Preis.</h2></div>
     </div>
-    <div class="steps" style="margin-top:clamp(1.5rem,3vw,2.5rem)">
-      <div class="step reveal">
-        <div class="n"><b>1</b></div>
-        <div class="body">
-          <h3>Sie oder Ihre Kunden laden hoch.</h3>
-          <p>Die Belege des Mandats — wie es passt: E-Mail-Inbox, Foto, PDF-Bankauszüge. Der Kunde kann selbst über das Portal unter Ihrer Marke hochladen — das nimmt Ihnen auch das Sammeln der Belege ab. Keine Software-Einführung bei Ihnen, kein Umschulen des Teams.</p>
-        </div>
-      </div>
-      <div class="step reveal">
-        <div class="n"><b>2</b></div>
-        <div class="body">
-          <h3>Wir produzieren.</h3>
-          <p>Arvut-Team und ABM-Plattform: Buchungen, Kreditoren und Debitoren, Zahlungsabgleich, MWST-Deklarationsentwurf, Verbuchung der Löhne aus Ihren Lohnabrechnungen. Mit Qualitäts-Checkpoints.</p>
-        </div>
-      </div>
-      <div class="step reveal">
-        <div class="n"><b>3</b></div>
-        <div class="body">
-          <h3>Sie prüfen und unterschreiben.</h3>
-          <p>Entwürfe der Deklarationen und Berichte kommen zur Freigabe zu Ihnen. Unterschrift, Einreichung, Kundenkommunikation — Ihre.</p>
-        </div>
-      </div>
-    </div>
-    <p style="margin-top:2.4rem" class="reveal"><a class="link-arrow" href="so-funktionierts.html">Mehr zum Prozess <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
-  </div>
-</section>
-
-<!-- ============ TRUST-BAND ============ -->
-<section class="section--tight paper-2">
-  <div class="wrap">
-    <p class="center measure" style="margin-inline:auto; font-family:var(--f-display); font-size:clamp(1.4rem,2.6vw,2rem); color:var(--ink); line-height:1.25">Arvut ersetzt die Treuhand nicht. <span style="color:var(--teal-700)">Arvut macht sie profitabler.</span></p>
-    <div class="stats reveal" style="margin-top:clamp(2rem,4vw,3rem)">
-      <div class="stat"><div class="v">CH</div><div class="k">Swiss-hosted</div></div>
-      <div class="stat"><div class="v">Isoliert</div><div class="k">Mandats-Isolation</div></div>
-      <div class="stat"><div class="v">10 <span class="u">Jahre</span></div><div class="k">Archiv · OR 958f</div></div>
-      <div class="stat"><div class="v">0.00 <span class="u">CHF</span></div><div class="k">Abweichung — auf den Rappen</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ LEISTUNGEN-RAIL ============ -->
-<section class="section">
-  <div class="wrap">
-    <div class="s-head reveal">
-      <span class="eyebrow">Was wir produzieren</span>
-      <h2 class="h2">Sechs Bereiche — ein Preis.</h2>
-      <p class="lead" style="margin-top:1rem">Alles enthalten in CHF 500/Jahr pro Mandat + CHF 1.50 pro Buchung. Ohne Module, Zuschläge und «kontaktieren Sie den Vertrieb».</p>
-    </div>
-    <div class="grid grid-3" style="margin-top:clamp(2rem,4vw,3.5rem)">
-      <article class="card reveal"><span class="ix">Fibu</span><h3>Finanzbuchhaltung</h3><p>Hauptbuch mit Quellbeleg, Kontenplan, Saldenliste. Mehrwährung inklusive paralleler Bücher (EUR/CHF) mit ESTV-Kursen. Entwürfe des Jahresabschlusses zu Ihrer Prüfung.</p></article>
-      <article class="card reveal" data-d="1"><span class="ix">Kred/Deb</span><h3>Kreditoren &amp; Debitoren</h3><p>Erfassung der Ein- und Ausgangsrechnungen, Zahlungsfristen und Aging, automatischer Abgleich der Zahlungen, Gutschriften. Wer wem was schuldet — jederzeit.</p></article>
-      <article class="card reveal" data-d="2"><span class="ix">MWST</span><h3>MWST</h3><p>Deklarationsentwurf pro Periode: mehrere Sätze, Mehrwährung in CHF, Kontrolle nach Ziffern. Automatischer Gesundheitscheck, bevor der Entwurf zu Ihrer Unterschrift geht.</p></article>
-      <article class="card reveal"><span class="ix">Lohn</span><h3>Lohnverbuchung</h3><p>Aus Ihren fertigen Lohnabrechnungen: Brutto/Netto und Sozialabzüge als Buchungen, Auszahlungen auf den Rappen abgestimmt, Abschluss der Lohnkonten der Periode.</p></article>
-      <article class="card reveal" data-d="1"><span class="ix">Belege</span><h3>Belege &amp; Dokumente</h3><p>Die Inbox des Mandats: E-Mail weiterleiten oder Foto machen — der Beleg wird erkannt und zum Buchungsentwurf. Jeder Beleg mit seiner Buchung verknüpft, 10 Jahre aufbewahrt (OR 958f).</p></article>
-      <article class="card reveal" data-d="2"><span class="ix">Portal</span><h3>Reporting &amp; Kundenportal</h3><p>Bilanz und Erfolgsrechnung — vergleichend, mehrsprachig, jederzeit. White-Label-Portal: Bücher in Echtzeit, Beleg-Upload vom Handy, Zahlungsstatus — unter Ihrer Marke.</p></article>
-    </div>
-    <p style="margin-top:2.4rem" class="reveal"><a class="link-arrow" href="leistungen.html">Alle Leistungen im Detail <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
-  </div>
-</section>
-
-<!-- ============ PREIS-STREIFEN ============ -->
-<section class="section paper-2">
-  <div class="wrap">
-    <div class="s-head center reveal">
-      <span class="eyebrow center">Preise</span>
-      <h2 class="h2">Zwei Zahlen. Der ganze Preis.</h2>
-      <p class="lead">Transparent und im Voraus berechenbar — pro Mandat. Ohne Mindestpakete, ohne Einführungsgebühr, ohne «kontaktieren Sie den Vertrieb».</p>
-    </div>
-    <div class="price-2 reveal" style="margin-top:clamp(2rem,4vw,3rem); max-width:880px; margin-inline:auto">
-      <div class="price-card">
+    <div class="prices reveal">
+      <div class="p">
         <div class="pk">Basis-Subskription</div>
-        <div class="pv">CHF 500 <small>/ Jahr</small></div>
+        <div class="pv">500<small> CHF / Jahr</small></div>
         <div class="pu">pro Mandat · jede Unternehmensgrösse</div>
-        <p>Enthält: Führung des Mandats durch das Arvut-Team, White‑Label-Portal, Beleg-Inbox.</p>
+        <p>Führung des Mandats durch das Arvut-Team, White‑Label-Portal, Beleg-Inbox.</p>
       </div>
-      <div class="price-card">
+      <div class="p">
         <div class="pk">Pro Buchung</div>
-        <div class="pv">CHF 1.50</div>
+        <div class="pv">1.50<small> CHF</small></div>
         <div class="pu">pro Journaleintrag</div>
-        <p>Deckt: automatisierte Verarbeitung + Kontrolle durch den Buchhalter + Archiv 10 Jahre (OR 958f).</p>
+        <p>Automatisierte Verarbeitung + Kontrolle durch den Buchhalter + Archiv 10 Jahre (OR 958f).</p>
       </div>
     </div>
-    <p class="center reveal" style="margin-top:2.2rem"><a class="link-arrow" href="preise.html">Preisbeispiele &amp; Mengenrabatte <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+    <div class="price-note">
+      <span><b>−5%</b> ab 5'000 Buchungen / Jahr</span>
+      <span><b>−10%</b> ab 10'000 Buchungen / Jahr</span>
+      <span>Sie verrechnen dem Endkunden zu <b>Ihrem eigenen Tarif</b> weiter</span>
+      <span>Alle Preise exkl. MWST</span>
+    </div>
   </div>
 </section>
 
-<!-- ============ CTA-BAND / PILOT ============ -->
-<section class="cta-band" id="pilot">
+<!-- ============ CTA ============ -->
+<section class="cta bleed" id="pilot">
   <div class="wrap">
-    <div>
-      <span class="eyebrow" style="color:#4fd0d3">Pilot</span>
-      <h2 class="h2">90 Tage auf echten Büchern.</h2>
-      <p>Wählen Sie ein bis zwei Mandate. Wir führen die Bücher, Sie prüfen jede Zahl. Die Entscheidung über die Fortsetzung fällt, nachdem Sie die Qualität auf den eigenen Daten gesehen haben.</p>
-    </div>
+    <span class="meta" style="color:rgba(251,250,243,.7); display:block; margin-bottom:1.4rem">Der Pilot</span>
+    <h2 class="display" style="font-size:clamp(2.6rem,6vw,5.6rem)">90 Tage auf<br>echten Büchern.</h2>
+    <p class="lead">Wählen Sie ein bis zwei Mandate. Wir führen die Bücher, Sie prüfen jede Zahl auf den Rappen. Bei Fortsetzung werden die CHF 1'000 als Vorschuss angerechnet — bei Absage zahlen Sie nichts nach.</p>
     <div class="cta-actions">
-      <a class="btn btn--lg" href="preise.html#pilot">Pilot starten</a>
-      <a class="btn btn--lg btn--ghost btn--on-dark" href="mailto:hello@arvut.ch">Gespräch vereinbaren</a>
+      <a class="btn btn--onteal" href="mailto:hello@arvut.ch?subject=Pilot%20starten">Pilot starten</a>
+      <a class="btn btn--ghost-teal" href="mailto:hello@arvut.ch">Gespräch vereinbaren</a>
     </div>
   </div>
 </section>
 </main>
 
-<!-- ============ FOOTER ============ -->
 <footer class="site-foot">
   <div class="wrap">
-    <div class="foot-grid">
+    <div class="foot-top">
       <div>
-        <div class="foot-word">ARVUT<b> Accounting</b></div>
+        <div class="foot-word">Arvut</div>
         <p class="foot-tag">Buchhaltungsproduktion für Schweizer Treuhandgesellschaften. Sie prüfen, unterschreiben und behalten den Kunden.</p>
       </div>
-      <div class="foot-col">
-        <h4>Produkt</h4>
-        <ul>
-          <li><a href="so-funktionierts.html">So funktioniert's</a></li>
-          <li><a href="leistungen.html">Leistungen</a></li>
-          <li><a href="preise.html">Preise</a></li>
-          <li><a href="sicherheit.html">Sicherheit</a></li>
-        </ul>
-      </div>
-      <div class="foot-col">
-        <h4>Unternehmen</h4>
-        <ul>
-          <li><a href="unternehmen.html">Über uns</a></li>
-          <li><a href="team.html">Team</a></li>
-          <li><a href="karriere.html">Karriere</a></li>
-          <li><a href="mailto:hello@arvut.ch">Kontakt</a></li>
-        </ul>
-      </div>
+      <div class="foot-col"><h4>Produkt</h4><ul><li><a href="#prozess">Prozess</a></li><li><a href="#leistungen">Leistungen</a></li><li><a href="#preise">Preise</a></li><li><a href="#sicherheit">Sicherheit</a></li></ul></div>
+      <div class="foot-col"><h4>Unternehmen</h4><ul><li><a href="https://arvut.ch/de/unternehmen">Über uns</a></li><li><a href="https://arvut.ch/de/unternehmen/team">Team</a></li><li><a href="https://arvut.ch/de/unternehmen/karriere">Karriere</a></li><li><a href="mailto:hello@arvut.ch">Kontakt</a></li></ul></div>
+      <div class="foot-col"><h4>Sprache</h4><ul><li><a href="#top">Deutsch</a></li><li><a href="https://arvut.ch/fr">Français</a></li><li><a href="https://arvut.ch/it">Italiano</a></li><li><a href="https://arvut.ch/en">English</a></li></ul></div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Arvut GmbH · Untermüli 9, 6300 Zug · CHE-192.778.668</span>
-      <span><a href="https://arvut.ch/de/impressum">Impressum</a> &nbsp;·&nbsp; <a href="https://arvut.ch/de/datenschutz">Datenschutzerklärung</a></span>
+      <span>© 2026 Arvut GmbH · Untermüli 9, 6300 Zug</span>
+      <span><a href="https://arvut.ch/de/impressum">Impressum</a> &nbsp;·&nbsp; <a href="https://arvut.ch/de/datenschutz">Datenschutz</a></span>
     </div>
   </div>
 </footer>
