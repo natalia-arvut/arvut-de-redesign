@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#009B9F" />
+<title>Arvut — Buchhaltungsproduktion für Schweizer Treuhandgesellschaften</title>
+<meta name="description" content="Das Arvut-Team führt die Bücher Ihrer Mandate: Buchungen, MWST, Abstimmungen — auf den Rappen. Sie prüfen und unterschreiben. Mehr Mandate ohne neue Stellen. White-Label, Swiss-hosted, Non-Poaching." />
+<link rel="icon" type="image/png" href="images/logo.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Arvut" />
+<meta property="og:title" content="Arvut — Buchhaltungsproduktion für Schweizer Treuhandgesellschaften" />
+<meta property="og:description" content="Gleiches Team. Doppelt so viele Mandate. Die Buchhaltung Ihrer Mandate führt das Arvut-Team — Sie prüfen, unterschreiben und behalten den Kunden." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --cream:#FBF8F4;
+  --cream-2:#F4EEE4;
+  --cream-3:#EFE7D9;
+  --ink:#1f1f1f;
+  --gray:#333333;
+  --gray-soft:#555;
+  --gray-mute:#7a766e;
+  --teal:#009B9F;
+  --teal-700:#067e81;
+  --teal-deep:#0c2a2b;
+  --teal-deep-2:#0a2122;
+  --line:rgba(20,20,20,.10);
+  --line-soft:rgba(20,20,20,.06);
+  --shadow-sm:0 1px 2px rgba(20,30,30,.04),0 6px 18px rgba(20,40,40,.05);
+  --shadow-md:0 2px 6px rgba(15,40,40,.06),0 24px 60px -22px rgba(10,42,43,.30);
+  --shadow-lg:0 40px 90px -30px rgba(10,42,43,.45);
+  --maxw:1200px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--cream);color:var(--gray);
+  font-family:"Hanken Grotesk",system-ui,sans-serif;
+  font-weight:400;font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:"Space Grotesk",sans-serif;color:var(--ink);font-weight:600;line-height:1.08;letter-spacing:-.018em;margin:0}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+.mono{font-family:"JetBrains Mono",monospace;font-feature-settings:"tnum" 1;}
+.serif{font-family:"Newsreader",serif;font-style:italic;font-weight:400}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+::selection{background:rgba(0,155,159,.22)}
+
+/* ============ KICKER / LABELS ============ */
+.kicker{
+  font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--teal-700);
+  display:inline-flex;align-items:center;gap:10px;
+}
+.kicker::before{content:"";width:26px;height:1px;background:var(--teal);opacity:.7}
+
+/* ============ BUTTONS ============ */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;cursor:pointer;
+  font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:15px;
+  padding:13px 22px;border-radius:999px;border:1px solid transparent;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s,color .25s,border-color .25s;
+  white-space:nowrap;
+}
+.btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:0 10px 26px -10px rgba(0,155,159,.65)}
+.btn-primary:hover{background:var(--teal-700);transform:translateY(-2px);box-shadow:0 16px 34px -10px rgba(0,155,159,.7)}
+.btn-primary:hover svg{transform:translateX(4px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal-700);transform:translateY(-2px)}
+.btn-light{background:#fff;color:var(--teal-deep)}
+.btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+.btn-outline-light{border-color:rgba(255,255,255,.3);color:#fff}
+.btn-outline-light:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-2px)}
+
+/* ============ HEADER ============ */
+header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,box-shadow .35s,backdrop-filter .35s}
+header.scrolled{background:rgba(251,248,244,.82);backdrop-filter:saturate(160%) blur(14px);box-shadow:0 1px 0 var(--line-soft)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{display:flex;align-items:center}
+.logo img{height:30px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{font-size:15px;color:var(--gray-soft);font-weight:400;position:relative;transition:color .2s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:1.5px;width:0;background:var(--teal);transition:width .3s var(--ease)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:20px}
+.lang{display:flex;align-items:center;gap:2px;font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.04em}
+.lang a{padding:4px 6px;color:var(--gray-mute);border-radius:6px;transition:color .2s,background .2s}
+.lang a.active{color:var(--teal-700);font-weight:600}
+.lang a:hover{color:var(--ink);background:var(--cream-3)}
+.lang span{color:var(--line)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:158px 0 86px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,5.4vw,72px);font-weight:700;letter-spacing:-.03em}
+.hero h1 .accent{color:var(--teal);display:block}
+.hero-lead{font-size:clamp(18px,1.5vw,20.5px);color:var(--gray-soft);max-width:30em;margin-top:26px;line-height:1.6}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.hero-meta{margin-top:34px;display:flex;gap:26px;flex-wrap:wrap;align-items:center;color:var(--gray-mute);font-size:13.5px}
+.hero-meta .dot{display:inline-flex;align-items:center;gap:8px}
+.hero-meta .dot::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--teal)}
+
+/* guilloché bg */
+.hero-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.hero-bg svg{position:absolute;right:-12%;top:-18%;width:78vw;max-width:1100px;opacity:.5}
+.hero-bg .blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5}
+.hero-bg .b1{width:520px;height:520px;background:radial-gradient(circle,rgba(0,155,159,.16),transparent 70%);top:-160px;right:-120px}
+.hero-bg .b2{width:420px;height:420px;background:radial-gradient(circle,rgba(0,155,159,.08),transparent 70%);bottom:-140px;left:-120px}
+
+/* ledger card */
+.ledger{position:relative;background:#fff;border:1px solid var(--line-soft);border-radius:20px;
+  box-shadow:var(--shadow-lg);padding:26px 26px 22px;}
+.ledger::before{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;
+  background:linear-gradient(150deg,rgba(0,155,159,.45),transparent 40%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.ledger-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid var(--line-soft)}
+.ledger-head .t{font-family:"Space Grotesk";font-weight:600;color:var(--ink);font-size:15px}
+.ledger-head .badge{font-family:"JetBrains Mono";font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal-700);background:rgba(0,155,159,.10);padding:5px 10px;border-radius:999px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto auto 18px;gap:14px;align-items:center;padding:13px 2px;border-bottom:1px solid var(--line-soft)}
+.row .lbl{font-size:13.5px;color:var(--gray-soft)}
+.row .src{font-family:"JetBrains Mono";font-size:11px;color:var(--gray-mute);letter-spacing:.02em}
+.row .amt{font-family:"JetBrains Mono";font-size:14px;font-weight:500;color:var(--ink);text-align:right;min-width:96px}
+.row .chk{width:16px;height:16px;color:var(--teal);opacity:0;transform:scale(.6);transition:opacity .4s,transform .4s var(--ease)}
+.row.ok .chk{opacity:1;transform:scale(1)}
+.ledger-foot{display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px}
+.ledger-foot .lab{font-size:13px;color:var(--gray-soft)}
+.ledger-foot .val{display:flex;align-items:center;gap:10px;font-family:"Space Grotesk";font-weight:600;color:var(--teal-700);font-size:15px}
+.ledger-foot .val .pill{display:inline-flex;align-items:center;gap:6px;background:rgba(0,155,159,.10);color:var(--teal-700);font-family:"JetBrains Mono";font-size:11px;letter-spacing:.08em;padding:5px 10px;border-radius:999px}
+.float-chip{position:absolute;background:#fff;border:1px solid var(--line-soft);border-radius:12px;box-shadow:var(--shadow-md);padding:11px 14px;display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--gray-soft)}
+.float-chip .ic{width:24px;height:24px;border-radius:7px;background:rgba(0,155,159,.10);color:var(--teal-700);display:grid;place-items:center}
+.float-chip .ic svg{width:13px;height:13px}
+.fc1{top:-22px;right:18px;animation:floaty 6s var(--ease) infinite}
+.fc2{bottom:-20px;left:-26px;animation:floaty 7s var(--ease) infinite .8s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+/* ============ MARQUEE ============ */
+.marquee{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);background:var(--cream-2);overflow:hidden;padding:18px 0}
+.marquee-track{display:flex;gap:0;white-space:nowrap;width:max-content;animation:scroll 32s linear infinite}
+.marquee-track .item{display:inline-flex;align-items:center;gap:14px;padding:0 38px;font-family:"Space Grotesk";font-weight:500;font-size:15px;color:var(--gray-soft)}
+.marquee-track .item .s{color:var(--teal);font-size:9px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.marquee:hover .marquee-track{animation-play-state:paused}
+
+/* ============ SECTIONS ============ */
+section{position:relative}
+.sec{padding:96px 0}
+.sec-head{max-width:760px}
+.sec-head h2{font-size:clamp(28px,3.6vw,46px);margin-top:18px;letter-spacing:-.025em}
+.sec-head .lead{margin-top:20px;font-size:18.5px;color:var(--gray-soft);line-height:1.7}
+
+/* capacity */
+.cap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.cap-visual{position:relative}
+.team-stat{background:linear-gradient(160deg,#fff,#fdfbf7);border:1px solid var(--line-soft);border-radius:18px;padding:32px;box-shadow:var(--shadow-md)}
+.team-stat .big{font-family:"Space Grotesk";font-weight:700;font-size:64px;color:var(--teal);letter-spacing:-.04em;line-height:1}
+.team-stat .big small{font-size:34px;color:var(--ink)}
+.team-stat .cap-l{margin-top:8px;color:var(--gray-soft);font-size:15px}
+.bar-row{display:flex;align-items:flex-end;gap:14px;margin-top:30px;height:120px}
+.bar{flex:1;border-radius:8px 8px 0 0;position:relative;display:flex;flex-direction:column;justify-content:flex-end}
+.bar .fill{border-radius:8px 8px 0 0;width:100%;transform-origin:bottom;transform:scaleY(0);transition:transform 1.1s var(--ease)}
+.bar.show .fill{transform:scaleY(1)}
+.bar .t{position:absolute;top:-22px;left:0;right:0;text-align:center;font-family:"JetBrains Mono";font-size:12px;color:var(--gray-mute)}
+.bar .c{text-align:center;margin-top:8px;font-size:11.5px;color:var(--gray-mute);font-family:"JetBrains Mono"}
+
+/* feature cards */
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:8px}
+.card{background:#fff;border:1px solid var(--line-soft);border-radius:18px;padding:34px;box-shadow:var(--shadow-sm);
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:rgba(0,155,159,.28)}
+.card .ic{width:50px;height:50px;border-radius:13px;background:rgba(0,155,159,.10);color:var(--teal-700);display:grid;place-items:center;margin-bottom:22px}
+.card .ic svg{width:24px;height:24px}
+.card h3{font-size:21px;margin-bottom:12px;font-weight:600}
+.card p{color:var(--gray-soft);font-size:15.5px;line-height:1.65}
+
+/* dark excel section */
+.dark{background:radial-gradient(120% 130% at 80% -10%,#11393a 0%,var(--teal-deep) 45%,var(--teal-deep-2) 100%);color:#e9efee;border-radius:32px;margin:0 auto;max-width:1320px;overflow:hidden;position:relative}
+.dark::after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 39.5H40M39.5 0V40' stroke='%23ffffff' stroke-opacity='0.04'/%3E%3C/svg%3E");pointer-events:none}
+.dark-inner{padding:84px 64px;position:relative;z-index:1}
+.dark .kicker{color:#5fd8da}
+.dark .kicker::before{background:#5fd8da}
+.dark h2{color:#fff;font-size:clamp(30px,4vw,52px);max-width:14em}
+.dark .quote{font-family:"Newsreader";font-style:italic;font-size:clamp(22px,2.6vw,30px);color:#bfe6e6;line-height:1.4;max-width:20em;margin:26px 0 0}
+.dark-cols{display:grid;grid-template-columns:1.15fr 1fr;gap:54px;margin-top:46px;align-items:start}
+.dark p.body{color:#bcd2d1;font-size:17px;line-height:1.75}
+.find-list{display:flex;flex-direction:column;gap:2px}
+.find-item{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.find-item .n{font-family:"JetBrains Mono";font-size:13px;color:#5fd8da;min-width:30px}
+.find-item .x{margin-left:auto;font-family:"JetBrains Mono";font-size:12px;color:#7fa3a2;display:flex;align-items:center;gap:7px}
+.find-item .x .d{width:7px;height:7px;border-radius:50%;background:#5fd8da;box-shadow:0 0 12px #5fd8da}
+.pull{margin-top:42px;padding-top:30px;border-top:1px solid rgba(255,255,255,.12);font-family:"Space Grotesk";font-weight:500;font-size:clamp(18px,2vw,23px);color:#fff;max-width:30em;line-height:1.4}
+
+/* process timeline */
+.proc{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
+.proc-sticky{position:sticky;top:120px}
+.steps{display:flex;flex-direction:column}
+.step{position:relative;padding:0 0 44px 56px;border-left:1.5px solid var(--line)}
+.step:last-child{border-left-color:transparent;padding-bottom:0}
+.step .num{position:absolute;left:-21px;top:-4px;width:42px;height:42px;border-radius:50%;background:var(--cream);border:1.5px solid var(--teal);color:var(--teal-700);font-family:"JetBrains Mono";font-weight:600;font-size:15px;display:grid;place-items:center;transition:background .4s,color .4s,transform .4s var(--ease)}
+.step.show .num{background:var(--teal);color:#fff;transform:scale(1.05)}
+.step h3{font-size:21px;margin-bottom:10px}
+.step p{color:var(--gray-soft);font-size:15.5px}
+.proc-note{margin-top:30px;background:var(--cream-2);border:1px solid var(--line-soft);border-radius:16px;padding:26px 28px}
+.proc-note .big{font-family:"Space Grotesk";font-weight:600;font-size:20px;color:var(--ink);line-height:1.35}
+.proc-note .big b{color:var(--teal-700);font-weight:600}
+.link-arrow{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--teal-700);font-family:"Space Grotesk";font-weight:500;font-size:15px}
+.link-arrow svg{width:15px;height:15px;transition:transform .3s var(--ease)}
+.link-arrow:hover svg{transform:translateX(4px)}
+
+/* trust */
+.trust{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.trust-card{background:#fff;border:1px solid var(--line-soft);border-radius:18px;padding:30px;box-shadow:var(--shadow-sm);margin-bottom:20px}
+.trust-card:last-child{margin-bottom:0}
+.trust-card .h{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.trust-card .h .ic{width:40px;height:40px;border-radius:11px;background:rgba(0,155,159,.10);color:var(--teal-700);display:grid;place-items:center}
+.trust-card .h .ic svg{width:20px;height:20px}
+.trust-card .h h3{font-size:18px}
+.trust-card p{color:var(--gray-soft);font-size:15.5px}
+.badges{display:flex;flex-direction:column;gap:16px}
+.badge-row{display:flex;align-items:center;gap:18px;background:#fff;border:1px solid var(--line-soft);border-radius:14px;padding:20px 24px;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),border-color .3s}
+.badge-row:hover{transform:translateX(6px);border-color:rgba(0,155,159,.3)}
+.badge-row .ic{width:46px;height:46px;border-radius:12px;background:var(--teal-deep);color:#5fd8da;display:grid;place-items:center;flex:none}
+.badge-row .ic svg{width:22px;height:22px}
+.badge-row .t .l{font-family:"Space Grotesk";font-weight:600;color:var(--ink);font-size:17px}
+.badge-row .t .s{font-size:13px;color:var(--gray-mute);font-family:"JetBrains Mono";letter-spacing:.03em;margin-top:2px}
+
+/* pilot cta */
+.pilot{text-align:center;background:linear-gradient(165deg,#11393a,var(--teal-deep) 60%,var(--teal-deep-2));border-radius:32px;color:#fff;padding:88px 32px;position:relative;overflow:hidden;max-width:1320px;margin:0 auto}
+.pilot::before{content:"";position:absolute;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(0,155,159,.35),transparent 65%);top:-340px;left:50%;transform:translateX(-50%);filter:blur(30px)}
+.pilot-inner{position:relative;z-index:1;max-width:680px;margin:0 auto}
+.pilot h2{color:#fff;font-size:clamp(32px,4.4vw,54px)}
+.pilot p{margin:22px auto 0;color:#bcd2d1;font-size:18px;max-width:34em;line-height:1.7}
+.pilot .hero-cta{justify-content:center;margin-top:38px}
+
+/* footer */
+footer{background:var(--cream-2);border-top:1px solid var(--line-soft);margin-top:96px;padding:70px 0 36px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:50px;align-items:start}
+.foot-brand img{height:30px;margin-bottom:20px}
+.foot-brand p{color:var(--gray-soft);font-size:15.5px;max-width:30em;line-height:1.65}
+.foot-nav{display:flex;gap:18px;flex-wrap:wrap;justify-content:flex-end}
+.foot-nav a{color:var(--gray-soft);font-size:15px;transition:color .2s}
+.foot-nav a:hover{color:var(--teal-700)}
+.foot-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:48px;padding-top:26px;border-top:1px solid var(--line-soft);font-size:13.5px;color:var(--gray-mute)}
+.foot-bottom .legal{display:flex;gap:22px}
+.foot-bottom a:hover{color:var(--teal-700)}
+.foot-bottom .mono{font-family:"JetBrains Mono";font-size:12.5px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:980px){
+  .nav-links{display:none}
+  .burger{display:flex}
+  .hero-grid,.cap,.dark-cols,.proc,.trust,.foot-grid{grid-template-columns:1fr}
+  .hero{padding-top:128px}
+  .hero-grid{gap:48px}
+  .ledger{max-width:460px}
+  .feat-grid{grid-template-columns:1fr}
+  .dark-inner{padding:60px 32px}
+  .proc-sticky{position:static}
+  .foot-nav{justify-content:flex-start}
+  .mobile-cta{display:flex !important}
+  .nav-right .lang{display:none}
+}
+@media(max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .hero h1{font-size:clamp(34px,9vw,46px)}
+  .hero-meta{gap:8px 16px;font-size:12.5px}
+  .hero-cta .btn-primary{font-size:14px;padding:14px 18px}
+  .kicker{letter-spacing:.16em;font-size:11px}
+  .sec{padding:68px 0}
+  .dark{border-radius:22px}.pilot{border-radius:22px;padding:64px 24px}
+  .team-stat .big{font-size:52px}
+  .float-chip{display:none}
+  .hero-cta .btn,.pilot .btn{width:100%;justify-content:center}
+  .foot-bottom{flex-direction:column;align-items:flex-start}
+}
+
+/* mobile menu */
+.mobile-menu{position:fixed;inset:0 0 0 auto;width:min(86vw,360px);background:var(--cream);z-index:200;transform:translateX(100%);transition:transform .4s var(--ease);box-shadow:var(--shadow-lg);padding:30px 28px;display:flex;flex-direction:column}
+.mobile-menu.open{transform:none}
+.mobile-menu .x{align-self:flex-end;background:none;border:0;font-size:26px;cursor:pointer;color:var(--ink);line-height:1}
+.mobile-menu a{padding:15px 0;font-family:"Space Grotesk";font-size:20px;color:var(--ink);border-bottom:1px solid var(--line-soft)}
+.mobile-menu .langs{display:flex;gap:8px;margin-top:24px}
+.mobile-menu .langs a{border:1px solid var(--line);border-radius:8px;padding:8px 14px;font-family:"JetBrains Mono";font-size:13px;border-bottom:1px solid var(--line)}
+.mobile-menu .btn{margin-top:24px;justify-content:center}
+.overlay{position:fixed;inset:0;background:rgba(12,42,43,.4);z-index:150;opacity:0;pointer-events:none;transition:opacity .4s}
+.overlay.show{opacity:1;pointer-events:auto}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="https://arvut.ch/de" class="logo" aria-label="Arvut"><img src="images/logo.png" alt="Arvut"></a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="https://arvut.ch/de/so-funktionierts">So funktioniert's</a>
+      <a href="https://arvut.ch/de/leistungen">Leistungen</a>
+      <a href="https://arvut.ch/de/preise">Preise</a>
+      <a href="https://arvut.ch/de/sicherheit-vertrauen">Sicherheit</a>
+      <a href="https://arvut.ch/de/unternehmen">Unternehmen</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" aria-label="Sprache">
+        <a href="https://arvut.ch/de" class="active">DE</a><span>·</span>
+        <a href="https://arvut.ch/fr">FR</a><span>·</span>
+        <a href="https://arvut.ch/it">IT</a><span>·</span>
+        <a href="https://arvut.ch/en">EN</a>
+      </div>
+      <a href="https://arvut.ch/de/kontakt" class="btn btn-primary">Pilot starten
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="burger" id="burger" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="overlay" id="overlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="x" id="closeMenu" aria-label="Menü schliessen">×</button>
+  <a href="https://arvut.ch/de/so-funktionierts">So funktioniert's</a>
+  <a href="https://arvut.ch/de/leistungen">Leistungen</a>
+  <a href="https://arvut.ch/de/preise">Preise</a>
+  <a href="https://arvut.ch/de/sicherheit-vertrauen">Sicherheit</a>
+  <a href="https://arvut.ch/de/unternehmen">Unternehmen</a>
+  <div class="langs">
+    <a href="https://arvut.ch/de">DE</a><a href="https://arvut.ch/fr">FR</a><a href="https://arvut.ch/it">IT</a><a href="https://arvut.ch/en">EN</a>
+  </div>
+  <a href="https://arvut.ch/de/kontakt" class="btn btn-primary">Pilot starten</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span>
+    <svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g stroke="#009B9F" stroke-opacity="0.18" fill="none">
+        <circle cx="300" cy="300" r="60"/><circle cx="300" cy="300" r="110"/>
+        <circle cx="300" cy="300" r="160"/><circle cx="300" cy="300" r="210"/>
+        <circle cx="300" cy="300" r="260"/>
+        <ellipse cx="300" cy="300" rx="260" ry="120"/>
+        <ellipse cx="300" cy="300" rx="120" ry="260"/>
+        <ellipse cx="300" cy="300" rx="230" ry="180" transform="rotate(45 300 300)"/>
+        <ellipse cx="300" cy="300" rx="230" ry="180" transform="rotate(-45 300 300)"/>
+      </g>
+    </svg>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="kicker reveal">Buchhaltungsproduktion · White-Label</span>
+      <h1 class="reveal d1" style="margin-top:24px">Gleiches Team.<span class="accent">Doppelt so viele Mandate.</span></h1>
+      <p class="hero-lead reveal d2">Die Buchhaltung Ihrer Mandate führt das Arvut-Team — Sie prüfen, unterschreiben und behalten den Kunden. Vertraglich: Non‑Poaching.</p>
+      <div class="hero-cta reveal d3">
+        <a href="https://arvut.ch/de/preise#pilot" class="btn btn-primary">Pilot starten — 90 Tage auf echten Büchern
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="https://arvut.ch/de/kontakt" class="btn btn-ghost">Gespräch vereinbaren</a>
+      </div>
+      <div class="hero-meta reveal d4">
+        <span class="dot">Swiss-hosted</span>
+        <span class="dot">Mandats-Isolation</span>
+        <span class="dot">Non‑Poaching</span>
+      </div>
+    </div>
+
+    <!-- ledger visual -->
+    <div class="hero-visual reveal d2">
+      <div class="ledger" id="ledger">
+        <div class="float-chip fc1">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l9 6 9-6M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8M3 8l9-5 9 5"/></svg></span>
+          Beleg-Inbox
+        </div>
+        <div class="float-chip fc2">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          Auf den Rappen
+        </div>
+        <div class="ledger-head">
+          <span class="t">Abstimmung · Periode 06/2026</span>
+          <span class="badge">Live</span>
+        </div>
+        <div class="row" data-row><span class="lbl">Bankauszug</span><span class="src">CH93 · UBS</span><span class="amt">128'440.00</span>
+          <svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div class="row" data-row><span class="lbl">MWST-Register</span><span class="src">7.7% · ESTV</span><span class="amt">9'889.88</span>
+          <svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div class="row" data-row><span class="lbl">Lohnabrechnung</span><span class="src">AHV · BVG</span><span class="amt">42'310.55</span>
+          <svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div class="row" data-row style="border-bottom:none"><span class="lbl">Kreditoren / Debitoren</span><span class="src">EUR ↔ CHF</span><span class="amt">17'205.10</span>
+          <svg class="chk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div class="ledger-foot">
+          <span class="lab">Differenz zur Quelle</span>
+          <span class="val"><span class="pill">CHF 0.00</span> abgestimmt</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="item">Swiss-hosted <span class="s">◆</span></span>
+    <span class="item">Mandats-Isolation <span class="s">◆</span></span>
+    <span class="item">10-Jahres-Archiv (OR 958f) <span class="s">◆</span></span>
+    <span class="item">Non‑Poaching <span class="s">◆</span></span>
+    <span class="item">White-Label <span class="s">◆</span></span>
+    <span class="item">Auf den Rappen abgestimmt <span class="s">◆</span></span>
+    <span class="item">Swiss-hosted <span class="s">◆</span></span>
+    <span class="item">Mandats-Isolation <span class="s">◆</span></span>
+    <span class="item">10-Jahres-Archiv (OR 958f) <span class="s">◆</span></span>
+    <span class="item">Non‑Poaching <span class="s">◆</span></span>
+    <span class="item">White-Label <span class="s">◆</span></span>
+    <span class="item">Auf den Rappen abgestimmt <span class="s">◆</span></span>
+  </div>
+</div>
+
+<!-- CAPACITY -->
+<section class="sec">
+  <div class="wrap cap">
+    <div class="cap-copy reveal">
+      <span class="kicker">Kapazität</span>
+      <h2 style="font-size:clamp(28px,3.6vw,46px);margin-top:18px;letter-spacing:-.025em">Kapazität ohne neue Stellen</h2>
+      <p class="lead" style="margin-top:22px;font-size:18.5px;color:var(--gray-soft);line-height:1.7">Qualifizierte Buchhalterinnen und Buchhalter sind auf dem Markt kaum zu finden — und das wird so bleiben. Arvut nimmt Ihrem Team die Produktion ab: Buchungen, Abstimmungen, Deklarationsentwürfe. Ihre Mitarbeitenden prüfen, beraten und pflegen die Kundenbeziehungen. Gleiches Team — mehr Mandate.</p>
+    </div>
+    <div class="cap-visual reveal d2">
+      <div class="team-stat">
+        <div class="big">×<span data-count="2">2</span></div>
+        <div class="cap-l">Mandate pro Team — ohne neue Stellen</div>
+        <div class="bar-row" id="barRow">
+          <div class="bar"><span class="t">heute</span><span class="fill" style="height:50%;background:var(--cream-3)"></span><span class="c">Team</span></div>
+          <div class="bar"><span class="t">mit Arvut</span><span class="fill" style="height:100%;background:linear-gradient(180deg,#00b3b7,var(--teal))"></span><span class="c">Team</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">Leistungen</span>
+      <h2>Neue Services unter Ihrer Marke</h2>
+      <p class="lead">Echtzeit-Bücher, Beleg-Inbox (E‑Mail oder Foto — und der Beleg wird zum Buchungsentwurf), Kundenportal. Alles unter Ihrer Marke und Ihrem Logo. Ihre Kunden sehen Sie, nicht uns.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="card reveal d1">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></span>
+        <h3>Echtzeit-Bücher</h3>
+        <p>Die Bücher Ihrer Mandate, jederzeit aktuell — kein Warten auf den Periodenabschluss.</p>
+      </div>
+      <div class="card reveal d2">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8l9 6 9-6M3 8v8a2 2 0 002 2h14a2 2 0 002-2V8M3 8l9-5 9 5"/><path d="M9 13l2 2 4-4" stroke-opacity=".55"/></svg></span>
+        <h3>Beleg-Inbox</h3>
+        <p>E‑Mail oder Foto — und der Beleg wird zum Buchungsentwurf. Ohne manuelles Erfassen.</p>
+      </div>
+      <div class="card reveal d3">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M7 14h5"/></svg></span>
+        <h3>Kundenportal</h3>
+        <p>Alles unter Ihrer Marke und Ihrem Logo. Ihre Kunden sehen Sie, nicht uns.</p>
+      </div>
+      <div class="card reveal d4">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3>Präzision unter Ihrer Kontrolle</h3>
+        <p>Jede Zahl wird gegen die Quelle abgestimmt: Bankauszug, MWST-Register, Lohnabrechnung — auf den Rappen. Jede Periode geht zur Prüfung und Unterschrift an Sie. Einreichung der Deklarationen und Unterschrift der Berichte bleiben bei Ihrer Treuhand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DARK: EXCEL -->
+<section class="sec" style="padding-top:0">
+  <div class="dark reveal">
+    <div class="dark-inner">
+      <span class="kicker">Datenqualität</span>
+      <h2 style="margin-top:18px">Wir finden, was Excel übersieht.</h2>
+      <p class="quote">„Kundennamen publizieren wir nicht — Schweizer Norm, und genau so funktioniert White-Label."</p>
+      <div class="dark-cols">
+        <p class="body">Die Abstimmung gegen die Quelle bringt zum Vorschein, was manuelle und Excel-Prozesse übersehen: doppelt erfasste Umsätze, verlorene MWST, Erkennungsfehler — bevor sie in die Deklaration gelangen. Mehrwährung führen wir real, mit parallelen Büchern in EUR/CHF, und Konten rekonstruieren wir bei Bedarf aus den Originalbelegen — alles auf den Rappen abgestimmt.</p>
+        <div class="find-list">
+          <div class="find-item"><span class="n">01</span><span>Doppelt erfasste Umsätze</span><span class="x"><span class="d"></span>erkannt</span></div>
+          <div class="find-item"><span class="n">02</span><span>Verlorene MWST</span><span class="x"><span class="d"></span>erkannt</span></div>
+          <div class="find-item"><span class="n">03</span><span>Erkennungsfehler</span><span class="x"><span class="d"></span>erkannt</span></div>
+          <div class="find-item"><span class="n">04</span><span>Mehrwährung EUR / CHF</span><span class="x"><span class="d"></span>real geführt</span></div>
+        </div>
+      </div>
+      <p class="pull">Die Deklaration reicht die Treuhand ein. Die Zahlen produziert und stimmt Arvut ab.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="prozess">
+  <div class="wrap proc">
+    <div class="proc-sticky reveal">
+      <span class="kicker">So funktioniert's</span>
+      <h2 style="font-size:clamp(28px,3.6vw,46px);margin-top:18px;letter-spacing:-.025em;max-width:9em">Die Produktion bei uns. Die Unterschrift bei Ihnen.</h2>
+      <div class="proc-note">
+        <p class="big">Arvut ersetzt die Treuhand nicht. <b>Arvut macht sie profitabler.</b></p>
+        <a href="https://arvut.ch/de/so-funktionierts" class="link-arrow">Mehr zum Prozess
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="num">1</span>
+        <h3>Sie oder Ihre Kunden laden hoch.</h3>
+        <p>Die Belege des Mandats — wie es passt: E-Mail-Inbox, Foto, PDF-Bankauszüge. Der Kunde kann selbst über das Portal unter Ihrer Marke hochladen — das nimmt Ihnen auch das Sammeln der Belege ab. Keine Software-Einführung bei Ihnen, kein Umschulen des Teams.</p>
+      </div>
+      <div class="step reveal d1"><span class="num">2</span>
+        <h3>Wir produzieren.</h3>
+        <p>Arvut-Team und ABM-Plattform: Buchungen, Kreditoren und Debitoren, Zahlungsabgleich, MWST-Deklarationsentwurf, Verbuchung der Löhne aus Ihren Lohnabrechnungen. Mit Qualitäts-Checkpoints.</p>
+      </div>
+      <div class="step reveal d2"><span class="num">3</span>
+        <h3>Sie prüfen und unterschreiben.</h3>
+        <p>Entwürfe der Deklarationen und Berichte kommen zur Freigabe zu Ihnen. Unterschrift, Einreichung, Kundenkommunikation — Ihre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap trust">
+    <div class="reveal">
+      <span class="kicker">Sicherheit & Vertrauen</span>
+      <h2 style="font-size:clamp(28px,3.6vw,42px);margin:18px 0 26px;letter-spacing:-.025em">Ihre Kunden bleiben Ihre Kunden.</h2>
+      <div class="trust-card">
+        <div class="h"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></span><h3>Non‑Poaching, vertraglich</h3></div>
+        <p>Ihre Kunden bleiben Ihre Kunden. Non‑Poaching ist vertraglich verankert; für den Endkunden ist Arvut unsichtbar.</p>
+      </div>
+      <div class="trust-card">
+        <div class="h"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span><h3>Schweizer Hosting & Isolation</h3></div>
+        <p>Die Daten sind in der Schweiz gehostet. Mandate sind voneinander isoliert; Belege werden 10 Jahre aufbewahrt (OR 958f).</p>
+      </div>
+    </div>
+    <div class="badges reveal d2">
+      <div class="badge-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20" stroke-opacity=".4"/><path d="M9 4h6v4l-3 2-3-2V4z" fill="currentColor" stroke="none"/></svg></span>
+        <div class="t"><div class="l">Swiss-hosted</div><div class="s">Daten in der Schweiz</div></div>
+      </div>
+      <div class="badge-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/></svg></span>
+        <div class="t"><div class="l">Mandats-Isolation</div><div class="s">Voneinander getrennt</div></div>
+      </div>
+      <div class="badge-row">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M6 7v12a2 2 0 002 2h8a2 2 0 002-2V7M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"/></svg></span>
+        <div class="t"><div class="l">10-Jahres-Archiv</div><div class="s">OR 958f</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILOT CTA -->
+<section class="sec" style="padding-top:0">
+  <div class="pilot reveal">
+    <div class="pilot-inner">
+      <span class="kicker" style="color:#5fd8da;justify-content:center;display:inline-flex">Pilot · 90 Tage</span>
+      <h2 style="margin-top:18px">90 Tage auf echten Büchern.</h2>
+      <p>Wählen Sie ein bis zwei Mandate. Wir führen die Bücher, Sie prüfen jede Zahl. Die Entscheidung über die Fortsetzung fällt, nachdem Sie die Qualität auf den eigenen Daten gesehen haben.</p>
+      <div class="hero-cta">
+        <a href="https://arvut.ch/de/preise#pilot" class="btn btn-light">Pilot starten
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="https://arvut.ch/de/kontakt" class="btn btn-outline-light">Gespräch vereinbaren</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="images/logo.png" alt="Arvut">
+        <p>Buchhaltungsproduktion für Schweizer Treuhandgesellschaften. Sie prüfen, unterschreiben und behalten den Kunden.</p>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="https://arvut.ch/de/so-funktionierts">So funktioniert's</a>
+        <a href="https://arvut.ch/de/preise">Preise</a>
+        <a href="https://arvut.ch/de/leistungen">Leistungen</a>
+        <a href="https://arvut.ch/de/sicherheit-vertrauen">Sicherheit</a>
+        <a href="https://arvut.ch/de/kontakt">Kontakt</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span class="mono">© 2026 Arvut GmbH · Untermüli 9, 6300 Zug · <a href="https://www.zefix.ch/en/search/entity/list/firm/1536195">CHE-192.778.668</a></span>
+      <span class="legal">
+        <a href="https://arvut.ch/de/impressum">Impressum</a>
+        <a href="https://arvut.ch/de/datenschutz">Datenschutzerklärung</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// header scroll
+const hdr=document.getElementById('hdr');
+const onScroll=()=>hdr.classList.toggle('scrolled',window.scrollY>14);
+onScroll();addEventListener('scroll',onScroll,{passive:true});
+
+// mobile menu
+const mm=document.getElementById('mobileMenu'),ov=document.getElementById('overlay');
+const openMM=()=>{mm.classList.add('open');ov.classList.add('show')};
+const closeMM=()=>{mm.classList.remove('open');ov.classList.remove('show')};
+document.getElementById('burger').onclick=openMM;
+document.getElementById('closeMenu').onclick=closeMM;
+ov.onclick=closeMM;
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMM));
+
+// reveal on scroll
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ledger rows tick in sequence when visible
+const ledger=document.getElementById('ledger');
+const lio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
+  const rows=ledger.querySelectorAll('[data-row]');
+  rows.forEach((r,i)=>setTimeout(()=>r.classList.add('ok'),350+i*260));
+  lio.unobserve(e.target);
+}})},{threshold:.4});
+if(ledger)lio.observe(ledger);
+
+// bars
+const barRow=document.getElementById('barRow');
+if(barRow){const bio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
+  barRow.querySelectorAll('.bar').forEach((b,i)=>setTimeout(()=>b.classList.add('show'),i*200));bio.unobserve(e.target)}})},{threshold:.5});bio.observe(barRow);}
+
+// process steps active
+const steps=document.querySelectorAll('.step');
+const sio=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})},{threshold:.5});
+steps.forEach(s=>sio.observe(s));
+</script>
+</body>
+</html>
