@@ -106,14 +106,14 @@ strong{ color:var(--ink); font-weight:600; }
    HERO — typografisches Plakat
    ========================================================================= */
 .hero{ position:relative; border-bottom:2px solid var(--ink); }
-.hero-grid{ display:grid; grid-template-columns:1.02fr 1fr; min-height:calc(100svh - var(--header-h)); }
+.hero-grid{ display:grid; grid-template-columns:1.08fr 1fr; min-height:calc(100svh - var(--header-h)); }
 .hero-copy{ display:flex; flex-direction:column; justify-content:center;
-  padding:clamp(3rem,6vw,5.5rem) clamp(2.2rem,3.5vw,4rem) clamp(3rem,6vw,5.5rem) var(--gut); }
+  padding:clamp(2.6rem,5vw,4.6rem) clamp(1.4rem,2.2vw,2.6rem) clamp(2.6rem,5vw,4.6rem) var(--gut); }
 .hero-eyebrow{ font-family:var(--f-mono); font-size:.74rem; letter-spacing:.18em; text-transform:uppercase;
-  color:var(--teal-d); display:inline-flex; align-items:center; gap:.7em; margin-bottom:1.6rem; }
+  color:var(--teal-d); display:inline-flex; align-items:center; gap:.7em; margin-bottom:1.5rem; }
 .hero-eyebrow::before{ content:""; width:30px; height:1px; background:var(--teal); }
 .h-hero{ font-family:var(--f-display); font-weight:800; text-transform:uppercase; color:var(--ink);
-  font-size:clamp(2.4rem,3.4vw,3.5rem); line-height:.96; letter-spacing:-.035em; }
+  font-size:clamp(2.7rem,4.7vw,5rem); line-height:.9; letter-spacing:-.04em; }
 .h-hero .tl{ color:var(--teal-d); }
 .h-hero .out{ -webkit-text-stroke:1.6px var(--teal); -webkit-text-fill-color:transparent; color:transparent; }
 .hero-copy .lead{ margin:1.7rem 0 2.2rem; max-width:42ch; }
