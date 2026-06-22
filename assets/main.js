@@ -120,7 +120,10 @@
     var intro = document.getElementById('intro');
     var iw = document.getElementById('iw');
     if (!intro || !iw) { startHeroScramble(); return; }
-    if (reduce) { intro.classList.add('done'); startHeroScramble(); return; }
+    // Intro nur einmal pro Sitzung — beim Sprachwechsel nicht erneut
+    var seen = false; try { seen = sessionStorage.getItem('arvIntro') === '1'; } catch (e) {}
+    if (reduce || seen) { intro.classList.add('done'); startHeroScramble(); return; }
+    try { sessionStorage.setItem('arvIntro', '1'); } catch (e) {}
     document.body.classList.add('intro-lock');
     // Decode-Effekt wie auf der Startseite (tyk-tyk-tyk)
     iw.setAttribute('data-text', 'ARVUT');

@@ -8,7 +8,7 @@
 :root{
   --paper:   #fcfaf4;   /* warmes Weiss */
   --paper-2: #f2ecdf;   /* Creme-Band */
-  --ink:     #15211f;   /* fast schwarz, warm */
+  --ink:     #303030;   /* Logo-Dunkelgrau (kein reines Schwarz) */
   --ink-2:   #4f5d5a;
   --ink-3:   #8a948f;
   --teal:    #009b9f;
