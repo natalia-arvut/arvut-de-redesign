@@ -15,7 +15,7 @@
   --teal-d:  #00787c;   /* Teal als Text auf hell (Kontrast) */
   --teal-deep:#0a4f50;
   --on-teal: #fbfaf3;
-  --line:    #ddd3c0;   /* warme Haarlinie */
+  --line:    #dcdcd8;   /* neutrale helle Haarlinie (kein Gold) */
   --line-2:  #e9e1d1;
   --gold:    #c9962f;
 
@@ -67,10 +67,17 @@ strong{ color:var(--ink); font-weight:600; }
 
 /* Sektionskopf mit Index-Nummer (Dokument-Gefühl) */
 .s-head{ display:grid; grid-template-columns:auto 1fr; gap:clamp(1rem,3vw,3rem); align-items:start;
-  border-top:1px solid var(--line); padding-top:1.4rem; margin-bottom:clamp(2.2rem,4vw,3.6rem); }
-.s-no{ font-family:var(--f-mono); font-size:1.02rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--teal-d); padding-top:.4rem; }
-.s-head .h1{ max-width:18ch; }
-.s-head .sub{ margin-top:1rem; }
+  margin-bottom:clamp(1.8rem,3.2vw,3rem); }
+.s-no{ font-family:var(--f-mono); font-size:1.02rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--teal-d); padding-top:.5rem; }
+.s-head .h1{ max-width:24ch; }
+.s-head .sub{ margin-top:1rem; max-width:60ch; }
+
+/* Balancierte Text-Sektion: Überschrift links, Text rechts */
+.splitrow{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,5.5rem); align-items:start; }
+.splitrow .sr-head .s-no{ display:block; margin-bottom:1rem; }
+.splitrow .sr-head .h1{ font-size:clamp(1.9rem,3.2vw,3.1rem); max-width:none; }
+.splitrow .sr-body p{ color:var(--ink-2); }
+.splitrow .sr-body{ padding-top:.4rem; }
 
 /* ---- Header ---- */
 .site-head{ position:sticky; top:0; z-index:80; background:color-mix(in srgb,var(--paper) 86%,transparent);
@@ -163,6 +170,7 @@ strong{ color:var(--ink); font-weight:600; }
 .index{ border-top:1px solid var(--line); }
 .index .item{ display:block;
   padding-block:clamp(1.6rem,3vw,2.6rem); border-bottom:1px solid var(--line); }
+.index .item:last-child{ border-bottom:0; }
 .index .no{ font-family:var(--f-mono); font-size:.82rem; font-weight:600; color:var(--teal-d); letter-spacing:.08em; padding-top:.4rem; }
 .index .it-main{ display:grid; grid-template-columns:1fr 1.4fr; gap:clamp(1rem,3vw,3rem); align-items:baseline; }
 .index .it-main h3{ font-size:clamp(1.5rem,2.4vw,2.2rem); font-weight:700; letter-spacing:-.02em; line-height:1.02; }
@@ -327,3 +335,6 @@ strong{ color:var(--ink); font-weight:600; }
 body.intro-lock{ overflow:hidden; height:100vh; }
 #intro.done{ display:none; }
 @media (prefers-reduced-motion:reduce){ #intro{ display:none!important; } }
+
+/* Text-Sektion: auf Mobile einspaltig */
+@media (max-width:860px){ .splitrow{ grid-template-columns:1fr; gap:1.4rem; } }
