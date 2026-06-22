@@ -107,11 +107,36 @@
     }
     requestAnimationFrame(tick);
   }
-  // Hero-Wörter beim Laden (gestaffelt)
-  document.querySelectorAll('.h-hero .scram').forEach(function (el, i) {
-    el.textContent = el.getAttribute('data-text');
-    setTimeout(function () { scramble(el, 850); }, 400 + i * 480);
-  });
+  // Hero-Wörter (Scramble) — startet nach dem Intro
+  function startHeroScramble() {
+    document.querySelectorAll('.h-hero .scram').forEach(function (el, i) {
+      el.textContent = el.getAttribute('data-text');
+      setTimeout(function () { scramble(el, 850); }, 150 + i * 430);
+    });
+  }
+
+  // ---- Intro-Loader: "ARVUT" tippt sich, dann teilt sich der Vorhang ----
+  (function () {
+    var intro = document.getElementById('intro');
+    var iw = document.getElementById('iw');
+    if (!intro || !iw) { startHeroScramble(); return; }
+    if (reduce) { intro.classList.add('done'); startHeroScramble(); return; }
+    document.body.classList.add('intro-lock');
+    'ARVUT'.split('').forEach(function (ch) {
+      var b = document.createElement('b'); b.textContent = ch; iw.appendChild(b);
+    });
+    var cur = document.createElement('span'); cur.className = 'cur'; iw.appendChild(cur);
+    var letters = iw.querySelectorAll('b');
+    letters.forEach(function (b, i) { setTimeout(function () { b.classList.add('on'); }, 280 + i * 160); });
+    var t = 280 + letters.length * 160 + 280;
+    setTimeout(function () { intro.classList.add('fade'); }, t);
+    setTimeout(function () { intro.classList.add('open'); }, t + 260);
+    setTimeout(function () {
+      intro.classList.add('done'); document.body.classList.remove('intro-lock'); startHeroScramble();
+    }, t + 1450);
+    // Sicherheits-Fallback: nie dauerhaft sperren
+    setTimeout(function () { document.body.classList.remove('intro-lock'); if (intro) intro.classList.add('done'); }, 6000);
+  })();
   // CTA-Wort beim Scrollen in den Viewport
   var sv = document.querySelectorAll('.scram-view');
   if (sv.length) {

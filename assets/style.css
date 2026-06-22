@@ -310,3 +310,25 @@ strong{ color:var(--ink); font-weight:600; }
 /* Stat-Karten: sanftes Hover */
 .stats .st{ transition:background .35s var(--ease); }
 .stats .st:hover{ background:color-mix(in srgb,var(--teal) 6%, transparent); }
+
+/* =========================================================================
+   Intro-Loader: schwarzer Screen -> "ARVUT" tippt sich -> Vorhang teilt sich
+   ========================================================================= */
+#intro{ position:fixed; inset:0; z-index:10000; }
+#intro .ih{ position:absolute; top:0; height:100%; width:50.6%; background:#07100f;
+  transition:transform .95s cubic-bezier(.76,0,.24,1); will-change:transform; }
+#intro .ih.l{ left:0; } #intro .ih.r{ right:0; }
+#intro.open .ih.l{ transform:translateX(-100%); }
+#intro.open .ih.r{ transform:translateX(100%); }
+#intro .iw{ position:absolute; inset:0; z-index:3; display:flex; align-items:center; justify-content:center;
+  font-family:var(--f-display); font-weight:800; text-transform:uppercase; letter-spacing:.16em;
+  font-size:clamp(2.2rem,7vw,5rem); color:var(--teal-br); transition:opacity .45s ease; }
+#intro.fade .iw{ opacity:0; }
+#intro .iw b{ display:inline-block; opacity:0; transform:translateY(12px); }
+#intro .iw b.on{ opacity:1; transform:none; transition:opacity .3s var(--ease), transform .3s var(--ease); }
+#intro .iw .cur{ display:inline-block; width:.07em; height:1.04em; background:var(--teal-br);
+  margin-left:.14em; transform:translateY(.1em); animation:icur .7s steps(1) infinite; }
+@keyframes icur{ 50%{ opacity:0; } }
+body.intro-lock{ overflow:hidden; height:100vh; }
+#intro.done{ display:none; }
+@media (prefers-reduced-motion:reduce){ #intro{ display:none!important; } }
