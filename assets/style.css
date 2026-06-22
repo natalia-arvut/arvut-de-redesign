@@ -105,18 +105,27 @@ strong{ color:var(--ink); font-weight:600; }
 /* =========================================================================
    HERO — typografisches Plakat
    ========================================================================= */
-.hero{ position:relative; border-bottom:2px solid var(--ink); overflow:hidden; }
-.hero-inner{ min-height:calc(100svh - var(--header-h)); display:grid; grid-template-columns:1fr 1.04fr;
-  gap:clamp(2rem,5vw,5rem); align-items:center; padding-block:clamp(28px,4vh,56px); }
-.hero-copy{ max-width:640px; }
+.hero{ position:relative; border-bottom:2px solid var(--ink); }
+.hero-grid{ display:grid; grid-template-columns:1.02fr 1fr; min-height:calc(100svh - var(--header-h)); }
+.hero-copy{ display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(3rem,6vw,5.5rem) clamp(2.2rem,3.5vw,4rem) clamp(3rem,6vw,5.5rem) var(--gut); }
+.hero-eyebrow{ font-family:var(--f-mono); font-size:.74rem; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--teal-d); display:inline-flex; align-items:center; gap:.7em; margin-bottom:1.6rem; }
+.hero-eyebrow::before{ content:""; width:30px; height:1px; background:var(--teal); }
 .h-hero{ font-family:var(--f-display); font-weight:800; text-transform:uppercase; color:var(--ink);
-  font-size:clamp(2.3rem,3.5vw,3.6rem); line-height:.94; letter-spacing:-.035em; }
+  font-size:clamp(2.4rem,3.4vw,3.5rem); line-height:.96; letter-spacing:-.035em; }
 .h-hero .tl{ color:var(--teal-d); }
 .h-hero .out{ -webkit-text-stroke:1.6px var(--teal); -webkit-text-fill-color:transparent; color:transparent; }
-.hero-copy .lead{ margin:1.6rem 0 2rem; max-width:46ch; }
-.hero-fig{ position:relative; }
-.hero-fig img{ width:100%; height:auto; border-radius:10px; box-shadow:0 50px 100px -50px rgba(15,33,30,.5); }
-.hero-cta{ display:flex; flex-wrap:wrap; gap:.8rem; }
+.hero-copy .lead{ margin:1.7rem 0 2.2rem; max-width:42ch; }
+.hero-cta{ display:flex; flex-wrap:wrap; gap:.9rem; }
+.hero-trustline{ margin-top:2.2rem; display:flex; flex-wrap:wrap; gap:.5rem 1.4rem; font-family:var(--f-mono);
+  font-size:.74rem; letter-spacing:.02em; color:var(--ink-3); }
+.hero-trustline span{ display:inline-flex; align-items:center; gap:.5em; }
+.hero-trustline span::before{ content:""; width:5px; height:5px; border-radius:50%; background:var(--teal); }
+.hero-media{ position:relative; border-left:1px solid var(--line); overflow:hidden; min-height:340px; }
+.hero-media img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 46%; }
+.hero-media::after{ content:""; position:absolute; inset:0; pointer-events:none;
+  box-shadow:inset 22px 0 40px -28px rgba(15,33,30,.35); }
 /* Masthead-Zeile oben */
 .masthead{ display:flex; flex-wrap:wrap; gap:.6rem 2.2rem; align-items:center; padding-bottom:1.1rem; border-bottom:1px solid var(--line); }
 .masthead .meta{ display:inline-flex; align-items:center; gap:.6rem; }
@@ -240,9 +249,10 @@ strong{ color:var(--ink); font-weight:600; }
    RESPONSIVE
    ========================================================================= */
 @media (max-width:1080px){
-  .hero-inner{ grid-template-columns:1fr; gap:2.2rem; align-content:center; }
-  .hero-copy{ max-width:none; }
-  .hero-fig{ max-width:620px; }
+  .hero-grid{ grid-template-columns:1fr; min-height:0; }
+  .hero-copy{ padding:clamp(2.4rem,6vw,3.4rem) var(--gut) clamp(1.8rem,4vw,2.6rem); }
+  .hero-media{ border-left:0; border-top:1px solid var(--line); aspect-ratio:16/11; min-height:0; }
+  .hero-media::after{ box-shadow:none; }
   .index .it-main{ grid-template-columns:1fr; gap:.6rem; }
   .foot-top{ grid-template-columns:1fr 1fr; }
 }
@@ -253,7 +263,7 @@ strong{ color:var(--ink); font-weight:600; }
   /* grosse Typo für Mobile beschneiden, damit nichts überläuft */
   .display{ font-size:clamp(2.3rem,10.5vw,3.6rem); line-height:.95; letter-spacing:-.03em; overflow-wrap:break-word; }
   .h-hero{ font-size:clamp(2.1rem,9vw,3rem); overflow-wrap:break-word; }
-  .hero-inner{ min-height:auto; padding-block:24px 8px; }
+  .hero-media{ aspect-ratio:4/3; }
   .hero-cta .btn{ flex:1 1 auto; }
   .h1{ font-size:clamp(1.9rem,7.5vw,2.6rem); overflow-wrap:break-word; }
   .band-statement{ font-size:clamp(1.7rem,7vw,2.4rem); }
