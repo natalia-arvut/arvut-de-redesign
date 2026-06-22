@@ -59,7 +59,8 @@ strong{ color:var(--ink); font-weight:600; }
 
 /* ---- Layout ---- */
 .wrap{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:var(--gut); }
-.section{ position:relative; padding-block:clamp(64px,8vw,140px); }
+.section{ position:relative; padding-block:clamp(46px,5vw,82px); }
+.section--sm{ position:relative; padding-block:clamp(32px,3.4vw,54px); }
 .bleed{ width:100%; }
 .rule{ height:1px; background:var(--line); border:0; }
 .rule-ink{ height:2px; background:var(--ink); border:0; }
@@ -72,16 +73,15 @@ strong{ color:var(--ink); font-weight:600; }
 .s-head .sub{ margin-top:1rem; }
 
 /* ---- Header ---- */
-.site-head{ position:sticky; top:0; z-index:80; background:color-mix(in srgb,var(--paper) 84%,transparent);
-  backdrop-filter:blur(10px) saturate(140%); border-bottom:1px solid transparent; transition:border-color .3s; }
-.site-head.scrolled{ border-bottom-color:var(--line); }
+.site-head{ position:sticky; top:0; z-index:80; background:color-mix(in srgb,var(--paper) 86%,transparent);
+  backdrop-filter:blur(10px) saturate(140%); border-bottom:1px solid var(--line); transition:background .3s; }
 .nav{ height:var(--header-h); display:flex; align-items:center; gap:2rem; }
-.brand img{ height:26px; width:auto; display:block; }
-.nav-links{ display:flex; gap:1.8rem; margin-left:1.5rem; }
-.nav-links a{ font-family:var(--f-mono); font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2); transition:color .2s; }
+.brand img{ height:27px; width:auto; display:block; }
+.nav-links{ display:flex; gap:2rem; margin-left:1.8rem; }
+.nav-links a{ font-family:var(--f-mono); font-size:.88rem; letter-spacing:.05em; text-transform:uppercase; color:var(--ink-2); transition:color .2s; }
 .nav-links a:hover{ color:var(--teal-d); }
-.nav-right{ margin-left:auto; display:flex; align-items:center; gap:1.4rem; }
-.lang{ display:flex; gap:.5rem; font-family:var(--f-mono); font-size:.74rem; }
+.nav-right{ margin-left:auto; display:flex; align-items:center; gap:1.5rem; }
+.lang{ display:flex; gap:.6rem; font-family:var(--f-mono); font-size:.84rem; }
 .lang a{ color:var(--ink-3); text-transform:uppercase; } .lang a.on{ color:var(--teal-d); }
 .lang a:hover{ color:var(--ink); }
 .burger{ display:none; background:none; border:0; width:42px; height:42px; padding:9px; }
@@ -152,10 +152,10 @@ strong{ color:var(--ink); font-weight:600; }
    TEAL-BAND (Plakat-Aussage, full-bleed)
    ========================================================================= */
 .band{ background:var(--teal); color:var(--on-teal); }
-.band .wrap{ padding-block:clamp(48px,7vw,96px); }
+.band .wrap{ padding-top:clamp(62px,6.5vw,96px); padding-bottom:clamp(46px,4.6vw,70px); }
 .band h2,.band .h1{ color:var(--on-teal); }
 .band .meta{ color:rgba(251,250,243,.7); }
-.band-statement{ font-family:var(--f-display); font-weight:800; text-transform:uppercase; letter-spacing:-.03em;
+.band-statement{ font-family:var(--f-display); font-weight:800; text-transform:uppercase; letter-spacing:-.035em;
   font-size:clamp(1.8rem,4.4vw,4.2rem); line-height:.98; }
 .band-statement em{ font-style:normal; -webkit-text-stroke:1.6px var(--on-teal); -webkit-text-fill-color:transparent; }
 
@@ -195,7 +195,7 @@ strong{ color:var(--ink); font-weight:600; }
 .prices .p{ padding:clamp(1.8rem,3vw,3rem) clamp(1.6rem,2.4vw,2.6rem); border-right:1px solid var(--line); }
 .prices .p:last-child{ border-right:0; }
 .prices .pk{ font-family:var(--f-mono); font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--teal-d); }
-.prices .pv{ font-family:var(--f-display); font-weight:800; font-size:clamp(3.4rem,7vw,6.6rem); line-height:.85; letter-spacing:-.05em; color:var(--ink); margin:1.4rem 0 .4rem; }
+.prices .pv{ font-family:var(--f-display); font-weight:800; font-size:clamp(3.4rem,7vw,6.6rem); line-height:.85; letter-spacing:-.05em; color:var(--teal-d); margin:1.4rem 0 .4rem; }
 .prices .pv small{ font-family:var(--f-mono); font-weight:500; font-size:1rem; color:var(--ink-3); letter-spacing:0; }
 .prices .pu{ font-family:var(--f-mono); font-size:.84rem; color:var(--ink-3); }
 .prices .p p{ margin-top:1.1rem; color:var(--ink-2); max-width:34ch; }
@@ -213,8 +213,8 @@ strong{ color:var(--ink); font-weight:600; }
 
 /* ---- CTA ---- */
 .cta{ background:var(--teal); color:var(--on-teal); text-align:center; }
-.cta .wrap{ padding-block:clamp(64px,9vw,140px); max-width:1000px; }
-.cta .display{ color:var(--on-teal); }
+.cta .wrap{ padding-block:clamp(56px,6vw,96px); max-width:1000px; }
+.cta .display,.cta .h1,.cta h2{ color:var(--on-teal); }
 .cta .lead{ color:rgba(251,250,243,.85); max-width:60ch; margin:1.4rem auto 0; }
 .cta-actions{ display:flex; gap:.9rem; justify-content:center; flex-wrap:wrap; margin-top:2.2rem; }
 
@@ -294,10 +294,12 @@ strong{ color:var(--ink); font-weight:600; }
    Custom Cursor · Magnetic · Count-up  (von artistic-demo adaptiert)
    ========================================================================= */
 .cur,.cur-ring{ position:fixed; top:0; left:0; border-radius:50%; pointer-events:none;
-  z-index:9999; transform:translate(-50%,-50%); mix-blend-mode:difference; }
-.cur{ width:7px; height:7px; background:#fff; }
-.cur-ring{ width:36px; height:36px; border:1.5px solid #fff; transition:width .3s var(--ease), height .3s var(--ease); }
-.cur-ring.grow{ width:72px; height:72px; }
+  z-index:9999; transform:translate(-50%,-50%); }
+.cur{ width:7px; height:7px; background:var(--ink); }
+.cur-ring{ width:36px; height:36px; border:1.5px solid var(--ink); transition:width .3s var(--ease), height .3s var(--ease), border-color .3s; }
+.cur-ring.grow{ width:72px; height:72px; border-color:var(--teal); }
+/* auf dunklen Teal-Flächen Cursor hell halten */
+.band .cur,.cta .cur,.band .cur-ring,.cta .cur-ring{ }
 @media (hover:none),(pointer:coarse){ .cur,.cur-ring{ display:none!important; } }
 .cursor-on, .cursor-on a, .cursor-on button, .cursor-on .btn,
 .cursor-on .item, .cursor-on .st, .cursor-on .p{ cursor:none; }

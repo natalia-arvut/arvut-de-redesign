@@ -24,16 +24,18 @@
   // ---- Count-up ----
   function countUp(el) {
     var to = parseFloat(el.getAttribute('data-to')) || 0;
+    var dec = parseInt(el.getAttribute('data-dec') || '0', 10);
     var dur = parseInt(el.getAttribute('data-dur') || '1100', 10);
-    if (reduce) { el.textContent = to; return; }
+    var fmt = function (n) { return dec ? n.toFixed(dec) : Math.round(n).toString(); };
+    if (reduce) { el.textContent = fmt(to); return; }
     var t0 = null;
     function step(t) {
       if (t0 === null) t0 = t;
       var p = Math.min((t - t0) / dur, 1);
       var e = 1 - Math.pow(1 - p, 3);            // easeOutCubic
-      el.textContent = Math.round(to * e);
+      el.textContent = fmt(to * e);
       if (p < 1) requestAnimationFrame(step);
-      else el.textContent = to;
+      else el.textContent = fmt(to);
     }
     requestAnimationFrame(step);
   }
