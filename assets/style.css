@@ -68,7 +68,7 @@ strong{ color:var(--ink); font-weight:600; }
 /* Sektionskopf mit Index-Nummer (Dokument-Gefühl) */
 .s-head{ display:grid; grid-template-columns:auto 1fr; gap:clamp(1rem,3vw,3rem); align-items:start;
   border-top:1px solid var(--line); padding-top:1.4rem; margin-bottom:clamp(2.2rem,4vw,3.6rem); }
-.s-no{ font-family:var(--f-mono); font-size:.8rem; font-weight:600; letter-spacing:.1em; color:var(--teal-d); padding-top:.5rem; }
+.s-no{ font-family:var(--f-mono); font-size:1.02rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--teal-d); padding-top:.4rem; }
 .s-head .h1{ max-width:18ch; }
 .s-head .sub{ margin-top:1rem; }
 
@@ -106,7 +106,7 @@ strong{ color:var(--ink); font-weight:600; }
    HERO — typografisches Plakat
    ========================================================================= */
 .hero{ position:relative; border-bottom:1px solid var(--line); }
-.hero-grid{ display:grid; grid-template-columns:1.08fr 1fr; min-height:calc(100svh - var(--header-h)); }
+.hero-grid{ display:grid; grid-template-columns:1fr 1fr; min-height:calc(100svh - var(--header-h)); }
 .hero-copy{ display:flex; flex-direction:column; justify-content:center;
   padding:clamp(2.6rem,5vw,4.6rem) clamp(1.4rem,2.2vw,2.6rem) clamp(2.6rem,5vw,4.6rem) var(--gut); }
 .hero-eyebrow{ font-family:var(--f-mono); font-size:.74rem; letter-spacing:.18em; text-transform:uppercase;
@@ -161,8 +161,8 @@ strong{ color:var(--ink); font-weight:600; }
 
 /* ---- Index-Liste (Werte / Leistungen als Dokument-Index) ---- */
 .index{ border-top:1px solid var(--line); }
-.index .item{ display:grid; grid-template-columns:auto 1fr; gap:clamp(1rem,3vw,3rem);
-  padding-block:clamp(1.6rem,3vw,2.6rem); border-bottom:1px solid var(--line); align-items:start; }
+.index .item{ display:block;
+  padding-block:clamp(1.6rem,3vw,2.6rem); border-bottom:1px solid var(--line); }
 .index .no{ font-family:var(--f-mono); font-size:.82rem; font-weight:600; color:var(--teal-d); letter-spacing:.08em; padding-top:.4rem; }
 .index .it-main{ display:grid; grid-template-columns:1fr 1.4fr; gap:clamp(1rem,3vw,3rem); align-items:baseline; }
 .index .it-main h3{ font-size:clamp(1.5rem,2.4vw,2.2rem); font-weight:700; letter-spacing:-.02em; line-height:1.02; }
