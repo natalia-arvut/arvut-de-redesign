@@ -204,7 +204,7 @@ strong{ color:var(--ink); font-weight:600; }
 .price-note span b{ color:var(--teal-d); }
 
 /* ---- Statleiste ---- */
-.stats{ display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.stats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .stats .st{ padding:clamp(1.4rem,2.4vw,2.2rem) clamp(1rem,2vw,1.6rem); border-right:1px solid var(--line); }
 .stats .st:last-child{ border-right:0; }
 .stats .v{ font-family:var(--f-display); font-weight:800; font-size:clamp(1.6rem,2.4vw,2.4rem); color:var(--ink); letter-spacing:-.02em; line-height:1; }
