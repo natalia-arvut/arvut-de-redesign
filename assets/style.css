@@ -66,7 +66,7 @@ strong{ color:var(--ink); font-weight:600; }
 
 /* Sektionskopf mit Index-Nummer (Dokument-Gefühl) */
 .s-head{ display:grid; grid-template-columns:auto 1fr; gap:clamp(1rem,3vw,3rem); align-items:start;
-  border-top:2px solid var(--ink); padding-top:1.4rem; margin-bottom:clamp(2.2rem,4vw,3.6rem); }
+  border-top:1px solid var(--line); padding-top:1.4rem; margin-bottom:clamp(2.2rem,4vw,3.6rem); }
 .s-no{ font-family:var(--f-mono); font-size:.8rem; font-weight:600; letter-spacing:.1em; color:var(--teal-d); padding-top:.5rem; }
 .s-head .h1{ max-width:18ch; }
 .s-head .sub{ margin-top:1rem; }
@@ -105,7 +105,7 @@ strong{ color:var(--ink); font-weight:600; }
 /* =========================================================================
    HERO — typografisches Plakat
    ========================================================================= */
-.hero{ position:relative; border-bottom:2px solid var(--ink); }
+.hero{ position:relative; border-bottom:1px solid var(--line); }
 .hero-grid{ display:grid; grid-template-columns:1.08fr 1fr; min-height:calc(100svh - var(--header-h)); }
 .hero-copy{ display:flex; flex-direction:column; justify-content:center;
   padding:clamp(2.6rem,5vw,4.6rem) clamp(1.4rem,2.2vw,2.6rem) clamp(2.6rem,5vw,4.6rem) var(--gut); }
@@ -179,7 +179,7 @@ strong{ color:var(--ink); font-weight:600; }
 .flow .st p{ margin:0; font-size:.96rem; color:var(--ink-2); }
 
 /* ---- Rollen-Tafel (SIE / ARVUT) ---- */
-.roles{ display:grid; grid-template-columns:1fr 1fr; border:2px solid var(--ink); }
+.roles{ display:grid; grid-template-columns:1fr 1fr; border:1px solid var(--line); border-radius:14px; overflow:hidden; }
 .roles .c{ padding:clamp(1.6rem,2.6vw,2.6rem); }
 .roles .c.you{ background:var(--teal); color:var(--on-teal); }
 .roles .c h4{ font-family:var(--f-display); font-weight:800; text-transform:uppercase; letter-spacing:-.01em; font-size:1.5rem; margin-bottom:1.4rem; }
@@ -191,7 +191,7 @@ strong{ color:var(--ink); font-weight:600; }
 .roles .arvut li{ color:var(--ink-2); } .roles .arvut li svg{ color:var(--teal-d); } .roles .arvut li strong{ color:var(--ink); }
 
 /* ---- Preise (typografisch, riesig) ---- */
-.prices{ display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:2px solid var(--ink); }
+.prices{ display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line); border-radius:14px; overflow:hidden; }
 .prices .p{ padding:clamp(1.8rem,3vw,3rem) clamp(1.6rem,2.4vw,2.6rem); border-right:1px solid var(--line); }
 .prices .p:last-child{ border-right:0; }
 .prices .pk{ font-family:var(--f-mono); font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--teal-d); }
@@ -219,7 +219,7 @@ strong{ color:var(--ink); font-weight:600; }
 .cta-actions{ display:flex; gap:.9rem; justify-content:center; flex-wrap:wrap; margin-top:2.2rem; }
 
 /* ---- Footer ---- */
-.site-foot{ background:var(--paper); border-top:2px solid var(--ink); padding-block:clamp(48px,5vw,72px) 2rem; }
+.site-foot{ background:var(--paper); border-top:1px solid var(--line); padding-block:clamp(48px,5vw,72px) 2rem; }
 .foot-top{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:clamp(1.6rem,3vw,3rem); }
 .foot-word{ font-family:var(--f-display); font-weight:800; text-transform:uppercase; font-size:clamp(2rem,4vw,3.4rem); letter-spacing:-.04em; color:var(--ink); line-height:.9; }
 .foot-tag{ max-width:34ch; font-size:.92rem; margin-top:1rem; color:var(--ink-2); }
@@ -289,3 +289,22 @@ strong{ color:var(--ink); font-weight:600; }
   .foot-bottom{ flex-direction:column; }
   .cta-actions .btn{ width:100%; }
 }
+
+/* =========================================================================
+   Custom Cursor · Magnetic · Count-up  (von artistic-demo adaptiert)
+   ========================================================================= */
+.cur,.cur-ring{ position:fixed; top:0; left:0; border-radius:50%; pointer-events:none;
+  z-index:9999; transform:translate(-50%,-50%); mix-blend-mode:difference; }
+.cur{ width:7px; height:7px; background:#fff; }
+.cur-ring{ width:36px; height:36px; border:1.5px solid #fff; transition:width .3s var(--ease), height .3s var(--ease); }
+.cur-ring.grow{ width:72px; height:72px; }
+@media (hover:none),(pointer:coarse){ .cur,.cur-ring{ display:none!important; } }
+.cursor-on, .cursor-on a, .cursor-on button, .cursor-on .btn,
+.cursor-on .item, .cursor-on .st, .cursor-on .p{ cursor:none; }
+
+/* Magnetische Buttons */
+.btn{ will-change:transform; }
+
+/* Stat-Karten: sanftes Hover */
+.stats .st{ transition:background .35s var(--ease); }
+.stats .st:hover{ background:color-mix(in srgb,var(--teal) 6%, transparent); }
