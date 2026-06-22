@@ -122,13 +122,11 @@
     if (!intro || !iw) { startHeroScramble(); return; }
     if (reduce) { intro.classList.add('done'); startHeroScramble(); return; }
     document.body.classList.add('intro-lock');
-    'ARVUT'.split('').forEach(function (ch) {
-      var b = document.createElement('b'); b.textContent = ch; iw.appendChild(b);
-    });
-    var cur = document.createElement('span'); cur.className = 'cur'; iw.appendChild(cur);
-    var letters = iw.querySelectorAll('b');
-    letters.forEach(function (b, i) { setTimeout(function () { b.classList.add('on'); }, 280 + i * 160); });
-    var t = 280 + letters.length * 160 + 280;
+    // Decode-Effekt wie auf der Startseite (tyk-tyk-tyk)
+    iw.setAttribute('data-text', 'ARVUT');
+    iw.textContent = '';
+    scramble(iw, 1100);
+    var t = 1550;
     setTimeout(function () { intro.classList.add('fade'); }, t);
     setTimeout(function () { intro.classList.add('open'); }, t + 260);
     setTimeout(function () {
