@@ -187,7 +187,7 @@ strong{ color:var(--ink); font-weight:600; }
 .roles ul{ list-style:none; margin:0; padding:0; display:grid; gap:.9rem; }
 .roles li{ display:grid; grid-template-columns:auto 1fr; gap:.7rem; align-items:start; font-size:1rem; }
 .roles li svg{ width:18px; height:18px; margin-top:.2rem; flex:0 0 auto; }
-.roles .you li{ color:var(--on-teal); } .roles .you li svg{ color:var(--on-teal); }
+.roles .you li{ color:var(--on-teal); } .roles .you li svg{ color:var(--on-teal); } .roles .you li strong{ color:var(--on-teal); }
 .roles .arvut li{ color:var(--ink-2); } .roles .arvut li svg{ color:var(--teal-d); } .roles .arvut li strong{ color:var(--ink); }
 
 /* ---- Preise (typografisch, riesig) ---- */

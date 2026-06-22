@@ -88,4 +88,40 @@
       b.addEventListener('mouseleave', function () { b.style.transform = ''; });
     });
   }
+
+  // ---- Scramble / Decode-Text (von razgon-demo adaptiert) ----
+  var CH = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ#%@&*<>/';
+  function scramble(el, dur) {
+    var text = el.getAttribute('data-text') || el.textContent;
+    if (reduce) { el.textContent = text; return; }
+    var len = text.length, start = null;
+    function tick(now) {
+      if (start === null) start = now;
+      var p = Math.min((now - start) / dur, 1);
+      var reveal = Math.floor(p * len), out = '';
+      for (var i = 0; i < len; i++) {
+        out += (i < reveal || text[i] === ' ') ? text[i] : CH[Math.floor(Math.random() * CH.length)];
+      }
+      el.textContent = out;
+      if (p < 1) requestAnimationFrame(tick); else el.textContent = text;
+    }
+    requestAnimationFrame(tick);
+  }
+  // Hero-Wörter beim Laden (gestaffelt)
+  document.querySelectorAll('.h-hero .scram').forEach(function (el, i) {
+    el.textContent = el.getAttribute('data-text');
+    setTimeout(function () { scramble(el, 850); }, 400 + i * 480);
+  });
+  // CTA-Wort beim Scrollen in den Viewport
+  var sv = document.querySelectorAll('.scram-view');
+  if (sv.length) {
+    if (reduce || !('IntersectionObserver' in window)) {
+      sv.forEach(function (el) { el.textContent = el.getAttribute('data-text'); });
+    } else {
+      var io2 = new IntersectionObserver(function (ents) {
+        ents.forEach(function (en) { if (en.isIntersecting) { scramble(en.target, 850); io2.unobserve(en.target); } });
+      }, { threshold: 0.5 });
+      sv.forEach(function (el) { io2.observe(el); });
+    }
+  }
 })();
