@@ -534,11 +534,12 @@ body.intro-lock{ overflow:hidden; height:100vh; }
 .roles-table th:nth-child(2),.roles-table th:nth-child(3),
 .roles-table td.mk{ text-align:center; width:22%; }
 .roles-table th:nth-child(2){ color:var(--teal-d); }
-.roles-table td.mk.yes{ color:var(--teal); font-weight:700; font-size:1.05rem; }
+.roles-table td.mk.yes{ color:var(--teal-d); }
+.roles-table .mk.yes .rk{ width:20px; height:20px; color:var(--teal-d); display:inline-block; vertical-align:middle; }
 .roles-table td.mk.no{ color:var(--ink-3); }
 .roles-table td:first-child{ font-weight:500; color:var(--ink-2); }
 
 /* Аватары команды */
-.team .m .who .avatar{ width:104px; height:104px; border-radius:50%; object-fit:cover; object-position:center top;
+.team .m .who .avatar{ width:104px; height:104px; border-radius:50%; object-fit:cover; object-position:center;
   border:1px solid var(--line); display:block; margin-bottom:1.1rem; background:var(--paper-2); }
 @media (max-width:760px){ .team .m .who .avatar{ width:84px; height:84px; } }
