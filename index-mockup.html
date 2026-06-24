@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#fcfaf4" />
+<title>[Mockup] Arvut — Buchhaltungsproduktion für Schweizer Treuhandgesellschaften</title>
+<meta name="description" content="Die Buchhaltung Ihrer Mandate führt das Arvut-Team — Sie prüfen, unterschreiben und behalten den Kunden. White-Label, Swiss-hosted, Non-Poaching." />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Arvut" />
+<meta property="og:title" content="Arvut — Buchhaltungsproduktion für Schweizer Treuhandgesellschaften" />
+<meta property="og:description" content="Gleiches Team. Doppelt so viele Mandate. Sie prüfen, unterschreiben und behalten den Kunden." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script>document.documentElement.className='js';</script>
+<link rel="stylesheet" href="assets/style.css" />
+<style>
+/* MacBook-мокап (только страница-эксперимент) — чистый серебристый, прозрачный фон */
+.hero-media{ display:flex; align-items:center; justify-content:center; padding:1% 2% 1% 0; }
+.macbook{ width:100%; max-width:660px; margin:0 auto; filter:drop-shadow(0 28px 48px rgba(18,38,38,.18)); }
+.mb-lid{ background:linear-gradient(152deg,#f1f3f5 0%,#d6dade 46%,#bcc1c7 100%); border-radius:22px; padding:2.3%;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.55), inset 0 -2px 6px rgba(0,0,0,.06); }
+.mb-screen{ background:#06080a; border-radius:12px; overflow:hidden; aspect-ratio:16/10;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.65); position:relative; }
+.mb-screen::after{ content:""; position:absolute; inset:0; border-radius:12px;
+  background:linear-gradient(120deg,rgba(255,255,255,.10),transparent 38%); pointer-events:none; }
+.mb-screen img{ width:100%; height:100%; object-fit:cover; object-position:left top; display:block; }
+.mb-base{ position:relative; width:110%; left:-5%; height:16px; margin:0 auto;
+  background:linear-gradient(#d6dade 0%,#aeb3ba 60%,#9398a0 100%); border-radius:0 0 13px 13px;
+  clip-path:polygon(1.4% 0, 98.6% 0, 100% 100%, 0 100%);
+  box-shadow:0 3px 5px rgba(0,0,0,.10); }
+.mb-notch{ position:absolute; top:0; left:50%; transform:translateX(-50%); width:86px; max-width:14%; height:7px;
+  background:linear-gradient(#9498a0,#b7bcc2); border-radius:0 0 8px 8px; }
+@media (max-width:900px){ .macbook{ max-width:560px; } }
+</style>
+</head>
+<body>
+<div id="intro"><div class="ih l"></div><div class="ih r"></div><div class="iw" id="iw"></div></div>
+
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Arvut Accounting"><img src="assets/logo-arvut.png" alt="Arvut Accounting" /></a>
+    <nav class="nav-links" aria-label="Navigation">
+      <a href="#prozess">So funktioniert's</a>
+      <a href="https://arvut.ch/de/leistungen">Leistungen</a>
+      <a href="https://arvut.ch/de/preise">Preise</a>
+      <a href="#sicherheit">Sicherheit</a>
+      <a href="https://arvut.ch/de/unternehmen">Unternehmen</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang"><a class="on" href="index.html">de</a><a href="fr.html">fr</a><a href="it.html">it</a><a href="en.html">en</a></div>
+      <a class="btn" href="#pilot">Pilot starten</a>
+    </div>
+    <button class="burger" aria-label="Menü" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="m-menu" id="mmenu">
+  <a href="#prozess">So funktioniert's</a><a href="https://arvut.ch/de/leistungen">Leistungen</a><a href="https://arvut.ch/de/preise">Preise</a><a href="#sicherheit">Sicherheit</a><a href="https://arvut.ch/de/unternehmen">Unternehmen</a>
+  <a class="btn" href="#pilot">Pilot starten</a>
+  <div class="m-lang"><a href="index.html">DE</a><a href="fr.html">FR</a><a href="it.html">IT</a><a href="en.html">EN</a></div>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Buchhaltungsproduktion · White-Label</span>
+      <h1 class="h-hero">Gleiches <span class="scram" data-text="Team">Team</span>.<br><span class="tl">Doppelt</span> so viele<br><span class="out scram" data-text="Mandate">Mandate</span>.</h1>
+      <p class="lead">Die Buchhaltung Ihrer Mandate führt das Arvut-Team — Sie prüfen, unterschreiben und behalten den Kunden. Vertraglich: Non‑Poaching.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#pilot">Pilot starten — 90 Tage</a>
+        <a class="btn btn--out" href="mailto:hello@arvut.ch">Gespräch vereinbaren</a>
+      </div>
+      <div class="hero-trustline"><span>Swiss-hosted</span><span>Mandats-Isolation</span><span>Non‑Poaching</span></div>
+    </div>
+    <div class="hero-media">
+      <div class="macbook" aria-label="ABM White-Label-Portal auf einem MacBook">
+        <div class="mb-lid"><div class="mb-screen"><img src="assets/screen-de.png" alt="Das ABM White-Label-Portal — Bilanz eines Mandats" /></div></div>
+        <div class="mb-base"><span class="mb-notch"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DREI WERTE ============ -->
+<section class="section" id="warum">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="s-no">Warum Arvut</span>
+      <div><h2 class="h1">Kapazität, die Sie nicht einstellen müssen.</h2></div>
+    </div>
+    <div class="index">
+      <div class="item reveal"><div class="it-main"><h3>Kapazität ohne neue Stellen</h3><p>Qualifizierte Buchhalterinnen und Buchhalter sind auf dem Markt kaum zu finden — und das wird so bleiben. Arvut nimmt Ihrem Team die Produktion ab: Buchungen, Abstimmungen, Deklarationsentwürfe. Ihre Mitarbeitenden prüfen, beraten und pflegen die Kundenbeziehungen. Gleiches Team — mehr Mandate.</p></div></div>
+      <div class="item reveal"><div class="it-main"><h3>Neue Services unter Ihrer Marke</h3><p>Echtzeit-Bücher, Beleg-Inbox (E‑Mail oder Foto — und der Beleg wird zum Buchungsentwurf), Kundenportal. Alles unter Ihrer Marke und Ihrem Logo. Ihre Kunden sehen Sie, nicht uns.</p></div></div>
+      <div class="item reveal"><div class="it-main"><h3>Präzision unter Ihrer Kontrolle</h3><p>Jede Zahl wird gegen die Quelle abgestimmt: Bankauszug, MWST-Register, Lohnabrechnung — auf den Rappen. Jede Periode geht zur Prüfung und Unterschrift an Sie. Einreichung der Deklarationen und Unterschrift der Berichte bleiben bei Ihrer Treuhand.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXCEL ============ -->
+<section class="section">
+  <div class="wrap">
+    <div class="splitrow reveal">
+      <div class="sr-head"><span class="s-no">Abstimmung gegen die Quelle</span><h2 class="h1">Wir finden, was Excel übersieht.</h2></div>
+      <div class="sr-body"><p>Die Abstimmung gegen die Quelle bringt zum Vorschein, was manuelle und Excel-Prozesse übersehen: doppelt erfasste Umsätze, verlorene MWST, Erkennungsfehler — bevor sie in die Deklaration gelangen. Mehrwährung führen wir real, mit parallelen Büchern in EUR/CHF, und Konten rekonstruieren wir bei Bedarf aus den Originalbelegen — alles auf den Rappen abgestimmt.</p><p class="meta" style="margin-top:.8rem">Kundennamen publizieren wir nicht — Schweizer Norm, und genau so funktioniert White-Label.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BAND ============ -->
+<section class="band bleed">
+  <div class="wrap">
+    <span class="meta" style="display:block; margin-bottom:1.4rem">Die Arbeitsteilung</span>
+    <p class="band-statement reveal">Die Produktion bei uns.<br><em>Die Unterschrift</em> bei Ihnen.</p>
+  </div>
+</section>
+
+<!-- ============ PROZESS ============ -->
+<section class="section" id="prozess">
+  <div class="wrap">
+    <div class="s-head reveal">
+      <span class="s-no">So funktioniert's</span>
+      <div>
+        <h2 class="h1">Sie laden hoch. Wir produzieren. Sie unterschreiben.</h2>
+        <p class="lead sub">Die Deklaration reicht die Treuhand ein. Die Zahlen produziert und stimmt Arvut ab.</p>
+      </div>
+    </div>
+    <div class="flow reveal">
+      <div class="st"><div class="n">1</div><h3>Sie oder Ihre Kunden laden hoch</h3><p>Die Belege des Mandats — wie es passt: E-Mail-Inbox, Foto, PDF-Bankauszüge. Der Kunde kann selbst über das Portal unter Ihrer Marke hochladen — das nimmt Ihnen auch das Sammeln der Belege ab. Keine Software-Einführung bei Ihnen, kein Umschulen des Teams.</p></div>
+      <div class="st"><div class="n">2</div><h3>Wir produzieren</h3><p>Arvut-Team und ABM-Plattform: Buchungen, Kreditoren und Debitoren, Zahlungsabgleich, MWST-Deklarationsentwurf, Verbuchung der Löhne aus Ihren Lohnabrechnungen. Mit Qualitäts-Checkpoints.</p></div>
+      <div class="st"><div class="n">3</div><h3>Sie prüfen und unterschreiben</h3><p>Entwürfe der Deklarationen und Berichte kommen zur Freigabe zu Ihnen. Unterschrift, Einreichung, Kundenkommunikation — Ihre.</p></div>
+    </div>
+    <p class="reveal" style="margin-top:2.2rem; display:flex; gap:1.4rem; align-items:baseline; flex-wrap:wrap">
+      <span style="font-family:var(--f-display); font-weight:700; font-size:clamp(1.2rem,2vw,1.6rem); color:var(--ink)">Arvut ersetzt die Treuhand nicht. Arvut macht sie profitabler.</span>
+      <a class="arrow" href="https://arvut.ch/de/so-funktionierts">Mehr zum Prozess →</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============ SICHERHEIT / VERTRAUEN ============ -->
+<section class="section" id="sicherheit">
+  <div class="wrap">
+    <div class="splitrow reveal" style="margin-bottom:clamp(1.8rem,3vw,2.6rem)">
+      <div class="sr-head"><span class="s-no">Sicherheit &amp; Vertrauen</span><h2 class="h1">Ihre Kunden bleiben Ihre Kunden.</h2></div>
+      <div class="sr-body"><p>Ihre Kunden bleiben Ihre Kunden. Non‑Poaching ist vertraglich verankert; für den Endkunden ist Arvut unsichtbar.</p><p>Die Daten sind in der Schweiz gehostet. Mandate sind voneinander isoliert; Belege werden 10 Jahre aufbewahrt (OR 958f).</p></div>
+    </div>
+    <div class="stats reveal">
+      <div class="st" data-cursor><div class="v">CH</div><div class="k">Swiss-hosted</div></div>
+      <div class="st" data-cursor><div class="v">Isoliert</div><div class="k">Mandats-Isolation</div></div>
+      <div class="st" data-cursor><div class="v tnum"><span class="count" data-to="10" data-dur="1100">0</span> <span class="u">Jahre</span></div><div class="k">10-Jahres-Archiv · OR 958f</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA / PILOT ============ -->
+<section class="cta bleed" id="pilot">
+  <div class="wrap reveal">
+    <span class="meta" style="color:rgba(251,250,243,.7); display:block; margin-bottom:1.4rem">Der Pilot</span>
+    <h2 class="h1">90 Tage auf <span class="scram scram-view" data-text="echten Büchern">echten Büchern</span>.</h2>
+    <p class="lead">Wählen Sie ein bis zwei Mandate. Wir führen die Bücher, Sie prüfen jede Zahl. Die Entscheidung über die Fortsetzung fällt, nachdem Sie die Qualität auf den eigenen Daten gesehen haben.</p>
+    <div class="cta-actions">
+      <a class="btn btn--onteal" href="mailto:hello@arvut.ch?subject=Pilot%20starten">Pilot starten</a>
+      <a class="btn btn--ghost-teal" href="mailto:hello@arvut.ch">Gespräch vereinbaren</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-word">Arvut</div>
+        <p class="foot-tag">Buchhaltungsproduktion für Schweizer Treuhandgesellschaften. Sie prüfen, unterschreiben und behalten den Kunden.</p>
+      </div>
+      <div class="foot-col"><h4>Produkt</h4><ul><li><a href="#prozess">So funktioniert's</a></li><li><a href="https://arvut.ch/de/leistungen">Leistungen</a></li><li><a href="https://arvut.ch/de/preise">Preise</a></li><li><a href="#sicherheit">Sicherheit</a></li></ul></div>
+      <div class="foot-col"><h4>Unternehmen</h4><ul><li><a href="https://arvut.ch/de/unternehmen">Über uns</a></li><li><a href="https://arvut.ch/de/unternehmen/team">Team</a></li><li><a href="https://arvut.ch/de/unternehmen/karriere">Karriere</a></li><li><a href="mailto:hello@arvut.ch">Kontakt</a></li></ul></div>
+      <div class="foot-col"><h4>Sprache</h4><ul><li><a href="index.html">Deutsch</a></li><li><a href="fr.html">Français</a></li><li><a href="it.html">Italiano</a></li><li><a href="en.html">English</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Arvut GmbH · Untermüli 9, 6300 Zug</span>
+      <span><a href="https://arvut.ch/de/impressum">Impressum</a> &nbsp;·&nbsp; <a href="https://arvut.ch/de/datenschutz">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
