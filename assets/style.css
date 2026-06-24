@@ -450,3 +450,44 @@ body.intro-lock{ overflow:hidden; height:100vh; }
 .statement-row{ margin-top:2rem; display:flex; gap:1.4rem; align-items:baseline; flex-wrap:wrap; }
 .statement-row .big{ font-family:var(--f-display); font-weight:700; font-size:clamp(1.2rem,2vw,1.6rem); color:var(--ink); letter-spacing:-.01em; }
 @media (max-width:760px){ .steps .step{ grid-template-columns:1fr; gap:.5rem; } }
+
+/* ============ ВНУТРЕННИЕ СТРАНИЦЫ — приведение к стилю главной ============ */
+/* убрать сквозные линии: page-hero без нижней полосы во всю ширину */
+.page-hero{ border-bottom:0 !important; padding-bottom:clamp(1.4rem,2.6vw,2.2rem); }
+.page-hero .h1{ max-width:none; }
+.page-hero .lead{ max-width:64ch; }
+
+/* крупные заголовки секций как на главной */
+.sec-h{ font-size:clamp(1.9rem,3.6vw,3.2rem) !important; letter-spacing:-.03em; max-width:none !important; margin-bottom:clamp(1.3rem,2.4vw,1.9rem); line-height:1.0; }
+
+/* акценты в заголовках (бирюза + обводка), работают где угодно */
+.acc{ color:var(--teal-d); }
+.acc-out{ -webkit-text-stroke:1.6px var(--teal); -webkit-text-fill-color:transparent; color:transparent; }
+
+/* ROLES: заливка фирменным на стороне Arvut, клиент — без заливки */
+.roles .c.you{ background:transparent !important; color:inherit !important; }
+.roles .c.you h4{ color:var(--ink) !important; }
+.roles .you li{ color:var(--ink-2) !important; } .roles .you li svg{ color:var(--teal-d) !important; } .roles .you li strong{ color:var(--ink) !important; }
+.roles .c.arvut{ background:var(--teal) !important; color:var(--on-teal) !important; }
+.roles .c.arvut h4{ color:var(--on-teal) !important; }
+.roles .arvut li{ color:var(--on-teal) !important; } .roles .arvut li svg{ color:var(--on-teal) !important; } .roles .arvut li strong{ color:var(--on-teal) !important; }
+/* разделитель между колонками roles виден на светлой стороне */
+.roles{ border-color:var(--line); }
+.roles .c.you{ border-right:1px solid var(--line); }
+@media (max-width:760px){ .roles .c.you{ border-right:0; border-bottom:1px solid var(--line); } }
+
+/* оживление при скролле: пункты/строки реагируют как на главной */
+.bullets li, .checklist li, .faq .q h3, .team .m .who h3, .beliefs .b h3{ transition:color .35s var(--ease); }
+.faq .q:hover h3, .beliefs .b:hover h3{ color:var(--teal-d); }
+.index .item:hover .it-main > div p{ color:var(--ink); }
+
+/* «прозаические» блоки рядом с заголовком — балансируем в 2 колонки */
+.lead.sub2{ max-width:64ch; }
+
+/* двухколоночный текст для прозаических блоков (чтобы не висели слева) */
+.tcols{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,5rem); align-items:start; }
+.tcols p{ color:var(--ink-2); line-height:1.6; margin:0 0 1.1rem; }
+.tcols p:last-child{ margin-bottom:0; }
+@media (max-width:760px){ .tcols{ grid-template-columns:1fr; gap:1rem; } }
+/* в splitrow тело-проза */
+.splitrow .sr-body .bullets, .splitrow .sr-body .checklist{ margin-top:0; }
