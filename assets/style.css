@@ -512,3 +512,33 @@ body.intro-lock{ overflow:hidden; height:100vh; }
 
 /* Широкое интро-утверждение вместо узкого абзаца в полстраницы */
 .statement{ font-family:var(--f-body); font-weight:500; font-size:clamp(1.25rem,1.9vw,1.7rem); line-height:1.42; color:var(--ink); max-width:none; }
+
+/* ===== ПРАВКИ по фидбеку ===== */
+/* текст под заголовком — на всю ширину (а не левая половина) */
+.page-hero .lead{ max-width:none !important; }
+.page-hero .lead.reveal{ max-width:none !important; }
+
+/* выпадающее подменю Company */
+.nav-links .has-sub{ position:relative; display:inline-flex; align-items:center; }
+.nav-links .has-sub > a::after{ content:"⌄"; font-size:.7em; margin-left:.35em; opacity:.6; }
+.nav-sub{ position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(8px);
+  background:var(--paper); border:1px solid var(--line); border-radius:12px; padding:.5rem 0; min-width:190px;
+  opacity:0; visibility:hidden; transition:opacity .2s,transform .2s; box-shadow:0 16px 34px rgba(18,38,38,.12); z-index:80; }
+.nav-links .has-sub::before{ content:""; position:absolute; top:100%; left:0; right:0; height:14px; }
+.nav-links .has-sub:hover .nav-sub, .nav-links .has-sub:focus-within .nav-sub{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(8px); }
+.nav-sub a{ display:block; padding:.55rem 1.2rem; font-family:var(--f-body); font-size:.92rem; color:var(--ink-2); white-space:nowrap; }
+.nav-sub a:hover{ color:var(--teal-d); background:var(--paper-2); }
+
+/* таблица распределения ролей (как в оригинале: ● / —) */
+.roles-table{ max-width:none; }
+.roles-table th:nth-child(2),.roles-table th:nth-child(3),
+.roles-table td.mk{ text-align:center; width:22%; }
+.roles-table th:nth-child(2){ color:var(--teal-d); }
+.roles-table td.mk.yes{ color:var(--teal); font-weight:700; font-size:1.05rem; }
+.roles-table td.mk.no{ color:var(--ink-3); }
+.roles-table td:first-child{ font-weight:500; color:var(--ink-2); }
+
+/* Аватары команды */
+.team .m .who .avatar{ width:104px; height:104px; border-radius:50%; object-fit:cover; object-position:center top;
+  border:1px solid var(--line); display:block; margin-bottom:1.1rem; background:var(--paper-2); }
+@media (max-width:760px){ .team .m .who .avatar{ width:84px; height:84px; } }
