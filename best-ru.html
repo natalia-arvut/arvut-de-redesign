@@ -1,0 +1,226 @@
+<!doctype html>
+<!--
+  /best — hidden ad-traffic landing (SME audience: end clients of fiduciaries).
+  Redesigned by Natalia in the site's own class system; copy is VERBATIM from the
+  production React page https://new.arvut.ch/en/best (Arvut Strategy 01.07).
+
+  Guardrails (kept):
+   • MATCHMAKER framing — Arvut routes businesses TO the AI-native fiduciaries in
+     the network; it does NOT sell bookkeeping direct to SMEs.
+   • No prices on this page.
+   • Law name per language: EN/DE/RU revDSG · FR nLPD · IT revLPD.
+   • Not in the top nav; reachable only via the footer "For businesses" link.
+-->
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#fcfaf4" />
+<title>Лучшие фидучиарии Швейцарии — Arvut</title>
+<meta name="description" content="Целый финансовый бэк-офис в реальном времени — как собственный бухгалтер и финдиректор, всегда под рукой. Подберём вам подходящую AI-native фидучиарию. Записаться на демо." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://arvut.ch/ru/luchshie" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Arvut" />
+<meta property="og:title" content="Лучшие фидучиарии Швейцарии — AI-native, для компаний любого размера" />
+<meta property="og:description" content="Целый финансовый бэк-офис в реальном времени — как собственный бухгалтер и финдиректор, всегда под рукой. Записаться на демо." />
+<meta property="og:image" content="assets/hero-best-ru.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script>document.documentElement.className='js';</script>
+<link rel="stylesheet" href="assets/style.css" />
+<style>
+/* best-лендинг: доводка поверх дизайн-системы */
+.hero-media .hero-office{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:46% 40%; }
+.h-hero .h-range{ display:block; margin-top:.5em; font-size:.34em; letter-spacing:.02em; font-weight:700; color:var(--ink-2); text-transform:none; }
+.band .index .no{ color:rgba(251,250,243,.65); }
+.band .index h3{ position:relative; padding-left:2.6rem; }
+.band .index h3 .no{ position:absolute; left:0; top:.42em; margin-right:0 !important; }
+.band .index .item{ border-color:rgba(251,250,243,.22); }
+.band .index .it-main p{ color:rgba(251,250,243,.82); }
+.band .index .item:hover h3{ color:#fff; }
+.band .lead{ color:rgba(251,250,243,.85); }
+.index .it-num{ display:grid; grid-template-columns:auto 1fr; gap:clamp(1rem,2.6vw,2.4rem); align-items:baseline; }
+.index .it-num .no{ font-family:var(--f-mono); font-size:.82rem; font-weight:600; letter-spacing:.08em; }
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Arvut Accounting"><img src="assets/logo-arvut.png" alt="Arvut Accounting" /></a>
+    <nav class="nav-links" aria-label="Navigation"><a href="en/how-it-works.html">Как это работает</a><a href="en/services.html">Услуги</a><a href="en/pricing.html">Цены</a><a href="en/security.html">Безопасность</a><span class="has-sub"><a href="en/company.html">Компания</a><span class="nav-sub"><a href="en/company.html">О компании</a><a href="en/team.html">Team</a><a href="en/careers.html">Карьера</a></span></span></nav>
+    <div class="nav-right">
+      <div class="lang"><a href="best-de.html">de</a><a href="best-fr.html">fr</a><a href="best-it.html">it</a><a href="en/best.html">en</a><a class="on" href="best-ru.html">ru</a></div>
+      <a class="btn" href="#kontakt">Записаться на демо</a>
+    </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="m-menu" id="mmenu">
+  <a href="en/how-it-works.html">Как это работает</a><a href="en/services.html">Услуги</a><a href="en/pricing.html">Цены</a><a href="en/security.html">Безопасность</a><a href="en/company.html">Компания</a>
+  <a class="btn" href="#kontakt">Записаться на демо</a>
+  <div class="m-lang"><a href="best-de.html">DE</a><a href="best-fr.html">FR</a><a href="best-it.html">IT</a><a href="en/best.html">EN</a><a href="best-ru.html">RU</a></div>
+</div>
+<main id="top">
+
+<!-- 1 — Hero -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Для бизнеса</span>
+      <h1 class="h-hero"><span class="out scram" data-text="Лучшие">Лучшие</span> фидучиарии Швейцарии<span class="h-range">— от стартапа до 250 сотрудников</span></h1>
+      <p class="lead">Мы сотрудничаем с ведущими AI-native фидучиариями немецко-, франко- и италоязычной Швейцарии. Малому бизнесу &mdash; фидучиария, которая всегда рядом. Крупному &mdash; целый финансовый бэк-офис под управлением вашей фидучиарии, без своего финотдела.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#kontakt">Записаться на демо &rarr;</a>
+      </div>
+      <div class="hero-trustline"><span>Отчётность в реальном времени</span><span>Швейцарский хостинг</span><span>Соответствие revDSG</span></div>
+    </div>
+    <div class="hero-media">
+      <img class="hero-office" src="assets/hero-best-ru.jpg" alt="Кабинет руководителя: фидуциарный портал в реальном времени на мониторе" />
+    </div>
+  </div>
+</section>
+
+<!-- 2 — Metaphor -->
+<section class="section"><div class="wrap"><div class="splitrow reveal">
+  <div class="sr-head"><span class="s-no meta meta-teal">Метафора</span><h2 class="h1">Как нанять финдиректора &mdash; но без его <span class="acc scram-view" data-text="зарплаты">зарплаты</span></h2></div>
+  <div class="sr-body"><p>Современная фидучиария из нашей сети не просто ведёт учёт. Она управляет вашим финансовым бэк-офисом от начала до конца, в реальном времени. Будь у вас 0 или 250 сотрудников &mdash; вы получаете финансовую функцию гораздо более крупной компании, не выстраивая её сами.</p></div>
+</div></div></section>
+
+<!-- 3 — Six services -->
+<section class="section"><div class="wrap">
+  <div class="s-head reveal">
+    <span class="s-no meta meta-teal">Шесть сервисов</span>
+    <div>
+      <h2 class="h1">Больше, чем <span class="acc scram-view" data-text="бухгалтерия">бухгалтерия</span></h2>
+      <p class="lead sub">Каждая фидучиария в сети ведёт это за вас &mdash; под своим именем:</p>
+    </div>
+  </div>
+  <div class="index">
+    <div class="item reveal"><div class="it-main"><h3>Дебиторы</h3><p>выпуск и управление исходящими (AR) инвойсами</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Банк и касса</h3><p>счета и кассы под контролем</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Кредиторы</h3><p>входящие (AP) инвойсы и платежи, с финальным подтверждением всегда за вами</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Автосбор документов</h3><p>учётные документы прямо из касс и POS</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Время и зарплаты</h3><p>учёт рабочего времени и расчёт зарплат</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Цифры в реальном времени</h3><p>баланс и P&amp;L, вживую, когда нужно</p></div></div>
+  </div>
+</div></section>
+
+<!-- 4 — For whom -->
+<section class="section"><div class="wrap">
+  <div class="s-head reveal">
+    <span class="s-no meta meta-teal">Для кого</span>
+    <div><h2 class="h1">Под любой <span class="acc scram-view" data-text="размер">размер</span></h2></div>
+  </div>
+  <div class="beliefs reveal">
+    <div class="b"><h3>Малый бизнес</h3><p>Перестаньте вести учёт сами и оставьте позади медленную «бумажную» фидучиарию. AI-native фидучиария держит вашу бухгалтерию в актуальном состоянии &mdash; без расширения штата.</p></div>
+    <div class="b"><h3>Средний и крупный бизнес</h3><p>Не стройте целый финансовый отдел. Фидучиария из сети даёт полноценный AI-native бэк-офис, который растёт вместе с вами &mdash; за долю стоимости внутренней команды.</p></div>
+  </div>
+</div></section>
+
+<!-- 5 — Why it pays off -->
+<section class="section"><div class="wrap"><div class="splitrow reveal">
+  <div class="sr-head"><span class="s-no meta meta-teal">Почему это выгодно</span><h2 class="h1">Финансы лучше, затраты <span class="acc scram-view" data-text="ниже">ниже</span></h2></div>
+  <div class="sr-body"><p>Для малых и средних предприятий фидучиария из нашей сети обходится дешевле традиционной. Для крупных &mdash; это доля стоимости собственного бухгалтера или финансовой команды. Вы получаете больше &mdash; прозрачность в реальном времени, автоматизацию, взгляд финдиректора &mdash; и платите меньше, чем за альтернативу.</p></div>
+</div></div></section>
+
+<!-- 6 — What makes them the best (criteria; copy verbatim from Arvut Strategy 01.07) -->
+<section class="section band bleed"><div class="wrap">
+  <h2 class="h1 sec-h reveal">Что делает их <span class="scram scram-view" data-text="лучшими">лучшими</span></h2>
+  <p class="lead reveal" style="margin-bottom:2.4rem;max-width:66ch">«Лучшие» &mdash; это не оценка, а список критериев. Каждая фидуциария сети соответствует пяти проверяемым условиям:</p>
+  <div class="index">
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">01</span>Книги в реальном времени.</h3><p>Проводки появляются по мере поступления документов &mdash; не раз в квартал. Вы видите баланс, P&amp;L и денежный поток на сегодня, а не отчёт о прошлом.</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">02</span>Каждая цифра сверена с первичкой.</h3><p>Банковские выписки, кассы и инвойсы сверяются до раппена. За каждой проводкой стоит документ.</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">03</span>Клиентский портал под брендом вашей фидуциарии.</h3><p>Документы отправляются с телефона за секунды; статус книг и платежей виден в любой момент. Никакой коробки с квитанциями в конце квартала.</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">04</span>Швейцарский хостинг, швейцарская защита данных.</h3><p>Данные хранятся в Швейцарии, обрабатываются в соответствии с revDSG и архивируются 10 лет (ст. 958f OR).</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">05</span>Одна платформа, один стандарт.</h3><p>В сеть входят фидуциарии, отобранные Arvut и работающие на единой производственной платформе &mdash; с одинаковыми требованиями к точности и срокам.</p></div></div>
+  </div>
+</div></section>
+
+<!-- 7 — FAQ -->
+<section class="section"><div class="wrap">
+  <h2 class="h1 sec-h reveal">FAQ</h2>
+  <div class="faq">
+    <div class="q reveal"><h3>Сколько это стоит?</h3><p>Тариф вы согласуете напрямую с вашей фидуциарией &mdash; он зависит от объёма и состава работ. Подбор со стороны Arvut бесплатен и ни к чему вас не обязывает.</p></div>
+    <div class="q reveal"><h3>В каких кантонах и на каких языках вы работаете?</h3><p>По всей Швейцарии. Фидуциарии сети работают на немецком, французском, итальянском и английском &mdash; мы подберём ту, что говорит на вашем языке и знает практику вашего кантона.</p></div>
+    <div class="q reveal"><h3>Насколько защищены наши данные?</h3><p>Данные хранятся на серверах в Швейцарии и обрабатываются в соответствии с revDSG. Бухгалтерский архив хранится 10 лет, как требует ст. 958f OR.</p></div>
+    <div class="q reveal"><h3>У нас уже есть бухгалтер или фидуциария. Насколько сложен переход?</h3><p>Переход берёт на себя ваша новая фидуциария: история, входящие остатки и открытые инвойсы переносятся. Вы продолжаете работать без разрыва &mdash; без «начать всё заново».</p></div>
+    <div class="q reveal"><h3>Почему вы не публикуете список фидуциарий?</h3><p>Потому что подбор точнее каталога. Мы учитываем кантон, язык, отрасль и размер вашей компании &mdash; и знакомим вас напрямую с той фидуциарией, которая подходит именно вам.</p></div>
+  </div>
+</div></section>
+
+<!-- 8 — How it works -->
+<section class="section"><div class="wrap">
+  <div class="s-head reveal">
+    <span class="s-no meta meta-teal">Как это работает</span>
+    <div>
+      <h2 class="h1">Мы подберём <span class="acc scram-view" data-text="фидучиарию">фидучиарию</span> под вас</h2>
+      <p class="lead sub">Мы не публикуем список открыто. Вместо этого вы выходите на нас напрямую &mdash; а дальше подбор берём на себя.</p>
+    </div>
+  </div>
+  <div class="flow reveal">
+    <div class="st"><div class="n">1</div><h3>Вы связываетесь с нами</h3><p>напишите или забронируйте звонок.</p></div>
+    <div class="st"><div class="n">2</div><h3>Встреча и живое демо</h3><p>показываем, как это работает на реальных сценариях, и разбираем вашу ситуацию.</p></div>
+    <div class="st"><div class="n">3</div><h3>Подбираем партнёра</h3><p>под ваш кантон, язык и размер отдаём вас подходящей фидучиарии из нашей сети.</p></div>
+  </div>
+  <p class="lead-narrow reveal" style="margin-top:2rem;color:var(--ink-2)">Каждая фидучиария в сети отобрана, AI-native и работает на Arvut. Отчётность в реальном времени &middot; швейцарский хостинг &middot; соответствие revDSG.</p>
+</div></section>
+
+<!-- 9 — CTA + lead form -->
+<section class="section" id="kontakt"><div class="wrap">
+  <div class="splitrow reveal" style="align-items:start">
+    <div class="sr-head"><span class="s-no meta meta-teal">Контакт</span><h2 class="h1"><span class="acc scram-view" data-text="Начнём">Начнём</span>?</h2></div>
+    <div class="sr-body">
+      <p style="margin-bottom:1.8rem">Забронируйте демо &mdash; или просто напишите нам. Познакомимся, покажем систему и подберём вам подходящую фидучиарию.</p>
+      <form class="cform" id="cform">
+        <div><label for="f-name">Имя</label><input id="f-name" type="text" /></div>
+        <div><label for="f-comp">Компания</label><input id="f-comp" type="text" /></div>
+        <div><label for="f-mail">Email</label><input id="f-mail" type="email" /></div>
+        <div><label for="f-size">Размер компании</label><select id="f-size"><option>0</option><option>1&ndash;10</option><option>11&ndash;50</option><option>51&ndash;250</option></select></div>
+        <div><label for="f-canton">Кантон</label><select id="f-canton"><option value="">Выберите кантон</option><option>AG</option><option>AI</option><option>AR</option><option>BE</option><option>BL</option><option>BS</option><option>FR</option><option>GE</option><option>GL</option><option>GR</option><option>JU</option><option>LU</option><option>NE</option><option>NW</option><option>OW</option><option>SG</option><option>SH</option><option>SO</option><option>SZ</option><option>TG</option><option>TI</option><option>UR</option><option>VD</option><option>VS</option><option>ZG</option><option>ZH</option></select></div>
+        <div class="full"><label for="f-msg">Сообщение (необязательно)</label><textarea id="f-msg"></textarea></div>
+        <div class="full"><button class="btn" type="submit">Записаться на демо</button></div>
+      </form>
+      <p class="contact-side" style="margin-top:1.6rem">Данные формы используем только чтобы ответить на ваш запрос. <a href="en/privacy.html">Политика конфиденциальности</a><br>Или напрямую: <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:fiduciaries@arvut.ch">fiduciaries@arvut.ch</a></p>
+    </div>
+  </div>
+</div></section>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-word">Arvut</div>
+        <p class="foot-tag">Производство бухгалтерии для швейцарских фидуциарий.</p>
+      </div>
+      <div class="foot-col"><h4>Продукт</h4><ul><li><a href="en/how-it-works.html">Как это работает</a></li><li><a href="en/services.html">Услуги</a></li><li><a href="en/pricing.html">Цены</a></li><li><a href="en/security.html">Безопасность</a></li></ul></div>
+      <div class="foot-col"><h4>Компания</h4><ul><li><a href="en/company.html">О компании</a></li><li><a href="en/team.html">Team</a></li><li><a href="en/careers.html">Карьера</a></li><li><a href="en/contact.html">Контакт</a></li></ul></div>
+      <div class="foot-col"><h4>Язык</h4><ul><li><a href="best-de.html">Deutsch</a></li><li><a href="best-fr.html">Fran&ccedil;ais</a></li><li><a href="best-it.html">Italiano</a></li><li><a href="en/best.html">English</a></li><li><a href="best-ru.html">Русский</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Arvut GmbH &middot; Unterm&uuml;li 9, 6300 Zug &middot; CHE-192.778.668</span>
+      <span><a href="en/imprint.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="en/privacy.html">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Сколько это стоит?","acceptedAnswer":{"@type":"Answer","text":"Тариф вы согласуете напрямую с вашей фидуциарией — он зависит от объёма и состава работ. Подбор со стороны Arvut бесплатен и ни к чему вас не обязывает."}},
+{"@type":"Question","name":"В каких кантонах и на каких языках вы работаете?","acceptedAnswer":{"@type":"Answer","text":"По всей Швейцарии. Фидуциарии сети работают на немецком, французском, итальянском и английском — мы подберём ту, что говорит на вашем языке и знает практику вашего кантона."}},
+{"@type":"Question","name":"Насколько защищены наши данные?","acceptedAnswer":{"@type":"Answer","text":"Данные хранятся на серверах в Швейцарии и обрабатываются в соответствии с revDSG. Бухгалтерский архив хранится 10 лет, как требует ст. 958f OR."}},
+{"@type":"Question","name":"У нас уже есть бухгалтер или фидуциария. Насколько сложен переход?","acceptedAnswer":{"@type":"Answer","text":"Переход берёт на себя ваша новая фидуциария: история, входящие остатки и открытые инвойсы переносятся. Вы продолжаете работать без разрыва — без «начать всё заново»."}},
+{"@type":"Question","name":"Почему вы не публикуете список фидуциарий?","acceptedAnswer":{"@type":"Answer","text":"Потому что подбор точнее каталога. Мы учитываем кантон, язык, отрасль и размер вашей компании — и знакомим вас напрямую с той фидуциарией, которая подходит именно вам."}}]}
+</script>
+<script src="assets/main.js"></script>
+<script>
+(function(){var f=document.getElementById('cform');if(!f)return;
+f.addEventListener('submit',function(e){e.preventDefault();
+var g=function(id){return encodeURIComponent((document.getElementById(id)||{}).value||'');};
+var body='Name: '+g('f-name')+'%0D%0ACompany: '+g('f-comp')+'%0D%0AEmail: '+g('f-mail')+'%0D%0ACompany size: '+g('f-size')+'%0D%0ACanton: '+g('f-canton')+'%0D%0A%0D%0A'+g('f-msg');
+window.location.href='mailto:fiduciaries@arvut.ch?subject='+encodeURIComponent('Запрос демо')+'&body='+body;});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!doctype html>
+<!--
+  /best — hidden ad-traffic landing (SME audience: end clients of fiduciaries).
+  Redesigned by Natalia in the site's own class system; copy is VERBATIM from the
+  production React page https://new.arvut.ch/en/best (Arvut Strategy 01.07).
+
+  Guardrails (kept):
+   • MATCHMAKER framing — Arvut routes businesses TO the AI-native fiduciaries in
+     the network; it does NOT sell bookkeeping direct to SMEs.
+   • No prices on this page.
+   • Law name per language: EN/DE/RU revDSG · FR nLPD · IT revLPD.
+   • Not in the top nav; reachable only via the footer "For businesses" link.
+-->
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#fcfaf4" />
+<title>Le migliori fiduciarie della Svizzera — Arvut</title>
+<meta name="description" content="Un back office finanziario completo in tempo reale — come il proprio contabile e direttore finanziario, sempre a portata di mano. Ti mettiamo in contatto con la fiduciaria AI-native giusta. Prenota una demo." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://arvut.ch/it/migliori" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Arvut" />
+<meta property="og:title" content="Le migliori fiduciarie della Svizzera — AI-native, per aziende di ogni dimensione" />
+<meta property="og:description" content="Un back office finanziario completo in tempo reale — come il proprio contabile e direttore finanziario, sempre a portata di mano. Prenota una demo." />
+<meta property="og:image" content="assets/hero-best-it.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script>document.documentElement.className='js';</script>
+<link rel="stylesheet" href="assets/style.css" />
+<style>
+/* best-лендинг: доводка поверх дизайн-системы */
+.hero-media .hero-office{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:46% 40%; }
+.h-hero .h-range{ display:block; margin-top:.5em; font-size:.34em; letter-spacing:.02em; font-weight:700; color:var(--ink-2); text-transform:none; }
+.band .index .no{ color:rgba(251,250,243,.65); }
+.band .index h3{ position:relative; padding-left:2.6rem; }
+.band .index h3 .no{ position:absolute; left:0; top:.42em; margin-right:0 !important; }
+.band .index .item{ border-color:rgba(251,250,243,.22); }
+.band .index .it-main p{ color:rgba(251,250,243,.82); }
+.band .index .item:hover h3{ color:#fff; }
+.band .lead{ color:rgba(251,250,243,.85); }
+.index .it-num{ display:grid; grid-template-columns:auto 1fr; gap:clamp(1rem,2.6vw,2.4rem); align-items:baseline; }
+.index .it-num .no{ font-family:var(--f-mono); font-size:.82rem; font-weight:600; letter-spacing:.08em; }
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="it.html" aria-label="Arvut Accounting"><img src="assets/logo-arvut.png" alt="Arvut Accounting" /></a>
+    <nav class="nav-links" aria-label="Navigation"><a href="en/how-it-works.html">Come funziona</a><a href="en/services.html">Servizi</a><a href="en/pricing.html">Prezzi</a><a href="en/security.html">Sicurezza</a><span class="has-sub"><a href="en/company.html">Azienda</a><span class="nav-sub"><a href="en/company.html">Chi siamo</a><a href="en/team.html">Team</a><a href="en/careers.html">Carriera</a></span></span></nav>
+    <div class="nav-right">
+      <div class="lang"><a href="best-de.html">de</a><a href="best-fr.html">fr</a><a class="on" href="best-it.html">it</a><a href="en/best.html">en</a></div>
+      <a class="btn" href="#kontakt">Prenota una demo</a>
+    </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="m-menu" id="mmenu">
+  <a href="en/how-it-works.html">Come funziona</a><a href="en/services.html">Servizi</a><a href="en/pricing.html">Prezzi</a><a href="en/security.html">Sicurezza</a><a href="en/company.html">Azienda</a>
+  <a class="btn" href="#kontakt">Prenota una demo</a>
+  <div class="m-lang"><a href="best-de.html">DE</a><a href="best-fr.html">FR</a><a href="best-it.html">IT</a><a href="en/best.html">EN</a><a href="best-ru.html">RU</a></div>
+</div>
+<main id="top">
+
+<!-- 1 — Hero -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Per le imprese</span>
+      <h1 class="h-hero">Le <span class="out scram" data-text="migliori">migliori</span> fiduciarie della Svizzera<span class="h-range">— dalla start-up a 250 dipendenti</span></h1>
+      <p class="lead">Collaboriamo con fiduciarie AI-native di primo piano nella Svizzera tedesca, romanda e italiana. Per le piccole imprese &mdash; una fiduciaria sempre a portata di mano. Per le più grandi &mdash; un back office finanziario completo, gestito dalla tua fiduciaria, senza un reparto finanziario interno.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#kontakt">Prenota una demo &rarr;</a>
+      </div>
+      <div class="hero-trustline"><span>Reporting in tempo reale</span><span>Hosting svizzero</span><span>Conforme alla revLPD</span></div>
+    </div>
+    <div class="hero-media">
+      <img class="hero-office" src="assets/hero-best-it.jpg" alt="Un ufficio direzionale: il portale fiduciario in tempo reale su un monitor" />
+    </div>
+  </div>
+</section>
+
+<!-- 2 — Metaphor -->
+<section class="section"><div class="wrap"><div class="splitrow reveal">
+  <div class="sr-head"><span class="s-no meta meta-teal">La metafora</span><h2 class="h1">Come assumere un direttore finanziario &mdash; senza il suo <span class="acc scram-view" data-text="stipendio">stipendio</span></h2></div>
+  <div class="sr-body"><p>Una fiduciaria moderna della nostra rete non si limita a tenere i conti. Gestisce il tuo back office finanziario dall'inizio alla fine, in tempo reale. Che tu abbia 0 o 250 dipendenti, ottieni la funzione finanziaria di un'azienda molto più grande &mdash; senza doverla costruire.</p></div>
+</div></div></section>
+
+<!-- 3 — Six services -->
+<section class="section"><div class="wrap">
+  <div class="s-head reveal">
+    <span class="s-no meta meta-teal">Sei servizi</span>
+    <div>
+      <h2 class="h1">Molto più della <span class="acc scram-view" data-text="contabilità">contabilità</span></h2>
+      <p class="lead sub">Ogni fiduciaria della rete se ne occupa per te &mdash; sotto il proprio nome:</p>
+    </div>
+  </div>
+  <div class="index">
+    <div class="item reveal"><div class="it-main"><h3>Debitori</h3><p>emissione e gestione delle fatture attive</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Banca &amp; cassa</h3><p>conti e casse sotto controllo</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Creditori</h3><p>fatture fornitori e pagamenti, con approvazione finale sempre nelle tue mani</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Acquisizione automatica dei documenti</h3><p>giustificativi raccolti direttamente da casse e POS</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Tempo &amp; salari</h3><p>rilevazione delle ore e calcolo degli stipendi</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Numeri in tempo reale</h3><p>bilancio e conto economico, in diretta, quando ti servono</p></div></div>
+  </div>
+</div></section>
+
+<!-- 4 — For whom -->
+<section class="section"><div class="wrap">
+  <div class="s-head reveal">
+    <span class="s-no meta meta-teal">Per chi</span>
+    <div><h2 class="h1">Pensato per ogni <span class="acc scram-view" data-text="dimensione">dimensione</span></h2></div>
+  </div>
+  <div class="beliefs reveal">
+    <div class="b"><h3>Piccola impresa</h3><p>Smetti di fare tutto da solo e lascia alle spalle la fiduciaria lenta e cartacea. Una fiduciaria AI-native tiene i tuoi conti aggiornati &mdash; senza aumentare il personale.</p></div>
+    <div class="b"><h3>Media &amp; grande impresa</h3><p>Non costruire un intero reparto finanziario. Una fiduciaria della rete ti dà un back office AI-native completo che cresce con te &mdash; a una frazione del costo di un team interno.</p></div>
+  </div>
+</div></section>
+
+<!-- 5 — Why it pays off -->
+<section class="section"><div class="wrap"><div class="splitrow reveal">
+  <div class="sr-head"><span class="s-no meta meta-teal">Perché conviene</span><h2 class="h1">Finanze migliori, costi <span class="acc scram-view" data-text="inferiori">inferiori</span></h2></div>
+  <div class="sr-body"><p>Per le piccole e medie imprese una fiduciaria della nostra rete costa meno di una tradizionale. Per le più grandi è una frazione del costo di un contabile o di un team finanziario interno. Ottieni di più &mdash; visibilità in tempo reale, automazione, una visione da direttore finanziario &mdash; e paghi meno dell'alternativa.</p></div>
+</div></div></section>
+
+<!-- 6 — What makes them the best (criteria; copy verbatim from Arvut Strategy 01.07) -->
+<section class="section band bleed"><div class="wrap">
+  <h2 class="h1 sec-h reveal">Cosa le rende le <span class="scram scram-view" data-text="migliori">migliori</span></h2>
+  <p class="lead reveal" style="margin-bottom:2.4rem;max-width:66ch">&laquo;Le migliori&raquo; non è uno slogan &mdash; è una lista di criteri. Ogni fiduciaria della rete soddisfa cinque condizioni verificabili:</p>
+  <div class="index">
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">01</span>Contabilità in tempo reale.</h3><p>Le registrazioni vengono effettuate man mano che arrivano i documenti &mdash; non una volta al trimestre. Vedete il bilancio, il conto economico e la liquidità di oggi, non un rapporto sul passato.</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">02</span>Ogni cifra riconciliata con i giustificativi.</h3><p>Estratti bancari, casse e fatture sono riconciliati al centesimo. Dietro ogni registrazione c'è un documento.</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">03</span>Un portale clienti con il marchio della vostra fiduciaria.</h3><p>Inviate i documenti dal telefono in pochi secondi; lo stato dei conti e dei pagamenti è visibile in ogni momento. Niente più scatole di ricevute a fine trimestre.</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">04</span>Hosting svizzero, protezione dei dati svizzera.</h3><p>I dati sono conservati in Svizzera, trattati in conformità alla revLPD e archiviati per 10 anni (art. 958f CO).</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">05</span>Una piattaforma, uno standard.</h3><p>La rete riunisce fiduciarie selezionate da Arvut che lavorano su un'unica piattaforma di produzione &mdash; con gli stessi requisiti di precisione e di tempistiche.</p></div></div>
+  </div>
+</div></section>
+
+<!-- 7 — FAQ -->
+<section class="section"><div class="wrap">
+  <h2 class="h1 sec-h reveal">FAQ</h2>
+  <div class="faq">
+    <div class="q reveal"><h3>Quanto costa?</h3><p>L'onorario lo concordate direttamente con la vostra fiduciaria &mdash; dipende dal volume e dall'ampiezza dei lavori. L'abbinamento da parte di Arvut è gratuito e senza impegno.</p></div>
+    <div class="q reveal"><h3>In quali cantoni e lingue lavorate?</h3><p>In tutta la Svizzera. Le fiduciarie della rete lavorano in italiano, tedesco, francese e inglese &mdash; vi proponiamo quella che parla la vostra lingua e conosce la prassi del vostro cantone.</p></div>
+    <div class="q reveal"><h3>Quanto sono al sicuro i nostri dati?</h3><p>I dati sono ospitati su server in Svizzera e trattati in conformità alla revLPD. I documenti contabili sono archiviati per 10 anni, come richiede l'art. 958f CO.</p></div>
+    <div class="q reveal"><h3>Abbiamo già un contabile o una fiduciaria. Quanto è complicato il passaggio?</h3><p>La transizione è gestita dalla vostra nuova fiduciaria: storico, saldi di apertura e fatture aperte vengono ripresi. Continuate a lavorare senza interruzioni &mdash; senza ripartire da zero.</p></div>
+    <div class="q reveal"><h3>Perché non pubblicate l'elenco delle fiduciarie?</h3><p>Perché un abbinamento mirato vale più di un elenco. Teniamo conto di cantone, lingua, settore e dimensione della vostra azienda &mdash; e vi presentiamo direttamente la fiduciaria giusta per voi.</p></div>
+  </div>
+</div></section>
+
+<!-- 8 — How it works -->
+<section class="section"><div class="wrap">
+  <div class="s-head reveal">
+    <span class="s-no meta meta-teal">Come funziona</span>
+    <div>
+      <h2 class="h1">Ti mettiamo in contatto con la fiduciaria <span class="acc scram-view" data-text="giusta">giusta</span></h2>
+      <p class="lead sub">Non pubblichiamo l'elenco apertamente. Sei tu a contattarci direttamente &mdash; al resto pensiamo noi.</p>
+    </div>
+  </div>
+  <div class="flow reveal">
+    <div class="st"><div class="n">1</div><h3>Ci contatti</h3><p>scrivici o prenota una chiamata.</p></div>
+    <div class="st"><div class="n">2</div><h3>Incontro &amp; demo dal vivo</h3><p>mostriamo come funziona su casi reali ed esaminiamo la tua situazione.</p></div>
+    <div class="st"><div class="n">3</div><h3>Ti indirizziamo a un partner</h3><p>in base a cantone, lingua e dimensione, alla fiduciaria adatta della nostra rete.</p></div>
+  </div>
+  <p class="lead-narrow reveal" style="margin-top:2rem;color:var(--ink-2)">Ogni fiduciaria della rete è selezionata, AI-native e Arvut-powered. Reporting in tempo reale &middot; hosting svizzero &middot; conforme alla revLPD.</p>
+</div></section>
+
+<!-- 9 — CTA + lead form -->
+<section class="section" id="kontakt"><div class="wrap">
+  <div class="splitrow reveal" style="align-items:start">
+    <div class="sr-head"><span class="s-no meta meta-teal">Contatto</span><h2 class="h1"><span class="acc scram-view" data-text="Iniziamo">Iniziamo</span>?</h2></div>
+    <div class="sr-body">
+      <p style="margin-bottom:1.8rem">Prenota una demo &mdash; o scrivici semplicemente. Ci conosceremo, ti mostreremo il sistema e ti indirizzeremo alla fiduciaria adatta.</p>
+      <form class="cform" id="cform">
+        <div><label for="f-name">Nome</label><input id="f-name" type="text" /></div>
+        <div><label for="f-comp">Azienda</label><input id="f-comp" type="text" /></div>
+        <div><label for="f-mail">E-mail</label><input id="f-mail" type="email" /></div>
+        <div><label for="f-size">Dimensione dell'azienda</label><select id="f-size"><option>0</option><option>1&ndash;10</option><option>11&ndash;50</option><option>51&ndash;250</option></select></div>
+        <div><label for="f-canton">Cantone</label><select id="f-canton"><option value="">Scegli il cantone</option><option>AG</option><option>AI</option><option>AR</option><option>BE</option><option>BL</option><option>BS</option><option>FR</option><option>GE</option><option>GL</option><option>GR</option><option>JU</option><option>LU</option><option>NE</option><option>NW</option><option>OW</option><option>SG</option><option>SH</option><option>SO</option><option>SZ</option><option>TG</option><option>TI</option><option>UR</option><option>VD</option><option>VS</option><option>ZG</option><option>ZH</option></select></div>
+        <div class="full"><label for="f-msg">Messaggio (facoltativo)</label><textarea id="f-msg"></textarea></div>
+        <div class="full"><button class="btn" type="submit">Prenota una demo</button></div>
+      </form>
+      <p class="contact-side" style="margin-top:1.6rem">Utilizziamo i dati del modulo solo per rispondere alla tua richiesta. <a href="en/privacy.html">Protezione dei dati</a><br>Oppure direttamente: <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:fiduciarie@arvut.ch">fiduciarie@arvut.ch</a></p>
+    </div>
+  </div>
+</div></section>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-word">Arvut</div>
+        <p class="foot-tag">Produzione contabile per le fiduciarie svizzere.</p>
+      </div>
+      <div class="foot-col"><h4>Prodotto</h4><ul><li><a href="en/how-it-works.html">Come funziona</a></li><li><a href="en/services.html">Servizi</a></li><li><a href="en/pricing.html">Prezzi</a></li><li><a href="en/security.html">Sicurezza</a></li></ul></div>
+      <div class="foot-col"><h4>Azienda</h4><ul><li><a href="en/company.html">Chi siamo</a></li><li><a href="en/team.html">Team</a></li><li><a href="en/careers.html">Carriera</a></li><li><a href="en/contact.html">Contatto</a></li></ul></div>
+      <div class="foot-col"><h4>Lingua</h4><ul><li><a href="best-de.html">Deutsch</a></li><li><a href="best-fr.html">Fran&ccedil;ais</a></li><li><a href="best-it.html">Italiano</a></li><li><a href="en/best.html">English</a></li><li><a href="best-ru.html">Русский</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Arvut GmbH &middot; Unterm&uuml;li 9, 6300 Zug &middot; CHE-192.778.668</span>
+      <span><a href="en/imprint.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="en/privacy.html">Protezione dei dati</a></span>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Quanto costa?","acceptedAnswer":{"@type":"Answer","text":"L'onorario lo concordate direttamente con la vostra fiduciaria — dipende dal volume e dall'ampiezza dei lavori. L'abbinamento da parte di Arvut è gratuito e senza impegno."}},
+{"@type":"Question","name":"In quali cantoni e lingue lavorate?","acceptedAnswer":{"@type":"Answer","text":"In tutta la Svizzera. Le fiduciarie della rete lavorano in italiano, tedesco, francese e inglese — vi proponiamo quella che parla la vostra lingua e conosce la prassi del vostro cantone."}},
+{"@type":"Question","name":"Quanto sono al sicuro i nostri dati?","acceptedAnswer":{"@type":"Answer","text":"I dati sono ospitati su server in Svizzera e trattati in conformità alla revLPD. I documenti contabili sono archiviati per 10 anni, come richiede l'art. 958f CO."}},
+{"@type":"Question","name":"Abbiamo già un contabile o una fiduciaria. Quanto è complicato il passaggio?","acceptedAnswer":{"@type":"Answer","text":"La transizione è gestita dalla vostra nuova fiduciaria: storico, saldi di apertura e fatture aperte vengono ripresi. Continuate a lavorare senza interruzioni — senza ripartire da zero."}},
+{"@type":"Question","name":"Perché non pubblicate l'elenco delle fiduciarie?","acceptedAnswer":{"@type":"Answer","text":"Perché un abbinamento mirato vale più di un elenco. Teniamo conto di cantone, lingua, settore e dimensione della vostra azienda — e vi presentiamo direttamente la fiduciaria giusta per voi."}}]}
+</script>
+<script src="assets/main.js"></script>
+<script>
+(function(){var f=document.getElementById('cform');if(!f)return;
+f.addEventListener('submit',function(e){e.preventDefault();
+var g=function(id){return encodeURIComponent((document.getElementById(id)||{}).value||'');};
+var body='Name: '+g('f-name')+'%0D%0ACompany: '+g('f-comp')+'%0D%0AEmail: '+g('f-mail')+'%0D%0ACompany size: '+g('f-size')+'%0D%0ACanton: '+g('f-canton')+'%0D%0A%0D%0A'+g('f-msg');
+window.location.href='mailto:fiduciarie@arvut.ch?subject='+encodeURIComponent('Richiesta demo')+'&body='+body;});})();
+</script>
+</body>
+</html>

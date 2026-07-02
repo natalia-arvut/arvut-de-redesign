@@ -1,0 +1,226 @@
+<!doctype html>
+<!--
+  /best — hidden ad-traffic landing (SME audience: end clients of fiduciaries).
+  Redesigned by Natalia in the site's own class system; copy is VERBATIM from the
+  production React page https://new.arvut.ch/en/best (Arvut Strategy 01.07).
+
+  Guardrails (kept):
+   • MATCHMAKER framing — Arvut routes businesses TO the AI-native fiduciaries in
+     the network; it does NOT sell bookkeeping direct to SMEs.
+   • No prices on this page.
+   • Law name per language: EN/DE/RU revDSG · FR nLPD · IT revLPD.
+   • Not in the top nav; reachable only via the footer "For businesses" link.
+-->
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#fcfaf4" />
+<title>Die besten Treuhänder der Schweiz — Arvut</title>
+<meta name="description" content="Ein komplettes Finanz-Backoffice in Echtzeit — wie ein eigener Buchhalter und CFO, stets griffbereit. Wir vermitteln Ihnen den passenden AI-nativen Treuhänder. Demo buchen." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://arvut.ch/de/besten" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Arvut" />
+<meta property="og:title" content="Die besten Treuhänder der Schweiz — AI-native, für Unternehmen jeder Grösse" />
+<meta property="og:description" content="Ein komplettes Finanz-Backoffice in Echtzeit — wie ein eigener Buchhalter und CFO, stets griffbereit. Demo buchen." />
+<meta property="og:image" content="assets/hero-best-de.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script>document.documentElement.className='js';</script>
+<link rel="stylesheet" href="assets/style.css" />
+<style>
+/* best-лендинг: доводка поверх дизайн-системы */
+.hero-media .hero-office{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:46% 40%; }
+.h-hero .h-range{ display:block; margin-top:.5em; font-size:.34em; letter-spacing:.02em; font-weight:700; color:var(--ink-2); text-transform:none; }
+.band .index .no{ color:rgba(251,250,243,.65); }
+.band .index h3{ position:relative; padding-left:2.6rem; }
+.band .index h3 .no{ position:absolute; left:0; top:.42em; margin-right:0 !important; }
+.band .index .item{ border-color:rgba(251,250,243,.22); }
+.band .index .it-main p{ color:rgba(251,250,243,.82); }
+.band .index .item:hover h3{ color:#fff; }
+.band .lead{ color:rgba(251,250,243,.85); }
+.index .it-num{ display:grid; grid-template-columns:auto 1fr; gap:clamp(1rem,2.6vw,2.4rem); align-items:baseline; }
+.index .it-num .no{ font-family:var(--f-mono); font-size:.82rem; font-weight:600; letter-spacing:.08em; }
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Arvut Accounting"><img src="assets/logo-arvut.png" alt="Arvut Accounting" /></a>
+    <nav class="nav-links" aria-label="Navigation"><a href="en/how-it-works.html">So funktioniert's</a><a href="en/services.html">Leistungen</a><a href="en/pricing.html">Preise</a><a href="en/security.html">Sicherheit</a><span class="has-sub"><a href="en/company.html">Unternehmen</a><span class="nav-sub"><a href="en/company.html">Über uns</a><a href="en/team.html">Team</a><a href="en/careers.html">Karriere</a></span></span></nav>
+    <div class="nav-right">
+      <div class="lang"><a class="on" href="best-de.html">de</a><a href="best-fr.html">fr</a><a href="best-it.html">it</a><a href="en/best.html">en</a></div>
+      <a class="btn" href="#kontakt">Demo buchen</a>
+    </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="m-menu" id="mmenu">
+  <a href="en/how-it-works.html">So funktioniert's</a><a href="en/services.html">Leistungen</a><a href="en/pricing.html">Preise</a><a href="en/security.html">Sicherheit</a><a href="en/company.html">Unternehmen</a>
+  <a class="btn" href="#kontakt">Demo buchen</a>
+  <div class="m-lang"><a href="best-de.html">DE</a><a href="best-fr.html">FR</a><a href="best-it.html">IT</a><a href="en/best.html">EN</a><a href="best-ru.html">RU</a></div>
+</div>
+<main id="top">
+
+<!-- 1 — Hero -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Für Unternehmen</span>
+      <h1 class="h-hero">Die <span class="out scram" data-text="besten">besten</span> Treuhänder der Schweiz<span class="h-range">— vom Start-up bis 250 Mitarbeitende</span></h1>
+      <p class="lead">Wir arbeiten mit führenden AI-nativen Treuhändern in der Deutsch-, West- und italienischsprachigen Schweiz zusammen. Für kleine Unternehmen &mdash; ein Treuhänder, stets griffbereit. Für grössere &mdash; ein komplettes Finanz-Backoffice, geführt von Ihrem Treuhänder, ohne eigene Finanzabteilung.</p>
+      <div class="hero-cta">
+        <a class="btn" href="#kontakt">Demo buchen &rarr;</a>
+      </div>
+      <div class="hero-trustline"><span>Echtzeit-Reporting</span><span>Swiss Hosting</span><span>revDSG-konform</span></div>
+    </div>
+    <div class="hero-media">
+      <img class="hero-office" src="assets/hero-best-de.jpg" alt="Ein Chefbüro: das Echtzeit-Treuhandportal auf einem Desktop-Monitor" />
+    </div>
+  </div>
+</section>
+
+<!-- 2 — Metaphor -->
+<section class="section"><div class="wrap"><div class="splitrow reveal">
+  <div class="sr-head"><span class="s-no meta meta-teal">Die Metapher</span><h2 class="h1">Wie ein eigener CFO &mdash; ohne <span class="acc scram-view" data-text="CFO-Gehalt">CFO-Gehalt</span></h2></div>
+  <div class="sr-body"><p>Ein moderner Treuhänder in unserem Netzwerk führt nicht nur die Bücher. Er betreibt Ihr Finanz-Backoffice von A bis Z, in Echtzeit. Ob 0 oder 250 Mitarbeitende &mdash; Sie erhalten die Finanzfunktion eines weit grösseren Unternehmens, ohne sie selbst aufzubauen.</p></div>
+</div></div></section>
+
+<!-- 3 — Six services -->
+<section class="section"><div class="wrap">
+  <div class="s-head reveal">
+    <span class="s-no meta meta-teal">Sechs Leistungen</span>
+    <div>
+      <h2 class="h1">Mehr als <span class="acc scram-view" data-text="Buchhaltung">Buchhaltung</span></h2>
+      <p class="lead sub">Jeder Treuhänder im Netzwerk übernimmt das für Sie &mdash; unter seinem eigenen Namen:</p>
+    </div>
+  </div>
+  <div class="index">
+    <div class="item reveal"><div class="it-main"><h3>Debitoren</h3><p>Ausstellung und Verwaltung von AR-Rechnungen</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Bank &amp; Kasse</h3><p>Konten und Kassen unter Kontrolle</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Kreditoren</h3><p>Lieferantenrechnungen und Zahlungen, mit finaler Freigabe stets bei Ihnen</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Automatische Belegerfassung</h3><p>Belege direkt aus Kassen und POS</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Zeit &amp; Lohn</h3><p>Arbeitszeiterfassung und Lohnabrechnung</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3>Zahlen in Echtzeit</h3><p>Bilanz und Erfolgsrechnung, live, wann immer Sie sie brauchen</p></div></div>
+  </div>
+</div></section>
+
+<!-- 4 — For whom -->
+<section class="section"><div class="wrap">
+  <div class="s-head reveal">
+    <span class="s-no meta meta-teal">Für wen</span>
+    <div><h2 class="h1">Für jede <span class="acc scram-view" data-text="Grösse">Grösse</span> gemacht</h2></div>
+  </div>
+  <div class="beliefs reveal">
+    <div class="b"><h3>Kleinunternehmen</h3><p>Hören Sie auf, es selbst zu erledigen, und lassen Sie den langsamen, papierbasierten Treuhänder hinter sich. Ein AI-nativer Treuhänder hält Ihre Bücher aktuell &mdash; ohne zusätzliches Personal.</p></div>
+    <div class="b"><h3>Mittlere &amp; grosse Unternehmen</h3><p>Bauen Sie keine ganze Finanzabteilung auf. Ein Treuhänder aus dem Netzwerk gibt Ihnen ein komplettes AI-natives Backoffice, das mit Ihnen wächst &mdash; zu einem Bruchteil eines internen Teams.</p></div>
+  </div>
+</div></section>
+
+<!-- 5 — Why it pays off -->
+<section class="section"><div class="wrap"><div class="splitrow reveal">
+  <div class="sr-head"><span class="s-no meta meta-teal">Warum es sich lohnt</span><h2 class="h1">Bessere Finanzen, <span class="acc scram-view" data-text="tiefere">tiefere</span> Kosten</h2></div>
+  <div class="sr-body"><p>Für kleine und mittlere Unternehmen kostet ein Treuhänder aus unserem Netzwerk weniger als ein traditioneller. Für grössere ist es ein Bruchteil der Kosten für eigene Buchhalter oder ein Finanzteam. Sie erhalten mehr &mdash; Echtzeit-Einblick, Automatisierung, CFO-Perspektive &mdash; und zahlen weniger als für die Alternative.</p></div>
+</div></div></section>
+
+<!-- 6 — What makes them the best (criteria; copy verbatim from Arvut Strategy 01.07) -->
+<section class="section band bleed"><div class="wrap">
+  <h2 class="h1 sec-h reveal">Was sie zu den <span class="scram scram-view" data-text="Besten">Besten</span> macht</h2>
+  <p class="lead reveal" style="margin-bottom:2.4rem;max-width:66ch">&laquo;Die Besten&raquo; ist keine Behauptung, sondern eine Checkliste. Jeder Treuhänder im Netzwerk erfüllt fünf überprüfbare Kriterien:</p>
+  <div class="index">
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">01</span>Bücher in Echtzeit.</h3><p>Buchungen entstehen, sobald die Belege eintreffen &mdash; nicht einmal pro Quartal. Sie sehen Bilanz, Erfolgsrechnung und Liquidität von heute, nicht einen Bericht über die Vergangenheit.</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">02</span>Jede Zahl mit dem Beleg abgeglichen.</h3><p>Bankauszüge, Kassen und Rechnungen werden auf den Rappen genau abgestimmt. Hinter jeder Buchung steht ein Beleg.</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">03</span>Kundenportal unter der Marke Ihres Treuhänders.</h3><p>Belege in Sekunden vom Handy einreichen; Status von Büchern und Zahlungen jederzeit einsehbar. Kein Schuhkarton voller Quittungen am Quartalsende.</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">04</span>Schweizer Hosting, Schweizer Datenschutz.</h3><p>Daten werden in der Schweiz gespeichert, revDSG-konform verarbeitet und 10 Jahre archiviert (Art. 958f OR).</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">05</span>Eine Plattform, ein Standard.</h3><p>Zum Netzwerk gehören Treuhänder, die von Arvut ausgewählt wurden und auf einer gemeinsamen Produktionsplattform arbeiten &mdash; mit denselben Anforderungen an Genauigkeit und Fristen.</p></div></div>
+  </div>
+</div></section>
+
+<!-- 7 — FAQ -->
+<section class="section"><div class="wrap">
+  <h2 class="h1 sec-h reveal">FAQ</h2>
+  <div class="faq">
+    <div class="q reveal"><h3>Was kostet das?</h3><p>Das Honorar vereinbaren Sie direkt mit Ihrem Treuhänder &mdash; es richtet sich nach Umfang und Volumen der Arbeit. Die Vermittlung durch Arvut ist kostenlos und unverbindlich.</p></div>
+    <div class="q reveal"><h3>In welchen Kantonen und Sprachen arbeiten Sie?</h3><p>In der ganzen Schweiz. Die Treuhänder des Netzwerks arbeiten auf Deutsch, Französisch, Italienisch und Englisch &mdash; wir vermitteln Ihnen einen, der Ihre Sprache spricht und die Praxis Ihres Kantons kennt.</p></div>
+    <div class="q reveal"><h3>Wie sicher sind unsere Daten?</h3><p>Die Daten liegen auf Servern in der Schweiz und werden revDSG-konform verarbeitet. Die Buchhaltungsunterlagen werden 10 Jahre archiviert, wie es Art. 958f OR verlangt.</p></div>
+    <div class="q reveal"><h3>Wir haben bereits einen Buchhalter oder Treuhänder. Wie aufwendig ist der Wechsel?</h3><p>Den Übergang übernimmt Ihr neuer Treuhänder: Historie, Eröffnungssaldi und offene Rechnungen werden übernommen. Sie arbeiten ohne Unterbruch weiter &mdash; kein Neuanfang.</p></div>
+    <div class="q reveal"><h3>Warum veröffentlichen Sie keine Liste der Treuhänder?</h3><p>Weil eine gezielte Vermittlung besser ist als ein Verzeichnis. Wir berücksichtigen Kanton, Sprache, Branche und Grösse Ihres Unternehmens &mdash; und stellen Sie direkt dem Treuhänder vor, der zu Ihnen passt.</p></div>
+  </div>
+</div></section>
+
+<!-- 8 — How it works -->
+<section class="section"><div class="wrap">
+  <div class="s-head reveal">
+    <span class="s-no meta meta-teal">So funktioniert's</span>
+    <div>
+      <h2 class="h1">Wir vermitteln Ihnen den passenden <span class="acc scram-view" data-text="Treuhänder">Treuhänder</span></h2>
+      <p class="lead sub">Wir veröffentlichen die Liste nicht öffentlich. Stattdessen kommen Sie direkt auf uns zu &mdash; die Vermittlung übernehmen wir.</p>
+    </div>
+  </div>
+  <div class="flow reveal">
+    <div class="st"><div class="n">1</div><h3>Sie melden sich</h3><p>schreiben Sie uns oder buchen Sie ein Gespräch.</p></div>
+    <div class="st"><div class="n">2</div><h3>Treffen &amp; Live-Demo</h3><p>wir zeigen anhand realer Szenarien, wie es funktioniert, und schauen uns Ihre Situation an.</p></div>
+    <div class="st"><div class="n">3</div><h3>Wir vermitteln einen Partner</h3><p>nach Kanton, Sprache und Grösse übergeben wir Sie dem passenden Treuhänder in unserem Netzwerk.</p></div>
+  </div>
+  <p class="lead-narrow reveal" style="margin-top:2rem;color:var(--ink-2)">Jeder Treuhänder im Netzwerk ist ausgewählt, AI-native und Arvut-powered. Echtzeit-Reporting &middot; Swiss Hosting &middot; revDSG-konform.</p>
+</div></section>
+
+<!-- 9 — CTA + lead form -->
+<section class="section" id="kontakt"><div class="wrap">
+  <div class="splitrow reveal" style="align-items:start">
+    <div class="sr-head"><span class="s-no meta meta-teal">Kontakt</span><h2 class="h1"><span class="acc scram-view" data-text="Legen">Legen</span> wir los?</h2></div>
+    <div class="sr-body">
+      <p style="margin-bottom:1.8rem">Buchen Sie eine Demo &mdash; oder schreiben Sie uns einfach. Wir lernen uns kennen, zeigen Ihnen das System und vermitteln Ihnen den passenden Treuhänder.</p>
+      <form class="cform" id="cform">
+        <div><label for="f-name">Name</label><input id="f-name" type="text" /></div>
+        <div><label for="f-comp">Unternehmen</label><input id="f-comp" type="text" /></div>
+        <div><label for="f-mail">E-Mail</label><input id="f-mail" type="email" /></div>
+        <div><label for="f-size">Unternehmensgrösse</label><select id="f-size"><option>0</option><option>1&ndash;10</option><option>11&ndash;50</option><option>51&ndash;250</option></select></div>
+        <div><label for="f-canton">Kanton</label><select id="f-canton"><option value="">Kanton wählen</option><option>AG</option><option>AI</option><option>AR</option><option>BE</option><option>BL</option><option>BS</option><option>FR</option><option>GE</option><option>GL</option><option>GR</option><option>JU</option><option>LU</option><option>NE</option><option>NW</option><option>OW</option><option>SG</option><option>SH</option><option>SO</option><option>SZ</option><option>TG</option><option>TI</option><option>UR</option><option>VD</option><option>VS</option><option>ZG</option><option>ZH</option></select></div>
+        <div class="full"><label for="f-msg">Nachricht (optional)</label><textarea id="f-msg"></textarea></div>
+        <div class="full"><button class="btn" type="submit">Demo buchen</button></div>
+      </form>
+      <p class="contact-side" style="margin-top:1.6rem">Die Formulardaten verwenden wir ausschliesslich zur Beantwortung Ihrer Anfrage. <a href="en/privacy.html">Datenschutzerklärung</a><br>Oder direkt: <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:treuhandfirmen@arvut.ch">treuhandfirmen@arvut.ch</a></p>
+    </div>
+  </div>
+</div></section>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-word">Arvut</div>
+        <p class="foot-tag">Buchhaltungsproduktion für Schweizer Treuhandgesellschaften.</p>
+      </div>
+      <div class="foot-col"><h4>Produkt</h4><ul><li><a href="en/how-it-works.html">So funktioniert's</a></li><li><a href="en/services.html">Leistungen</a></li><li><a href="en/pricing.html">Preise</a></li><li><a href="en/security.html">Sicherheit</a></li></ul></div>
+      <div class="foot-col"><h4>Unternehmen</h4><ul><li><a href="en/company.html">Über uns</a></li><li><a href="en/team.html">Team</a></li><li><a href="en/careers.html">Karriere</a></li><li><a href="en/contact.html">Kontakt</a></li></ul></div>
+      <div class="foot-col"><h4>Sprache</h4><ul><li><a href="best-de.html">Deutsch</a></li><li><a href="best-fr.html">Fran&ccedil;ais</a></li><li><a href="best-it.html">Italiano</a></li><li><a href="en/best.html">English</a></li><li><a href="best-ru.html">Русский</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Arvut GmbH &middot; Unterm&uuml;li 9, 6300 Zug &middot; CHE-192.778.668</span>
+      <span><a href="en/imprint.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="en/privacy.html">Datenschutz</a></span>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Was kostet das?","acceptedAnswer":{"@type":"Answer","text":"Das Honorar vereinbaren Sie direkt mit Ihrem Treuhänder — es richtet sich nach Umfang und Volumen der Arbeit. Die Vermittlung durch Arvut ist kostenlos und unverbindlich."}},
+{"@type":"Question","name":"In welchen Kantonen und Sprachen arbeiten Sie?","acceptedAnswer":{"@type":"Answer","text":"In der ganzen Schweiz. Die Treuhänder des Netzwerks arbeiten auf Deutsch, Französisch, Italienisch und Englisch — wir vermitteln Ihnen einen, der Ihre Sprache spricht und die Praxis Ihres Kantons kennt."}},
+{"@type":"Question","name":"Wie sicher sind unsere Daten?","acceptedAnswer":{"@type":"Answer","text":"Die Daten liegen auf Servern in der Schweiz und werden revDSG-konform verarbeitet. Die Buchhaltungsunterlagen werden 10 Jahre archiviert, wie es Art. 958f OR verlangt."}},
+{"@type":"Question","name":"Wir haben bereits einen Buchhalter oder Treuhänder. Wie aufwendig ist der Wechsel?","acceptedAnswer":{"@type":"Answer","text":"Den Übergang übernimmt Ihr neuer Treuhänder: Historie, Eröffnungssaldi und offene Rechnungen werden übernommen. Sie arbeiten ohne Unterbruch weiter — kein Neuanfang."}},
+{"@type":"Question","name":"Warum veröffentlichen Sie keine Liste der Treuhänder?","acceptedAnswer":{"@type":"Answer","text":"Weil eine gezielte Vermittlung besser ist als ein Verzeichnis. Wir berücksichtigen Kanton, Sprache, Branche und Grösse Ihres Unternehmens — und stellen Sie direkt dem Treuhänder vor, der zu Ihnen passt."}}]}
+</script>
+<script src="assets/main.js"></script>
+<script>
+(function(){var f=document.getElementById('cform');if(!f)return;
+f.addEventListener('submit',function(e){e.preventDefault();
+var g=function(id){return encodeURIComponent((document.getElementById(id)||{}).value||'');};
+var body='Name: '+g('f-name')+'%0D%0ACompany: '+g('f-comp')+'%0D%0AEmail: '+g('f-mail')+'%0D%0ACompany size: '+g('f-size')+'%0D%0ACanton: '+g('f-canton')+'%0D%0A%0D%0A'+g('f-msg');
+window.location.href='mailto:treuhandfirmen@arvut.ch?subject='+encodeURIComponent('Demo-Anfrage')+'&body='+body;});})();
+</script>
+</body>
+</html>
