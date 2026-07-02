@@ -33,6 +33,21 @@
 <link rel="stylesheet" href="assets/style.css" />
 <style>
 /* best-лендинг: доводка поверх дизайн-системы */
+/* ЕДИНЫЕ отступы секций; band без двойного паддинга */
+.section{ padding-block:clamp(56px,6vw,96px) !important; }
+.band.section{ padding-block:0 !important; }
+.band.section .wrap{ padding-top:clamp(56px,6vw,96px); padding-bottom:clamp(56px,6vw,96px); }
+/* тексты всегда на всю ширину колонки/страницы — никаких 2/3 */
+.hero-copy .lead{ max-width:none; }
+.s-head .sub{ max-width:none; }
+.lead{ max-width:none; }
+/* splitrow: правый текст начинается на уровне ЗАГОЛОВКА (не выше) */
+.splitrow .sr-body{ padding-top:2.35rem; }
+/* кнопки крупнее */
+.btn{ padding:1.05rem 2.6rem !important; }
+.hero-cta .btn{ padding:1.15rem 3rem !important; }
+/* статичный акцент вместо scramble на бирюзовом band */
+.band .scram-static{ color:var(--on-teal); }
 .hero-media .hero-office{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:46% 40%; }
 .h-hero .h-range{ display:block; margin-top:.5em; font-size:.34em; letter-spacing:.02em; font-weight:700; color:var(--ink-2); text-transform:none; }
 .band .index .no{ color:rgba(251,250,243,.65); }
@@ -70,7 +85,7 @@
   <div class="hero-grid">
     <div class="hero-copy">
       <span class="hero-eyebrow">Per le imprese</span>
-      <h1 class="h-hero">Le <span class="out scram" data-text="migliori">migliori</span> fiduciarie della Svizzera<span class="h-range">— dalla start-up a 250 dipendenti</span></h1>
+      <h1 class="h-hero">Le <span class="out">migliori</span> fiduciarie della Svizzera<span class="h-range">— dalla start-up a 250 dipendenti</span></h1>
       <p class="lead">Collaboriamo con fiduciarie AI-native di primo piano nella Svizzera tedesca, romanda e italiana. Per le piccole imprese &mdash; una fiduciaria sempre a portata di mano. Per le più grandi &mdash; un back office finanziario completo, gestito dalla tua fiduciaria, senza un reparto finanziario interno.</p>
       <div class="hero-cta">
         <a class="btn" href="#kontakt">Prenota una demo &rarr;</a>
@@ -85,7 +100,7 @@
 
 <!-- 2 — Metaphor -->
 <section class="section"><div class="wrap"><div class="splitrow reveal">
-  <div class="sr-head"><span class="s-no meta meta-teal">La metafora</span><h2 class="h1">Come assumere un direttore finanziario &mdash; senza il suo <span class="acc scram-view" data-text="stipendio">stipendio</span></h2></div>
+  <div class="sr-head"><span class="s-no meta meta-teal">La metafora</span><h2 class="h1">Come assumere un direttore finanziario &mdash; senza il suo <span class="acc">stipendio</span></h2></div>
   <div class="sr-body"><p>Una fiduciaria moderna della nostra rete non si limita a tenere i conti. Gestisce il tuo back office finanziario dall'inizio alla fine, in tempo reale. Che tu abbia 0 o 250 dipendenti, ottieni la funzione finanziaria di un'azienda molto più grande &mdash; senza doverla costruire.</p></div>
 </div></div></section>
 
@@ -94,7 +109,7 @@
   <div class="s-head reveal">
     <span class="s-no meta meta-teal">Sei servizi</span>
     <div>
-      <h2 class="h1">Molto più della <span class="acc scram-view" data-text="contabilità">contabilità</span></h2>
+      <h2 class="h1">Molto più della <span class="acc">contabilità</span></h2>
       <p class="lead sub">Ogni fiduciaria della rete se ne occupa per te &mdash; sotto il proprio nome:</p>
     </div>
   </div>
@@ -112,7 +127,7 @@
 <section class="section"><div class="wrap">
   <div class="s-head reveal">
     <span class="s-no meta meta-teal">Per chi</span>
-    <div><h2 class="h1">Pensato per ogni <span class="acc scram-view" data-text="dimensione">dimensione</span></h2></div>
+    <div><h2 class="h1">Pensato per ogni <span class="acc">dimensione</span></h2></div>
   </div>
   <div class="beliefs reveal">
     <div class="b"><h3>Piccola impresa</h3><p>Smetti di fare tutto da solo e lascia alle spalle la fiduciaria lenta e cartacea. Una fiduciaria AI-native tiene i tuoi conti aggiornati &mdash; senza aumentare il personale.</p></div>
@@ -122,14 +137,14 @@
 
 <!-- 5 — Why it pays off -->
 <section class="section"><div class="wrap"><div class="splitrow reveal">
-  <div class="sr-head"><span class="s-no meta meta-teal">Perché conviene</span><h2 class="h1">Finanze migliori, costi <span class="acc scram-view" data-text="inferiori">inferiori</span></h2></div>
+  <div class="sr-head"><span class="s-no meta meta-teal">Perché conviene</span><h2 class="h1">Finanze migliori, costi <span class="acc">inferiori</span></h2></div>
   <div class="sr-body"><p>Per le piccole e medie imprese una fiduciaria della nostra rete costa meno di una tradizionale. Per le più grandi è una frazione del costo di un contabile o di un team finanziario interno. Ottieni di più &mdash; visibilità in tempo reale, automazione, una visione da direttore finanziario &mdash; e paghi meno dell'alternativa.</p></div>
 </div></div></section>
 
 <!-- 6 — What makes them the best (criteria; copy verbatim from Arvut Strategy 01.07) -->
 <section class="section band bleed"><div class="wrap">
-  <h2 class="h1 sec-h reveal">Cosa le rende le <span class="scram scram-view" data-text="migliori">migliori</span></h2>
-  <p class="lead reveal" style="margin-bottom:2.4rem;max-width:66ch">&laquo;Le migliori&raquo; non è uno slogan &mdash; è una lista di criteri. Ogni fiduciaria della rete soddisfa cinque condizioni verificabili:</p>
+  <h2 class="h1 sec-h reveal">Cosa le rende le <span class="scram-static">migliori</span></h2>
+  <p class="lead reveal" style="margin-bottom:2.4rem;max-width:none">&laquo;Le migliori&raquo; non è uno slogan &mdash; è una lista di criteri. Ogni fiduciaria della rete soddisfa cinque condizioni verificabili:</p>
   <div class="index">
     <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">01</span>Contabilità in tempo reale.</h3><p>Le registrazioni vengono effettuate man mano che arrivano i documenti &mdash; non una volta al trimestre. Vedete il bilancio, il conto economico e la liquidità di oggi, non un rapporto sul passato.</p></div></div>
     <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">02</span>Ogni cifra riconciliata con i giustificativi.</h3><p>Estratti bancari, casse e fatture sono riconciliati al centesimo. Dietro ogni registrazione c'è un documento.</p></div></div>
@@ -156,7 +171,7 @@
   <div class="s-head reveal">
     <span class="s-no meta meta-teal">Come funziona</span>
     <div>
-      <h2 class="h1">Ti mettiamo in contatto con la fiduciaria <span class="acc scram-view" data-text="giusta">giusta</span></h2>
+      <h2 class="h1">Ti mettiamo in contatto con la fiduciaria <span class="acc">giusta</span></h2>
       <p class="lead sub">Non pubblichiamo l'elenco apertamente. Sei tu a contattarci direttamente &mdash; al resto pensiamo noi.</p>
     </div>
   </div>
@@ -165,15 +180,17 @@
     <div class="st"><div class="n">2</div><h3>Incontro &amp; demo dal vivo</h3><p>mostriamo come funziona su casi reali ed esaminiamo la tua situazione.</p></div>
     <div class="st"><div class="n">3</div><h3>Ti indirizziamo a un partner</h3><p>in base a cantone, lingua e dimensione, alla fiduciaria adatta della nostra rete.</p></div>
   </div>
-  <p class="lead-narrow reveal" style="margin-top:2rem;color:var(--ink-2)">Ogni fiduciaria della rete è selezionata, AI-native e Arvut-powered. Reporting in tempo reale &middot; hosting svizzero &middot; conforme alla revLPD.</p>
+  <p class="lead reveal" style="margin-top:2rem;max-width:none;color:var(--ink-2)">Ogni fiduciaria della rete è selezionata, AI-native e Arvut-powered. Reporting in tempo reale &middot; hosting svizzero &middot; conforme alla revLPD.</p>
 </div></section>
 
 <!-- 9 — CTA + lead form -->
 <section class="section" id="kontakt"><div class="wrap">
   <div class="splitrow reveal" style="align-items:start">
-    <div class="sr-head"><span class="s-no meta meta-teal">Contatto</span><h2 class="h1"><span class="acc scram-view" data-text="Iniziamo">Iniziamo</span>?</h2></div>
+    <div class="sr-head"><span class="s-no meta meta-teal">Contatto</span><h2 class="h1"><span class="acc">Iniziamo</span>?</h2>
+      <p style="margin-top:1.6rem;max-width:none;color:var(--ink-2)">Prenota una demo &mdash; o scrivici semplicemente. Ci conosceremo, ti mostreremo il sistema e ti indirizzeremo alla fiduciaria adatta.</p>
+      <p class="contact-side" style="margin-top:1.6rem">Utilizziamo i dati del modulo solo per rispondere alla tua richiesta. <a href="en/privacy.html">Protezione dei dati</a><br>Oppure direttamente: <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:fiduciarie@arvut.ch">fiduciarie@arvut.ch</a></p>
+    </div>
     <div class="sr-body">
-      <p style="margin-bottom:1.8rem">Prenota una demo &mdash; o scrivici semplicemente. Ci conosceremo, ti mostreremo il sistema e ti indirizzeremo alla fiduciaria adatta.</p>
       <form class="cform" id="cform">
         <div><label for="f-name">Nome</label><input id="f-name" type="text" /></div>
         <div><label for="f-comp">Azienda</label><input id="f-comp" type="text" /></div>
@@ -183,7 +200,6 @@
         <div class="full"><label for="f-msg">Messaggio (facoltativo)</label><textarea id="f-msg"></textarea></div>
         <div class="full"><button class="btn" type="submit">Prenota una demo</button></div>
       </form>
-      <p class="contact-side" style="margin-top:1.6rem">Utilizziamo i dati del modulo solo per rispondere alla tua richiesta. <a href="en/privacy.html">Protezione dei dati</a><br>Oppure direttamente: <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:fiduciarie@arvut.ch">fiduciarie@arvut.ch</a></p>
     </div>
   </div>
 </div></section>

@@ -33,6 +33,21 @@
 <link rel="stylesheet" href="assets/style.css" />
 <style>
 /* best-лендинг: доводка поверх дизайн-системы */
+/* ЕДИНЫЕ отступы секций; band без двойного паддинга */
+.section{ padding-block:clamp(56px,6vw,96px) !important; }
+.band.section{ padding-block:0 !important; }
+.band.section .wrap{ padding-top:clamp(56px,6vw,96px); padding-bottom:clamp(56px,6vw,96px); }
+/* тексты всегда на всю ширину колонки/страницы — никаких 2/3 */
+.hero-copy .lead{ max-width:none; }
+.s-head .sub{ max-width:none; }
+.lead{ max-width:none; }
+/* splitrow: правый текст начинается на уровне ЗАГОЛОВКА (не выше) */
+.splitrow .sr-body{ padding-top:2.35rem; }
+/* кнопки крупнее */
+.btn{ padding:1.05rem 2.6rem !important; }
+.hero-cta .btn{ padding:1.15rem 3rem !important; }
+/* статичный акцент вместо scramble на бирюзовом band */
+.band .scram-static{ color:var(--on-teal); }
 .hero-media .hero-office{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:46% 40%; }
 .h-hero .h-range{ display:block; margin-top:.5em; font-size:.34em; letter-spacing:.02em; font-weight:700; color:var(--ink-2); text-transform:none; }
 .band .index .no{ color:rgba(251,250,243,.65); }
@@ -70,7 +85,7 @@
   <div class="hero-grid">
     <div class="hero-copy">
       <span class="hero-eyebrow">Для бизнеса</span>
-      <h1 class="h-hero"><span class="out scram" data-text="Лучшие">Лучшие</span> фидучиарии Швейцарии<span class="h-range">— от стартапа до 250 сотрудников</span></h1>
+      <h1 class="h-hero"><span class="out">Лучшие</span> фидучиарии Швейцарии<span class="h-range">— от стартапа до 250 сотрудников</span></h1>
       <p class="lead">Мы сотрудничаем с ведущими AI-native фидучиариями немецко-, франко- и италоязычной Швейцарии. Малому бизнесу &mdash; фидучиария, которая всегда рядом. Крупному &mdash; целый финансовый бэк-офис под управлением вашей фидучиарии, без своего финотдела.</p>
       <div class="hero-cta">
         <a class="btn" href="#kontakt">Записаться на демо &rarr;</a>
@@ -85,7 +100,7 @@
 
 <!-- 2 — Metaphor -->
 <section class="section"><div class="wrap"><div class="splitrow reveal">
-  <div class="sr-head"><span class="s-no meta meta-teal">Метафора</span><h2 class="h1">Как нанять финдиректора &mdash; но без его <span class="acc scram-view" data-text="зарплаты">зарплаты</span></h2></div>
+  <div class="sr-head"><span class="s-no meta meta-teal">Метафора</span><h2 class="h1">Как нанять финдиректора &mdash; но без его <span class="acc">зарплаты</span></h2></div>
   <div class="sr-body"><p>Современная фидучиария из нашей сети не просто ведёт учёт. Она управляет вашим финансовым бэк-офисом от начала до конца, в реальном времени. Будь у вас 0 или 250 сотрудников &mdash; вы получаете финансовую функцию гораздо более крупной компании, не выстраивая её сами.</p></div>
 </div></div></section>
 
@@ -94,7 +109,7 @@
   <div class="s-head reveal">
     <span class="s-no meta meta-teal">Шесть сервисов</span>
     <div>
-      <h2 class="h1">Больше, чем <span class="acc scram-view" data-text="бухгалтерия">бухгалтерия</span></h2>
+      <h2 class="h1">Больше, чем <span class="acc">бухгалтерия</span></h2>
       <p class="lead sub">Каждая фидучиария в сети ведёт это за вас &mdash; под своим именем:</p>
     </div>
   </div>
@@ -112,7 +127,7 @@
 <section class="section"><div class="wrap">
   <div class="s-head reveal">
     <span class="s-no meta meta-teal">Для кого</span>
-    <div><h2 class="h1">Под любой <span class="acc scram-view" data-text="размер">размер</span></h2></div>
+    <div><h2 class="h1">Под любой <span class="acc">размер</span></h2></div>
   </div>
   <div class="beliefs reveal">
     <div class="b"><h3>Малый бизнес</h3><p>Перестаньте вести учёт сами и оставьте позади медленную «бумажную» фидучиарию. AI-native фидучиария держит вашу бухгалтерию в актуальном состоянии &mdash; без расширения штата.</p></div>
@@ -122,14 +137,14 @@
 
 <!-- 5 — Why it pays off -->
 <section class="section"><div class="wrap"><div class="splitrow reveal">
-  <div class="sr-head"><span class="s-no meta meta-teal">Почему это выгодно</span><h2 class="h1">Финансы лучше, затраты <span class="acc scram-view" data-text="ниже">ниже</span></h2></div>
+  <div class="sr-head"><span class="s-no meta meta-teal">Почему это выгодно</span><h2 class="h1">Финансы лучше, затраты <span class="acc">ниже</span></h2></div>
   <div class="sr-body"><p>Для малых и средних предприятий фидучиария из нашей сети обходится дешевле традиционной. Для крупных &mdash; это доля стоимости собственного бухгалтера или финансовой команды. Вы получаете больше &mdash; прозрачность в реальном времени, автоматизацию, взгляд финдиректора &mdash; и платите меньше, чем за альтернативу.</p></div>
 </div></div></section>
 
 <!-- 6 — What makes them the best (criteria; copy verbatim from Arvut Strategy 01.07) -->
 <section class="section band bleed"><div class="wrap">
-  <h2 class="h1 sec-h reveal">Что делает их <span class="scram scram-view" data-text="лучшими">лучшими</span></h2>
-  <p class="lead reveal" style="margin-bottom:2.4rem;max-width:66ch">«Лучшие» &mdash; это не оценка, а список критериев. Каждая фидуциария сети соответствует пяти проверяемым условиям:</p>
+  <h2 class="h1 sec-h reveal">Что делает их <span class="scram-static">лучшими</span></h2>
+  <p class="lead reveal" style="margin-bottom:2.4rem;max-width:none">«Лучшие» &mdash; это не оценка, а список критериев. Каждая фидуциария сети соответствует пяти проверяемым условиям:</p>
   <div class="index">
     <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">01</span>Книги в реальном времени.</h3><p>Проводки появляются по мере поступления документов &mdash; не раз в квартал. Вы видите баланс, P&amp;L и денежный поток на сегодня, а не отчёт о прошлом.</p></div></div>
     <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">02</span>Каждая цифра сверена с первичкой.</h3><p>Банковские выписки, кассы и инвойсы сверяются до раппена. За каждой проводкой стоит документ.</p></div></div>
@@ -156,7 +171,7 @@
   <div class="s-head reveal">
     <span class="s-no meta meta-teal">Как это работает</span>
     <div>
-      <h2 class="h1">Мы подберём <span class="acc scram-view" data-text="фидучиарию">фидучиарию</span> под вас</h2>
+      <h2 class="h1">Мы подберём <span class="acc">фидучиарию</span> под вас</h2>
       <p class="lead sub">Мы не публикуем список открыто. Вместо этого вы выходите на нас напрямую &mdash; а дальше подбор берём на себя.</p>
     </div>
   </div>
@@ -165,15 +180,17 @@
     <div class="st"><div class="n">2</div><h3>Встреча и живое демо</h3><p>показываем, как это работает на реальных сценариях, и разбираем вашу ситуацию.</p></div>
     <div class="st"><div class="n">3</div><h3>Подбираем партнёра</h3><p>под ваш кантон, язык и размер отдаём вас подходящей фидучиарии из нашей сети.</p></div>
   </div>
-  <p class="lead-narrow reveal" style="margin-top:2rem;color:var(--ink-2)">Каждая фидучиария в сети отобрана, AI-native и работает на Arvut. Отчётность в реальном времени &middot; швейцарский хостинг &middot; соответствие revDSG.</p>
+  <p class="lead reveal" style="margin-top:2rem;max-width:none;color:var(--ink-2)">Каждая фидучиария в сети отобрана, AI-native и работает на Arvut. Отчётность в реальном времени &middot; швейцарский хостинг &middot; соответствие revDSG.</p>
 </div></section>
 
 <!-- 9 — CTA + lead form -->
 <section class="section" id="kontakt"><div class="wrap">
   <div class="splitrow reveal" style="align-items:start">
-    <div class="sr-head"><span class="s-no meta meta-teal">Контакт</span><h2 class="h1"><span class="acc scram-view" data-text="Начнём">Начнём</span>?</h2></div>
+    <div class="sr-head"><span class="s-no meta meta-teal">Контакт</span><h2 class="h1"><span class="acc">Начнём</span>?</h2>
+      <p style="margin-top:1.6rem;max-width:none;color:var(--ink-2)">Забронируйте демо &mdash; или просто напишите нам. Познакомимся, покажем систему и подберём вам подходящую фидучиарию.</p>
+      <p class="contact-side" style="margin-top:1.6rem">Данные формы используем только чтобы ответить на ваш запрос. <a href="en/privacy.html">Политика конфиденциальности</a><br>Или напрямую: <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:fiduciaries@arvut.ch">fiduciaries@arvut.ch</a></p>
+    </div>
     <div class="sr-body">
-      <p style="margin-bottom:1.8rem">Забронируйте демо &mdash; или просто напишите нам. Познакомимся, покажем систему и подберём вам подходящую фидучиарию.</p>
       <form class="cform" id="cform">
         <div><label for="f-name">Имя</label><input id="f-name" type="text" /></div>
         <div><label for="f-comp">Компания</label><input id="f-comp" type="text" /></div>
@@ -183,7 +200,6 @@
         <div class="full"><label for="f-msg">Сообщение (необязательно)</label><textarea id="f-msg"></textarea></div>
         <div class="full"><button class="btn" type="submit">Записаться на демо</button></div>
       </form>
-      <p class="contact-side" style="margin-top:1.6rem">Данные формы используем только чтобы ответить на ваш запрос. <a href="en/privacy.html">Политика конфиденциальности</a><br>Или напрямую: <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:fiduciaries@arvut.ch">fiduciaries@arvut.ch</a></p>
     </div>
   </div>
 </div></section>

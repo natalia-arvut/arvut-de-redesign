@@ -33,6 +33,21 @@
 <link rel="stylesheet" href="assets/style.css" />
 <style>
 /* best-лендинг: доводка поверх дизайн-системы */
+/* ЕДИНЫЕ отступы секций; band без двойного паддинга */
+.section{ padding-block:clamp(56px,6vw,96px) !important; }
+.band.section{ padding-block:0 !important; }
+.band.section .wrap{ padding-top:clamp(56px,6vw,96px); padding-bottom:clamp(56px,6vw,96px); }
+/* тексты всегда на всю ширину колонки/страницы — никаких 2/3 */
+.hero-copy .lead{ max-width:none; }
+.s-head .sub{ max-width:none; }
+.lead{ max-width:none; }
+/* splitrow: правый текст начинается на уровне ЗАГОЛОВКА (не выше) */
+.splitrow .sr-body{ padding-top:2.35rem; }
+/* кнопки крупнее */
+.btn{ padding:1.05rem 2.6rem !important; }
+.hero-cta .btn{ padding:1.15rem 3rem !important; }
+/* статичный акцент вместо scramble на бирюзовом band */
+.band .scram-static{ color:var(--on-teal); }
 .hero-media .hero-office{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:46% 40%; }
 .h-hero .h-range{ display:block; margin-top:.5em; font-size:.34em; letter-spacing:.02em; font-weight:700; color:var(--ink-2); text-transform:none; }
 .band .index .no{ color:rgba(251,250,243,.65); }
@@ -70,7 +85,7 @@
   <div class="hero-grid">
     <div class="hero-copy">
       <span class="hero-eyebrow">Für Unternehmen</span>
-      <h1 class="h-hero">Die <span class="out scram" data-text="besten">besten</span> Treuhänder der Schweiz<span class="h-range">— vom Start-up bis 250 Mitarbeitende</span></h1>
+      <h1 class="h-hero">Die <span class="out">besten</span> Treuhänder der Schweiz<span class="h-range">— vom Start-up bis 250 Mitarbeitende</span></h1>
       <p class="lead">Wir arbeiten mit führenden AI-nativen Treuhändern in der Deutsch-, West- und italienischsprachigen Schweiz zusammen. Für kleine Unternehmen &mdash; ein Treuhänder, stets griffbereit. Für grössere &mdash; ein komplettes Finanz-Backoffice, geführt von Ihrem Treuhänder, ohne eigene Finanzabteilung.</p>
       <div class="hero-cta">
         <a class="btn" href="#kontakt">Demo buchen &rarr;</a>
@@ -85,7 +100,7 @@
 
 <!-- 2 — Metaphor -->
 <section class="section"><div class="wrap"><div class="splitrow reveal">
-  <div class="sr-head"><span class="s-no meta meta-teal">Die Metapher</span><h2 class="h1">Wie ein eigener CFO &mdash; ohne <span class="acc scram-view" data-text="CFO-Gehalt">CFO-Gehalt</span></h2></div>
+  <div class="sr-head"><span class="s-no meta meta-teal">Die Metapher</span><h2 class="h1">Wie ein eigener CFO &mdash; ohne <span class="acc">CFO-Gehalt</span></h2></div>
   <div class="sr-body"><p>Ein moderner Treuhänder in unserem Netzwerk führt nicht nur die Bücher. Er betreibt Ihr Finanz-Backoffice von A bis Z, in Echtzeit. Ob 0 oder 250 Mitarbeitende &mdash; Sie erhalten die Finanzfunktion eines weit grösseren Unternehmens, ohne sie selbst aufzubauen.</p></div>
 </div></div></section>
 
@@ -94,7 +109,7 @@
   <div class="s-head reveal">
     <span class="s-no meta meta-teal">Sechs Leistungen</span>
     <div>
-      <h2 class="h1">Mehr als <span class="acc scram-view" data-text="Buchhaltung">Buchhaltung</span></h2>
+      <h2 class="h1">Mehr als <span class="acc">Buchhaltung</span></h2>
       <p class="lead sub">Jeder Treuhänder im Netzwerk übernimmt das für Sie &mdash; unter seinem eigenen Namen:</p>
     </div>
   </div>
@@ -112,7 +127,7 @@
 <section class="section"><div class="wrap">
   <div class="s-head reveal">
     <span class="s-no meta meta-teal">Für wen</span>
-    <div><h2 class="h1">Für jede <span class="acc scram-view" data-text="Grösse">Grösse</span> gemacht</h2></div>
+    <div><h2 class="h1">Für jede <span class="acc">Grösse</span> gemacht</h2></div>
   </div>
   <div class="beliefs reveal">
     <div class="b"><h3>Kleinunternehmen</h3><p>Hören Sie auf, es selbst zu erledigen, und lassen Sie den langsamen, papierbasierten Treuhänder hinter sich. Ein AI-nativer Treuhänder hält Ihre Bücher aktuell &mdash; ohne zusätzliches Personal.</p></div>
@@ -122,14 +137,14 @@
 
 <!-- 5 — Why it pays off -->
 <section class="section"><div class="wrap"><div class="splitrow reveal">
-  <div class="sr-head"><span class="s-no meta meta-teal">Warum es sich lohnt</span><h2 class="h1">Bessere Finanzen, <span class="acc scram-view" data-text="tiefere">tiefere</span> Kosten</h2></div>
+  <div class="sr-head"><span class="s-no meta meta-teal">Warum es sich lohnt</span><h2 class="h1">Bessere Finanzen, <span class="acc">tiefere</span> Kosten</h2></div>
   <div class="sr-body"><p>Für kleine und mittlere Unternehmen kostet ein Treuhänder aus unserem Netzwerk weniger als ein traditioneller. Für grössere ist es ein Bruchteil der Kosten für eigene Buchhalter oder ein Finanzteam. Sie erhalten mehr &mdash; Echtzeit-Einblick, Automatisierung, CFO-Perspektive &mdash; und zahlen weniger als für die Alternative.</p></div>
 </div></div></section>
 
 <!-- 6 — What makes them the best (criteria; copy verbatim from Arvut Strategy 01.07) -->
 <section class="section band bleed"><div class="wrap">
-  <h2 class="h1 sec-h reveal">Was sie zu den <span class="scram scram-view" data-text="Besten">Besten</span> macht</h2>
-  <p class="lead reveal" style="margin-bottom:2.4rem;max-width:66ch">&laquo;Die Besten&raquo; ist keine Behauptung, sondern eine Checkliste. Jeder Treuhänder im Netzwerk erfüllt fünf überprüfbare Kriterien:</p>
+  <h2 class="h1 sec-h reveal">Was sie zu den <span class="scram-static">Besten</span> macht</h2>
+  <p class="lead reveal" style="margin-bottom:2.4rem;max-width:none">&laquo;Die Besten&raquo; ist keine Behauptung, sondern eine Checkliste. Jeder Treuhänder im Netzwerk erfüllt fünf überprüfbare Kriterien:</p>
   <div class="index">
     <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">01</span>Bücher in Echtzeit.</h3><p>Buchungen entstehen, sobald die Belege eintreffen &mdash; nicht einmal pro Quartal. Sie sehen Bilanz, Erfolgsrechnung und Liquidität von heute, nicht einen Bericht über die Vergangenheit.</p></div></div>
     <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">02</span>Jede Zahl mit dem Beleg abgeglichen.</h3><p>Bankauszüge, Kassen und Rechnungen werden auf den Rappen genau abgestimmt. Hinter jeder Buchung steht ein Beleg.</p></div></div>
@@ -156,7 +171,7 @@
   <div class="s-head reveal">
     <span class="s-no meta meta-teal">So funktioniert's</span>
     <div>
-      <h2 class="h1">Wir vermitteln Ihnen den passenden <span class="acc scram-view" data-text="Treuhänder">Treuhänder</span></h2>
+      <h2 class="h1">Wir vermitteln Ihnen den passenden <span class="acc">Treuhänder</span></h2>
       <p class="lead sub">Wir veröffentlichen die Liste nicht öffentlich. Stattdessen kommen Sie direkt auf uns zu &mdash; die Vermittlung übernehmen wir.</p>
     </div>
   </div>
@@ -165,15 +180,17 @@
     <div class="st"><div class="n">2</div><h3>Treffen &amp; Live-Demo</h3><p>wir zeigen anhand realer Szenarien, wie es funktioniert, und schauen uns Ihre Situation an.</p></div>
     <div class="st"><div class="n">3</div><h3>Wir vermitteln einen Partner</h3><p>nach Kanton, Sprache und Grösse übergeben wir Sie dem passenden Treuhänder in unserem Netzwerk.</p></div>
   </div>
-  <p class="lead-narrow reveal" style="margin-top:2rem;color:var(--ink-2)">Jeder Treuhänder im Netzwerk ist ausgewählt, AI-native und Arvut-powered. Echtzeit-Reporting &middot; Swiss Hosting &middot; revDSG-konform.</p>
+  <p class="lead reveal" style="margin-top:2rem;max-width:none;color:var(--ink-2)">Jeder Treuhänder im Netzwerk ist ausgewählt, AI-native und Arvut-powered. Echtzeit-Reporting &middot; Swiss Hosting &middot; revDSG-konform.</p>
 </div></section>
 
 <!-- 9 — CTA + lead form -->
 <section class="section" id="kontakt"><div class="wrap">
   <div class="splitrow reveal" style="align-items:start">
-    <div class="sr-head"><span class="s-no meta meta-teal">Kontakt</span><h2 class="h1"><span class="acc scram-view" data-text="Legen">Legen</span> wir los?</h2></div>
+    <div class="sr-head"><span class="s-no meta meta-teal">Kontakt</span><h2 class="h1"><span class="acc">Legen</span> wir los?</h2>
+      <p style="margin-top:1.6rem;max-width:none;color:var(--ink-2)">Buchen Sie eine Demo &mdash; oder schreiben Sie uns einfach. Wir lernen uns kennen, zeigen Ihnen das System und vermitteln Ihnen den passenden Treuhänder.</p>
+      <p class="contact-side" style="margin-top:1.6rem">Die Formulardaten verwenden wir ausschliesslich zur Beantwortung Ihrer Anfrage. <a href="en/privacy.html">Datenschutzerklärung</a><br>Oder direkt: <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:treuhandfirmen@arvut.ch">treuhandfirmen@arvut.ch</a></p>
+    </div>
     <div class="sr-body">
-      <p style="margin-bottom:1.8rem">Buchen Sie eine Demo &mdash; oder schreiben Sie uns einfach. Wir lernen uns kennen, zeigen Ihnen das System und vermitteln Ihnen den passenden Treuhänder.</p>
       <form class="cform" id="cform">
         <div><label for="f-name">Name</label><input id="f-name" type="text" /></div>
         <div><label for="f-comp">Unternehmen</label><input id="f-comp" type="text" /></div>
@@ -183,7 +200,6 @@
         <div class="full"><label for="f-msg">Nachricht (optional)</label><textarea id="f-msg"></textarea></div>
         <div class="full"><button class="btn" type="submit">Demo buchen</button></div>
       </form>
-      <p class="contact-side" style="margin-top:1.6rem">Die Formulardaten verwenden wir ausschliesslich zur Beantwortung Ihrer Anfrage. <a href="en/privacy.html">Datenschutzerklärung</a><br>Oder direkt: <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:treuhandfirmen@arvut.ch">treuhandfirmen@arvut.ch</a></p>
     </div>
   </div>
 </div></section>

@@ -33,6 +33,21 @@
 <link rel="stylesheet" href="../assets/style.css" />
 <style>
 /* best-лендинг: доводка поверх дизайн-системы */
+/* ЕДИНЫЕ отступы секций; band без двойного паддинга */
+.section{ padding-block:clamp(56px,6vw,96px) !important; }
+.band.section{ padding-block:0 !important; }
+.band.section .wrap{ padding-top:clamp(56px,6vw,96px); padding-bottom:clamp(56px,6vw,96px); }
+/* тексты всегда на всю ширину колонки/страницы — никаких 2/3 */
+.hero-copy .lead{ max-width:none; }
+.s-head .sub{ max-width:none; }
+.lead{ max-width:none; }
+/* splitrow: правый текст начинается на уровне ЗАГОЛОВКА (не выше) */
+.splitrow .sr-body{ padding-top:2.35rem; }
+/* кнопки крупнее */
+.btn{ padding:1.05rem 2.6rem !important; }
+.hero-cta .btn{ padding:1.15rem 3rem !important; }
+/* статичный акцент вместо scramble на бирюзовом band */
+.band .scram-static{ color:var(--on-teal); }
 .hero-media .hero-office{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:46% 40%; }
 .h-hero .h-range{ display:block; margin-top:.5em; font-size:.34em; letter-spacing:.02em; font-weight:700; color:var(--ink-2); text-transform:none; }
 .band .index .no{ color:rgba(251,250,243,.65); }
@@ -70,7 +85,7 @@
   <div class="hero-grid">
     <div class="hero-copy">
       <span class="hero-eyebrow">For businesses</span>
-      <h1 class="h-hero">Switzerland's <span class="out scram" data-text="best">best</span> fiduciaries<span class="h-range">— from startup to 250 employees</span></h1>
+      <h1 class="h-hero">Switzerland's <span class="out">best</span> fiduciaries<span class="h-range">— from startup to 250 employees</span></h1>
       <p class="lead">We partner with leading AI-native fiduciaries across German-, French- and Italian-speaking Switzerland. For small businesses &mdash; a fiduciary always at hand. For larger ones &mdash; a complete financial back office, run by your fiduciary, without your own finance department.</p>
       <div class="hero-cta">
         <a class="btn" href="#kontakt">Book a demo &rarr;</a>
@@ -85,7 +100,7 @@
 
 <!-- 2 — Metaphor -->
 <section class="section"><div class="wrap"><div class="splitrow reveal">
-  <div class="sr-head"><span class="s-no meta meta-teal">The metaphor</span><h2 class="h1">Like hiring a CFO &mdash; without the <span class="acc scram-view" data-text="CFO's">CFO's</span> salary</h2></div>
+  <div class="sr-head"><span class="s-no meta meta-teal">The metaphor</span><h2 class="h1">Like hiring a CFO &mdash; without the <span class="acc">CFO's</span> salary</h2></div>
   <div class="sr-body"><p>A modern fiduciary in our network does more than the books. It runs your financial back office end to end, in real time. Whether you have 0 or 250 employees, you get the finance function of a much larger company &mdash; without building one.</p></div>
 </div></div></section>
 
@@ -94,7 +109,7 @@
   <div class="s-head reveal">
     <span class="s-no meta meta-teal">Six services</span>
     <div>
-      <h2 class="h1">Beyond <span class="acc scram-view" data-text="accounting">accounting</span></h2>
+      <h2 class="h1">Beyond <span class="acc">accounting</span></h2>
       <p class="lead sub">Every fiduciary in the network runs this for you, under their own name:</p>
     </div>
   </div>
@@ -112,7 +127,7 @@
 <section class="section"><div class="wrap">
   <div class="s-head reveal">
     <span class="s-no meta meta-teal">For whom</span>
-    <div><h2 class="h1">Built for every <span class="acc scram-view" data-text="size">size</span></h2></div>
+    <div><h2 class="h1">Built for every <span class="acc">size</span></h2></div>
   </div>
   <div class="beliefs reveal">
     <div class="b"><h3>Small business</h3><p>Stop doing it yourself, and leave the slow, paper-based fiduciary behind. An AI-native fiduciary keeps your books current &mdash; without adding headcount.</p></div>
@@ -122,14 +137,14 @@
 
 <!-- 5 — Why it pays off -->
 <section class="section"><div class="wrap"><div class="splitrow reveal">
-  <div class="sr-head"><span class="s-no meta meta-teal">Why it pays off</span><h2 class="h1">Better finance, <span class="acc scram-view" data-text="lower">lower</span> cost</h2></div>
+  <div class="sr-head"><span class="s-no meta meta-teal">Why it pays off</span><h2 class="h1">Better finance, <span class="acc">lower</span> cost</h2></div>
   <div class="sr-body"><p>For small and mid-sized companies, a fiduciary from our network costs less than a traditional one. For larger ones, it's a fraction of the cost of your own accountant or finance team. You get more &mdash; real-time visibility, automation, a CFO-grade view &mdash; and pay less than the alternative.</p></div>
 </div></div></section>
 
 <!-- 6 — What makes them the best (criteria; copy verbatim from Arvut Strategy 01.07) -->
 <section class="section band bleed"><div class="wrap">
-  <h2 class="h1 sec-h reveal">What makes them the <span class="scram scram-view" data-text="best">best</span></h2>
-  <p class="lead reveal" style="margin-bottom:2.4rem;max-width:66ch">&ldquo;Best&rdquo; is not a claim &mdash; it's a checklist. Every fiduciary in the network meets five verifiable criteria:</p>
+  <h2 class="h1 sec-h reveal">What makes them the <span class="scram-static">best</span></h2>
+  <p class="lead reveal" style="margin-bottom:2.4rem;max-width:none">&ldquo;Best&rdquo; is not a claim &mdash; it's a checklist. Every fiduciary in the network meets five verifiable criteria:</p>
   <div class="index">
     <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">01</span>Books in real time.</h3><p>Entries are posted as documents arrive &mdash; not once a quarter. You see today's balance sheet, P&amp;L and cash position, not a report about the past.</p></div></div>
     <div class="item reveal"><div class="it-main"><h3 style="color:var(--on-teal)"><span class="no" style="margin-right:.9rem">02</span>Every figure reconciled to the source.</h3><p>Bank statements, cash registers and invoices are matched to the rappen. Behind every entry there is a document.</p></div></div>
@@ -156,7 +171,7 @@
   <div class="s-head reveal">
     <span class="s-no meta meta-teal">How it works</span>
     <div>
-      <h2 class="h1">We match you with the right <span class="acc scram-view" data-text="fiduciary">fiduciary</span></h2>
+      <h2 class="h1">We match you with the right <span class="acc">fiduciary</span></h2>
       <p class="lead sub">We don't publish the list openly. Instead, you reach out to us directly &mdash; and we take the matching from there.</p>
     </div>
   </div>
@@ -165,15 +180,17 @@
     <div class="st"><div class="n">2</div><h3>Meeting &amp; live demo</h3><p>we show how it works on real scenarios and look at your situation.</p></div>
     <div class="st"><div class="n">3</div><h3>We match a partner</h3><p>by your canton, language and size, we hand you to the right fiduciary in our network.</p></div>
   </div>
-  <p class="lead-narrow reveal" style="margin-top:2rem;color:var(--ink-2)">Every fiduciary in the network is selected, AI-native and Arvut-powered. Real-time reporting &middot; Swiss hosting &middot; revDSG-compliant.</p>
+  <p class="lead reveal" style="margin-top:2rem;max-width:none;color:var(--ink-2)">Every fiduciary in the network is selected, AI-native and Arvut-powered. Real-time reporting &middot; Swiss hosting &middot; revDSG-compliant.</p>
 </div></section>
 
 <!-- 9 — CTA + lead form -->
 <section class="section" id="kontakt"><div class="wrap">
   <div class="splitrow reveal" style="align-items:start">
-    <div class="sr-head"><span class="s-no meta meta-teal">Contact</span><h2 class="h1">Shall we <span class="acc scram-view" data-text="start">start</span>?</h2></div>
+    <div class="sr-head"><span class="s-no meta meta-teal">Contact</span><h2 class="h1">Shall we <span class="acc">start</span>?</h2>
+      <p style="margin-top:1.6rem;max-width:none;color:var(--ink-2)">Book a demo &mdash; or just write to us. We'll get to know you, show you the system, and match you with the right fiduciary.</p>
+      <p class="contact-side" style="margin-top:1.6rem">We use the form data solely to answer your request. <a href="privacy.html">Privacy policy</a><br>Or directly: <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:fiduciaries@arvut.ch">fiduciaries@arvut.ch</a></p>
+    </div>
     <div class="sr-body">
-      <p style="margin-bottom:1.8rem">Book a demo &mdash; or just write to us. We'll get to know you, show you the system, and match you with the right fiduciary.</p>
       <form class="cform" id="cform">
         <div><label for="f-name">Name</label><input id="f-name" type="text" /></div>
         <div><label for="f-comp">Company</label><input id="f-comp" type="text" /></div>
@@ -183,7 +200,6 @@
         <div class="full"><label for="f-msg">Message (optional)</label><textarea id="f-msg"></textarea></div>
         <div class="full"><button class="btn" type="submit">Book a demo</button></div>
       </form>
-      <p class="contact-side" style="margin-top:1.6rem">We use the form data solely to answer your request. <a href="privacy.html">Privacy policy</a><br>Or directly: <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:fiduciaries@arvut.ch">fiduciaries@arvut.ch</a></p>
     </div>
   </div>
 </div></section>
