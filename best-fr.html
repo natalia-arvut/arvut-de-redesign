@@ -48,7 +48,11 @@
 .hero-cta .btn{ padding:1.15rem 3rem !important; }
 /* статичный акцент вместо scramble на бирюзовом band */
 .band .scram-static{ color:var(--on-teal); }
-.hero-media .hero-office{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:46% 40%; }
+.hero-map{ display:flex; align-items:center; justify-content:center; border-left:0 !important; padding:4% 4% 4% 1%; }
+.hero-map img{ width:100%; max-width:760px; height:auto; }
+.hero .hero-media::after{ display:none; }
+#kontakt.section{ padding-top:clamp(20px,2.4vw,36px) !important; }
+.contact-office{ width:100%; height:auto; border-radius:14px; margin-top:2rem; display:block; }
 .h-hero .h-range{ display:block; margin-top:.5em; font-size:.34em; letter-spacing:.02em; font-weight:700; color:var(--ink-2); text-transform:none; }
 .band .index .no{ color:rgba(251,250,243,.65); }
 .band .index h3{ position:relative; padding-left:2.6rem; }
@@ -92,8 +96,8 @@
       </div>
       <div class="hero-trustline"><span>Reporting en temps réel</span><span>Hébergement suisse</span><span>Conforme à la nLPD</span></div>
     </div>
-    <div class="hero-media">
-      <img class="hero-office" src="assets/hero-best-fr.jpg" alt="Un bureau de direction : le portail fiduciaire en temps réel sur un écran" />
+    <div class="hero-map">
+      <img src="assets/ch-map.svg" alt="Carte de la Suisse : les fiduciaires du réseau marquées d’étoiles dans les principales villes" />
     </div>
   </div>
 </section>
@@ -188,7 +192,7 @@
   <div class="splitrow reveal" style="align-items:start">
     <div class="sr-head"><span class="s-no meta meta-teal">Contact</span><h2 class="h1">On <span class="acc">commence</span> ?</h2>
       <p style="margin-top:1.6rem;max-width:none;color:var(--ink-2)">Réservez une démo &mdash; ou écrivez-nous simplement. Nous ferons connaissance, vous montrerons le système et vous orienterons vers la fiduciaire adaptée.</p>
-      <p class="contact-side" style="margin-top:1.6rem">Nous utilisons les données du formulaire uniquement pour répondre à votre demande. <a href="en/privacy.html">Protection des données</a><br>Ou directement : <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:fiduciaires@arvut.ch">fiduciaires@arvut.ch</a></p>
+      <img class="contact-office" src="assets/hero-best-fr.jpg" alt="Un bureau de direction : le portail fiduciaire en temps réel sur un écran" />
     </div>
     <div class="sr-body">
       <form class="cform" id="cform">
@@ -200,6 +204,7 @@
         <div class="full"><label for="f-msg">Message (facultatif)</label><textarea id="f-msg"></textarea></div>
         <div class="full"><button class="btn" type="submit">Réserver une démo</button></div>
       </form>
+      <p class="contact-side" style="margin-top:1.6rem">Nous utilisons les données du formulaire uniquement pour répondre à votre demande. <a href="en/privacy.html">Protection des données</a><br>Ou directement : <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:fiduciaires@arvut.ch">fiduciaires@arvut.ch</a></p>
     </div>
   </div>
 </div></section>

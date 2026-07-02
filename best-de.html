@@ -48,7 +48,11 @@
 .hero-cta .btn{ padding:1.15rem 3rem !important; }
 /* статичный акцент вместо scramble на бирюзовом band */
 .band .scram-static{ color:var(--on-teal); }
-.hero-media .hero-office{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:46% 40%; }
+.hero-map{ display:flex; align-items:center; justify-content:center; border-left:0 !important; padding:4% 4% 4% 1%; }
+.hero-map img{ width:100%; max-width:760px; height:auto; }
+.hero .hero-media::after{ display:none; }
+#kontakt.section{ padding-top:clamp(20px,2.4vw,36px) !important; }
+.contact-office{ width:100%; height:auto; border-radius:14px; margin-top:2rem; display:block; }
 .h-hero .h-range{ display:block; margin-top:.5em; font-size:.34em; letter-spacing:.02em; font-weight:700; color:var(--ink-2); text-transform:none; }
 .band .index .no{ color:rgba(251,250,243,.65); }
 .band .index h3{ position:relative; padding-left:2.6rem; }
@@ -92,8 +96,8 @@
       </div>
       <div class="hero-trustline"><span>Echtzeit-Reporting</span><span>Swiss Hosting</span><span>revDSG-konform</span></div>
     </div>
-    <div class="hero-media">
-      <img class="hero-office" src="assets/hero-best-de.jpg" alt="Ein Chefbüro: das Echtzeit-Treuhandportal auf einem Desktop-Monitor" />
+    <div class="hero-map">
+      <img src="assets/ch-map.svg" alt="Karte der Schweiz: die Treuhänder des Netzwerks mit Sternen in den wichtigsten Städten" />
     </div>
   </div>
 </section>
@@ -188,7 +192,7 @@
   <div class="splitrow reveal" style="align-items:start">
     <div class="sr-head"><span class="s-no meta meta-teal">Kontakt</span><h2 class="h1"><span class="acc">Legen</span> wir los?</h2>
       <p style="margin-top:1.6rem;max-width:none;color:var(--ink-2)">Buchen Sie eine Demo &mdash; oder schreiben Sie uns einfach. Wir lernen uns kennen, zeigen Ihnen das System und vermitteln Ihnen den passenden Treuhänder.</p>
-      <p class="contact-side" style="margin-top:1.6rem">Die Formulardaten verwenden wir ausschliesslich zur Beantwortung Ihrer Anfrage. <a href="en/privacy.html">Datenschutzerklärung</a><br>Oder direkt: <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:treuhandfirmen@arvut.ch">treuhandfirmen@arvut.ch</a></p>
+      <img class="contact-office" src="assets/hero-best-de.jpg" alt="Ein Chefbüro: das Echtzeit-Treuhandportal auf einem Desktop-Monitor" />
     </div>
     <div class="sr-body">
       <form class="cform" id="cform">
@@ -200,6 +204,7 @@
         <div class="full"><label for="f-msg">Nachricht (optional)</label><textarea id="f-msg"></textarea></div>
         <div class="full"><button class="btn" type="submit">Demo buchen</button></div>
       </form>
+      <p class="contact-side" style="margin-top:1.6rem">Die Formulardaten verwenden wir ausschliesslich zur Beantwortung Ihrer Anfrage. <a href="en/privacy.html">Datenschutzerklärung</a><br>Oder direkt: <a href="https://calendly.com/arvut">calendly.com/arvut</a> &middot; <a href="mailto:treuhandfirmen@arvut.ch">treuhandfirmen@arvut.ch</a></p>
     </div>
   </div>
 </div></section>
