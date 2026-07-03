@@ -1,0 +1,146 @@
+<!doctype html>
+<!--
+  /ru/yasnost — public footer page "Financial clarity in real time".
+  Redesigned in the site's own class system; copy VERBATIM from the production
+  React page (Arvut Strategy 2026-07-03, RU master). Guardrails:
+   * No engine name, no inner mechanics, no prices, no client-flow claim.
+   * Two-door funnel: Door A (SME) -> /best matching · Door B (fiduciary) -> contact.
+   * Closing NDA line = a bridge, not an explanation.
+-->
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#fcfaf4" />
+<title>Финансовая ясность в реальном времени — сколько ваша компания стоит сегодня | Arvut</title>
+<meta name="description" content="Учёт, в котором баланс, маржа и платёжеспособность видны в реальном времени — взгляд финансового директора для малого и среднего бизнеса. Подбор фидуциарии бесплатно." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://arvut.ch/ru/yasnost" />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Arvut" />
+<meta property="og:title" content="Финансовая ясность в реальном времени — сколько ваша компания стоит сегодня | Arvut" />
+<meta property="og:description" content="Учёт, в котором баланс, маржа и платёжеспособность видны в реальном времени — взгляд финансового директора для малого и среднего бизнеса. Подбор фидуциарии бесплатно." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script>document.documentElement.className='js';</script>
+<link rel="stylesheet" href="assets/style.css" />
+<style>
+/* clarity — light doc-page tweaks on top of the design system */
+.section{ padding-block:clamp(40px,4.4vw,66px); }
+.band.section .wrap{ padding-top:clamp(40px,4.4vw,66px); padding-bottom:clamp(40px,4.4vw,66px); }
+.lead{ max-width:none; }
+.s-head .sub{ max-width:none; }
+.splitrow .sr-body{ padding-top:3.1rem; }
+.doors .b{ display:flex; flex-direction:column; align-items:flex-start; }
+.doors .b .door-label{ display:block; margin-bottom:.7rem; }
+.doors .b p{ margin:0 0 1.4rem; }
+.doors .b .btn{ margin-top:auto; }
+</style>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap nav">
+    <a class="brand" href="en/index.html" aria-label="Arvut Accounting"><img src="assets/logo-arvut.png" alt="Arvut Accounting" /></a>
+    <nav class="nav-links" aria-label="Navigation"><a href="en/how-it-works.html">Как это работает</a><a href="en/services.html">Услуги</a><a href="en/pricing.html">Цены</a><a href="en/security.html">Безопасность</a><span class="has-sub"><a href="en/company.html">Компания</a><span class="nav-sub"><a href="en/company.html">О компании</a><a href="en/team.html">Команда</a><a href="en/careers.html">Карьера</a></span></span></nav>
+    <div class="nav-right">
+      <div class="lang"><a href="clarity-de.html">de</a><a href="clarity-fr.html">fr</a><a href="clarity-it.html">it</a><a href="clarity.html">en</a></div>
+      <a class="btn" href="en/contact.html">Запустить пилот</a>
+    </div>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="m-menu" id="mmenu">
+  <a href="en/how-it-works.html">Как это работает</a><a href="en/services.html">Услуги</a><a href="en/pricing.html">Цены</a><a href="en/security.html">Безопасность</a><a href="en/company.html">Компания</a>
+  <a class="btn" href="en/contact.html">Запустить пилот</a>
+  <div class="m-lang"><a href="clarity-de.html">DE</a><a href="clarity-fr.html">FR</a><a href="clarity-it.html">IT</a><a href="clarity.html">EN</a><a href="clarity-ru.html">RU</a></div>
+</div>
+<main id="top">
+
+<!-- 1 — Hero -->
+<section class="page-hero"><div class="wrap">
+  <span class="s-no reveal">Финансовая ясность</span>
+  <h1 class="h1">Сколько ваша компания зарабатывает и стоит — сегодня, а не через квартал</h1>
+  <p class="lead reveal">Большинство компаний видят свои настоящие цифры раз в квартал, когда что-то менять уже поздно. Есть другой способ: учёт, в котором баланс, маржа и платёжеспособность видны в реальном времени — как их видел бы сильный финансовый директор.</p>
+</div></section>
+
+<!-- 2 — The problem (shared) -->
+<section class="section"><div class="wrap">
+  <div class="s-head reveal"><span class="s-no">Проблема</span><div><h2 class="h1">Отчёт о прошлом — не то же самое, что взгляд на настоящее</h2></div></div>
+  <p class="prose reveal" style="max-width:72ch;margin-top:1.4rem">Стандартная бухгалтерия отвечает налоговой и показывает вчерашний день по историческим ценам. Для соблюдения закона этого достаточно. Для управления компанией — нет. Руководителю нужны другие ответы: сколько мы зарабатываем на самом деле, хватает ли денег, какая маржа по каждому направлению, где решение назрело уже сегодня.</p>
+</div></section>
+
+<!-- 3 — What the approach gives (result, not mechanics) -->
+<section class="section"><div class="wrap">
+  <div class="s-head reveal"><span class="s-no">Наш подход</span><div><h2 class="h1">Учёт, на который можно опереться при решении</h2><p class="lead sub">Arvut ведёт учёт иначе — так, что управленческая картина возникает из тех же данных, что и легальная отчётность, и обновляется по мере поступления документов. Что это даёт руководству:</p></div></div>
+  <div class="index">
+    <div class="item reveal"><div class="it-main"><h3><span class="no" style="margin-right:.8rem">01</span>Платёжеспособность в реальном времени.</h3><p>Сколько компания стоит и сколько у неё есть — сейчас, а не в квартальном отчёте.</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3><span class="no" style="margin-right:.8rem">02</span>Настоящая маржа.</h3><p>Что действительно зарабатывает каждое направление, очищенное от искажений учёта по себестоимости.</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3><span class="no" style="margin-right:.8rem">03</span>Ранние сигналы.</h3><p>Проблемный клиент или проседающее направление видны, пока это ещё можно исправить.</p></div></div>
+    <div class="item reveal"><div class="it-main"><h3><span class="no" style="margin-right:.8rem">04</span>Устойчивость к искажениям.</h3><p>Каждая цифра сверена с первичкой до раппена — картина не «рисуется», а следует из документов.</p></div></div>
+  </div>
+</div></section>
+
+<!-- Category line — the spine -->
+<section class="section band bleed"><div class="wrap">
+  <p class="band-statement reveal">Это не дашборд поверх старых книг. Это другой способ производства финансовых данных — и в этом разница между «посмотреть отчёт» и «видеть компанию».</p>
+</div></section>
+
+<!-- 4 — CFO role (SEO/GEO core) -->
+<section class="section"><div class="wrap">
+  <div class="splitrow reveal"><div class="sr-head"><span class="s-no">Роль финдиректора</span><h2 class="h1">Взгляд финансового директора — без найма финансового директора</h2></div>
+    <div class="sr-body"><p>Большинству малых и средних компаний не по карману штатный CFO. Но именно его вопросы — о ликвидности, марже, устойчивости — определяют, растёт компания или буксует. Современная фидуциария, работающая на инфраструктуре Arvut, берёт эту роль на себя: real-time учёт как основа, а поверх — разговор о цифрах на уровне руководства, а не сдача отчётности.</p></div></div>
+</div></section>
+
+<!-- 5 — The fork (two doors) -->
+<section class="section"><div class="wrap">
+  <div class="s-head reveal"><span class="s-no">Две двери</span><div><h2 class="h1">С чего начать</h2></div></div>
+  <div class="beliefs doors reveal">
+    <div class="b"><span class="s-no meta-teal door-label">Для бизнеса</span><p>Вы — компания и хотите так видеть свои цифры? Мы бесплатно подберём фидуциарию сети, которая работает на этой инфраструктуре — по вашему кантону, языку и отрасли.</p><a class="btn" href="best-ru.html">Подобрать фидуциарию &rarr;</a></div>
+    <div class="b"><span class="s-no meta-teal door-label">Для фидуциарий</span><p>Вы — фидуциария и хотите предложить это своим клиентам? Это часть того, что Arvut даёт партнёрам сети — вместе с real-time производством под вашим брендом и потоком входящих запросов.</p><a class="btn btn--out" href="en/contact.html">Стать партнёром &rarr;</a></div>
+  </div>
+</div></section>
+
+<!-- 6 — NDA bridge (anonymous — names nothing, explains nothing) -->
+<section class="section"><div class="wrap">
+  <div class="splitrow reveal"><div class="sr-head"><span class="s-no">Технология</span><h2 class="h1">За этим стоит собственная технология</h2></div>
+    <div class="sr-body"><p>За этой возможностью стоит собственная технология Arvut — способ вести учёт, которого сегодня нет ни у одной другой платформы в Швейцарии. Как именно это устроено, мы показываем партнёрам отдельно, под соглашением о конфиденциальности. Это не маркетинговая фигура речи — это то, что мы защищаем.</p></div></div>
+</div></section>
+
+<!-- 7 — FAQ (verbatim -> FAQPage JSON-LD) -->
+<section class="section"><div class="wrap">
+  <div class="s-head reveal"><span class="s-no">FAQ</span><div><h2 class="h1">Частые вопросы</h2></div></div>
+  <div class="faq">
+    <div class="q reveal"><h3>Чем это отличается от обычной бухгалтерии?</h3><p>Обычная бухгалтерия ведётся для налоговой и показывает прошлое по историческим ценам. Наш подход из тех же данных даёт вторую, управленческую картину — платёжеспособность, маржу и стоимость компании в реальном времени. Легальная отчётность при этом остаётся полной и корректной.</p></div>
+    <div class="q reveal"><h3>Нужно ли менять бухгалтера или программу?</h3><p>Нет. Это работает через фидуциарию сети, которая ведёт ваш учёт на инфраструктуре Arvut. Вы получаете и законную отчётность, и управленческий взгляд — из одного источника.</p></div>
+    <div class="q reveal"><h3>Это заменяет финансового директора?</h3><p>Это даёт малому и среднему бизнесу то, ради чего нанимают финдиректора — ясность по деньгам, марже и устойчивости — без затрат на штатную позицию. Решения остаются за вами и вашей фидуциарией.</p></div>
+    <div class="q reveal"><h3>Насколько эти цифры точны?</h3><p>Каждая цифра сверяется с первичными документами — банком, кассой, инвойсами — до раппена. Управленческая картина не оценочная: она следует из проверенных данных.</p></div>
+    <div class="q reveal"><h3>Можно ли увидеть, как это устроено внутри?</h3><p>Публично мы показываем результат, а не механику. Партнёрам сети мы раскрываем технологию отдельно, под соглашением о конфиденциальности.</p></div>
+  </div>
+</div></section>
+
+</main>
+<footer class="site-foot"><div class="wrap">
+    <div class="foot-top">
+      <div><div class="foot-word">Arvut</div><p class="foot-tag">Производство бухгалтерии для швейцарских фидуциарий.</p></div>
+      <div class="foot-col"><h4>Продукт</h4><ul><li><a href="en/how-it-works.html">Как это работает</a></li><li><a href="en/services.html">Услуги</a></li><li><a href="en/pricing.html">Цены</a></li><li><a href="en/security.html">Безопасность</a></li></ul></div>
+      <div class="foot-col"><h4>Компания</h4><ul><li><a href="en/company.html">О компании</a></li><li><a href="en/team.html">Команда</a></li><li><a href="clarity-ru.html">Финансовая ясность</a></li><li><a href="en/contact.html">Контакт</a></li></ul></div>
+      <div class="foot-col"><h4>Язык</h4><ul><li><a href="clarity-de.html">Deutsch</a></li><li><a href="clarity-fr.html">Fran&ccedil;ais</a></li><li><a href="clarity-it.html">Italiano</a></li><li><a href="clarity.html">English</a></li><li><a href="clarity-ru.html">Русский</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Arvut GmbH &middot; Unterm&uuml;li 9, 6300 Zug &middot; CHE-192.778.668</span>
+      <span><a href="en/imprint.html">Impressum</a> &nbsp;&middot;&nbsp; <a href="en/privacy.html">Datenschutz</a></span>
+    </div>
+  </div></footer>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Чем это отличается от обычной бухгалтерии?","acceptedAnswer":{"@type":"Answer","text":"Обычная бухгалтерия ведётся для налоговой и показывает прошлое по историческим ценам. Наш подход из тех же данных даёт вторую, управленческую картину — платёжеспособность, маржу и стоимость компании в реальном времени. Легальная отчётность при этом остаётся полной и корректной."}},
+{"@type":"Question","name":"Нужно ли менять бухгалтера или программу?","acceptedAnswer":{"@type":"Answer","text":"Нет. Это работает через фидуциарию сети, которая ведёт ваш учёт на инфраструктуре Arvut. Вы получаете и законную отчётность, и управленческий взгляд — из одного источника."}},
+{"@type":"Question","name":"Это заменяет финансового директора?","acceptedAnswer":{"@type":"Answer","text":"Это даёт малому и среднему бизнесу то, ради чего нанимают финдиректора — ясность по деньгам, марже и устойчивости — без затрат на штатную позицию. Решения остаются за вами и вашей фидуциарией."}},
+{"@type":"Question","name":"Насколько эти цифры точны?","acceptedAnswer":{"@type":"Answer","text":"Каждая цифра сверяется с первичными документами — банком, кассой, инвойсами — до раппена. Управленческая картина не оценочная: она следует из проверенных данных."}},
+{"@type":"Question","name":"Можно ли увидеть, как это устроено внутри?","acceptedAnswer":{"@type":"Answer","text":"Публично мы показываем результат, а не механику. Партнёрам сети мы раскрываем технологию отдельно, под соглашением о конфиденциальности."}}]}
+</script>
+<script src="assets/main.js"></script>
+</body>
+</html>
