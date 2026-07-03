@@ -47,6 +47,7 @@
 .page-hero + .section{ padding-top:clamp(26px,2.8vw,40px); }
 .problem-row .sr-body{ padding-top:.4rem; }
 .band-statement{ font-size:clamp(1.5rem,3vw,2.6rem); line-height:1.1; letter-spacing:-.02em; }
+.band-statement .blk{ color:#0d0d0d; }
 .band-grid{ display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(1.8rem,3.6vw,3.6rem); align-items:center; }
 .band-viz{ background:var(--paper); border-radius:16px; padding:clamp(1rem,1.8vw,1.5rem) clamp(1rem,1.8vw,1.6rem); box-shadow:0 26px 64px -34px rgba(0,0,0,.5); }
 .band-viz svg{ display:block; width:100%; height:auto; }
@@ -99,13 +100,14 @@
 <!-- Category line — the spine -->
 <section class="section band bleed"><div class="wrap">
   <div class="band-grid">
-    <p class="band-statement reveal">Non è un cruscotto sopra i vecchi libri. È un altro modo di produrre il dato finanziario — la differenza tra leggere un rapporto e vedere l'azienda.</p>
+    <p class="band-statement reveal">Non è un cruscotto sopra i vecchi libri. È un <span class="blk">altro modo</span> di produrre il dato finanziario — la differenza tra leggere un rapporto e vedere l'azienda.</p>
     <div class="band-viz reveal"><svg class="clarity-viz" viewBox="0 0 1000 660" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Company finances in real time">
 <style>
- .cv-past{stroke:#00787c;stroke-width:3.4;fill:none;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1600;stroke-dashoffset:1600;animation:cvdraw 1.7s cubic-bezier(.25,.6,.2,1) .2s forwards;}
- .cv-fut{stroke:#009b9f;stroke-width:2.6;fill:none;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:2 9;opacity:0;animation:cvfade .8s ease 1.7s forwards;}
+ .cv-past{stroke:#00787c;stroke-width:3.4;fill:none;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1700;stroke-dashoffset:1700;animation:cvdraw 1.8s cubic-bezier(.25,.6,.2,1) .2s forwards;}
+ .cv-fut{stroke:#009b9f;stroke-width:2.6;fill:none;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:2 9;opacity:0;animation:cvfade .8s ease 1.8s forwards;}
  .cv-area{opacity:0;animation:cvfade 1.2s ease .6s forwards;}
  .cv-node{transform-box:fill-box;transform-origin:center;animation:cvsp 2.8s ease-in-out infinite;}
+ .cv-mk{opacity:0;animation:cvfade .5s ease 1.5s forwards;}
  .cv-glow{transform-box:fill-box;transform-origin:center;animation:cvpulse 2.6s ease-in-out infinite;}
  .cv-live{transform-box:fill-box;transform-origin:center;animation:cvpulse 1.8s ease-in-out infinite;}
  .cv-today,.cv-mark,.cv-livewrap{opacity:0;animation:cvfade .7s ease 1.5s forwards;}
@@ -113,33 +115,34 @@
  @keyframes cvfade{to{opacity:1;}}
  @keyframes cvsp{0%,100%{opacity:.55;transform:scale(.8);}50%{opacity:1;transform:scale(1.15);}}
  @keyframes cvpulse{0%,100%{opacity:.35;transform:scale(.7);}50%{opacity:.9;transform:scale(1.25);}}
- .static .cv-past,.static .cv-fut,.static .cv-area,.static .cv-node,.static .cv-glow,.static .cv-live,.static .cv-today,.static .cv-mark,.static .cv-livewrap{animation:none!important;opacity:1!important;stroke-dashoffset:0!important;}
+ .static .cv-past,.static .cv-fut,.static .cv-area,.static .cv-node,.static .cv-mk,.static .cv-glow,.static .cv-live,.static .cv-today,.static .cv-mark,.static .cv-livewrap{animation:none!important;opacity:1!important;stroke-dashoffset:0!important;}
  .static .cv-glow{opacity:.85!important;}
- @media (prefers-reduced-motion:reduce){.cv-past,.cv-fut,.cv-area,.cv-node,.cv-glow,.cv-live,.cv-today,.cv-mark,.cv-livewrap{animation:none;opacity:1;stroke-dashoffset:0;}}
+ @media (prefers-reduced-motion:reduce){.cv-past,.cv-fut,.cv-area,.cv-node,.cv-mk,.cv-glow,.cv-live,.cv-today,.cv-mark,.cv-livewrap{animation:none;opacity:1;stroke-dashoffset:0;}}
 </style>
 <defs>
  <filter id="cvg" x="-140%" y="-140%" width="380%" height="380%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
  <linearGradient id="cvarea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#009b9f" stop-opacity=".16"/><stop offset="1" stop-color="#009b9f" stop-opacity="0"/></linearGradient>
 </defs>
-<g stroke="#d7d7d0" stroke-width="1">
- <line x1="60" y1="180" x2="940" y2="180" opacity=".55"/><line x1="60" y1="290" x2="940" y2="290" opacity=".55"/>
- <line x1="60" y1="400" x2="940" y2="400" opacity=".55"/><line x1="60" y1="510" x2="940" y2="510" opacity=".55"/>
-</g>
-<line x1="60" y1="560" x2="940" y2="560" stroke="#c7c7bf" stroke-width="1.6"/>
-<polygon class="cv-area" fill="url(#cvarea)" points="70,470 170,440 270,470 370,388 470,412 560,330 648,300 648,560 70,560"/>
-<polyline class="cv-past" points="70,470 170,440 270,470 370,388 470,412 560,330 648,300"/>
-<polyline class="cv-fut" points="648,300 748,272 848,306 930,258"/>
-<g fill="#00787c">
- <path class="cv-node" style="animation-delay:0s" transform="translate(170,440)" d="M0,-5 L1.4,-1.4 L5,0 L1.4,1.4 L0,5 L-1.4,1.4 L-5,0 L-1.4,-1.4 Z"/>
- <path class="cv-node" style="animation-delay:.5s" transform="translate(270,470)" d="M0,-5 L1.4,-1.4 L5,0 L1.4,1.4 L0,5 L-1.4,1.4 L-5,0 L-1.4,-1.4 Z"/>
- <path class="cv-node" style="animation-delay:.9s" transform="translate(370,388)" d="M0,-5 L1.4,-1.4 L5,0 L1.4,1.4 L0,5 L-1.4,1.4 L-5,0 L-1.4,-1.4 Z"/>
- <path class="cv-node" style="animation-delay:.3s" transform="translate(470,412)" d="M0,-5 L1.4,-1.4 L5,0 L1.4,1.4 L0,5 L-1.4,1.4 L-5,0 L-1.4,-1.4 Z"/>
- <path class="cv-node" style="animation-delay:.7s" transform="translate(560,330)" d="M0,-5 L1.4,-1.4 L5,0 L1.4,1.4 L0,5 L-1.4,1.4 L-5,0 L-1.4,-1.4 Z"/>
-</g>
-<g class="cv-mark"><line x1="648" y1="150" x2="648" y2="575" stroke="#009b9f" stroke-width="1.4" stroke-dasharray="3 6" opacity=".45"/></g>
-<circle class="cv-glow" cx="648" cy="300" r="16" fill="#009b9f" filter="url(#cvg)"/>
-<circle cx="648" cy="300" r="9.5" fill="none" stroke="#00787c" stroke-width="2.6"/>
-<circle cx="648" cy="300" r="4.6" fill="#00787c"/>
+<!-- grid -->
+<g stroke="#d7d7d0" stroke-width="1" opacity=".7"><line x1="90" y1="250" x2="940" y2="250"/><line x1="90" y1="340" x2="940" y2="340"/><line x1="90" y1="430" x2="940" y2="430"/><line x1="90" y1="520" x2="940" y2="520"/></g>
+<g stroke="#dcdcd6" stroke-width="1" opacity=".55" stroke-dasharray="2 7"><line x1="230" y1="170" x2="230" y2="560"/><line x1="370" y1="170" x2="370" y2="560"/><line x1="510" y1="170" x2="510" y2="560"/><line x1="790" y1="170" x2="790" y2="560"/></g>
+<!-- axes + ticks -->
+<g stroke="#7c8783" stroke-width="1.3" opacity=".55"><line x1="82" y1="250" x2="90" y2="250"/><line x1="82" y1="340" x2="90" y2="340"/><line x1="82" y1="430" x2="90" y2="430"/><line x1="82" y1="520" x2="90" y2="520"/><line x1="215" y1="560" x2="215" y2="568"/><line x1="300" y1="560" x2="300" y2="568"/><line x1="385" y1="560" x2="385" y2="568"/><line x1="470" y1="560" x2="470" y2="568"/><line x1="555" y1="560" x2="555" y2="568"/><line x1="648" y1="560" x2="648" y2="568"/><line x1="745" y1="560" x2="745" y2="568"/><line x1="842" y1="560" x2="842" y2="568"/><line x1="930" y1="560" x2="930" y2="568"/></g>
+<line x1="90" y1="170" x2="90" y2="560" stroke="#7c8783" stroke-width="1.3" opacity=".5"/>
+<line x1="90" y1="560" x2="940" y2="560" stroke="#7c8783" stroke-width="1.6" opacity=".6"/>
+<!-- area + lines -->
+<polygon class="cv-area" fill="url(#cvarea)" points="130,470 215,435 300,475 385,395 470,425 555,340 648,305 648,560 130,560"/>
+<polyline class="cv-past" points="130,470 215,435 300,475 385,395 470,425 555,340 648,305"/>
+<polyline class="cv-fut" points="648,305 745,278 842,312 930,262"/>
+<!-- mid sparkle nodes -->
+<g fill="#00787c"><path class="cv-node" style="animation-delay:0.0s" transform="translate(130,470)" d="M0,-5 L1.4,-1.4 L5,0 L1.4,1.4 L0,5 L-1.4,1.4 L-5,0 L-1.4,-1.4 Z"/><path class="cv-node" style="animation-delay:0.4s" transform="translate(555,340)" d="M0,-5 L1.4,-1.4 L5,0 L1.4,1.4 L0,5 L-1.4,1.4 L-5,0 L-1.4,-1.4 Z"/></g>
+<!-- emphasized peak/valley markers -->
+<g class="cv-mk"><circle cx="215" cy="435" r="8" fill="none" stroke="#00787c" stroke-width="2"/><circle cx="215" cy="435" r="3.4" fill="#00787c"/></g><g class="cv-mk"><circle cx="300" cy="475" r="8" fill="none" stroke="#00787c" stroke-width="2"/><circle cx="300" cy="475" r="3.4" fill="#00787c"/></g><g class="cv-mk"><circle cx="385" cy="395" r="8" fill="none" stroke="#00787c" stroke-width="2"/><circle cx="385" cy="395" r="3.4" fill="#00787c"/></g><g class="cv-mk"><circle cx="470" cy="425" r="8" fill="none" stroke="#00787c" stroke-width="2"/><circle cx="470" cy="425" r="3.4" fill="#00787c"/></g>
+<!-- TODAY marker + node -->
+<g class="cv-mark"><line x1="648" y1="150" x2="648" y2="575" stroke="#009b9f" stroke-width="1.4" stroke-dasharray="3 6" opacity=".5"/></g>
+<circle class="cv-glow" cx="648" cy="305" r="16" fill="#009b9f" filter="url(#cvg)"/>
+<circle cx="648" cy="305" r="9.5" fill="none" stroke="#00787c" stroke-width="2.6"/>
+<circle cx="648" cy="305" r="4.6" fill="#00787c"/>
 <g class="cv-today"><text x="648" y="132" text-anchor="middle" fill="#00787c" font-family="'JetBrains Mono',monospace" font-size="21" font-weight="600" letter-spacing="3">OGGI</text></g>
 <g class="cv-livewrap"><circle class="cv-live" cx="78" cy="96" r="6" fill="#009b9f"/><text x="98" y="102" fill="#4f5d5a" font-family="'JetBrains Mono',monospace" font-size="17" font-weight="600" letter-spacing="3">TEMPO REALE</text></g>
 </svg></div>
