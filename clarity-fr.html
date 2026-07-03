@@ -37,15 +37,9 @@
 .doors .b .door-label{ display:block; margin-bottom:.7rem; }
 .doors .b p{ margin:0 0 1.4rem; }
 .doors .b .btn{ margin-top:auto; }
-/* --- clarity redesign: differentiate top blocks, full-width text --- */
-.h1 .hl{ background:var(--teal); color:var(--on-teal); padding:.02em .26em; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
-.stmt-head{ margin-bottom:clamp(1.6rem,3vw,2.6rem); }
-.stmt-head .s-no{ display:block; margin-bottom:1.1rem; }
-.stmt-head .h1{ max-width:26ch; }
-.stmt-head .sub{ margin-top:1.2rem; max-width:none; font-size:clamp(1.05rem,1.2vw,1.2rem); line-height:1.6; color:var(--ink-2); }
-.prob-cols{ columns:2; column-gap:clamp(2.4rem,4.6vw,4.6rem); }
-.prob-cols p{ margin:0; color:var(--ink-2); font-size:clamp(1.05rem,1.2vw,1.2rem); line-height:1.62; }
-@media (max-width:760px){ .prob-cols{ columns:1; } }
+/* --- clarity: readable band + single footer line --- */
+.page-hero + .section{ padding-top:clamp(26px,2.8vw,40px); }
+.problem-row .sr-body{ padding-top:.4rem; }
 .band-statement{ font-size:clamp(1.5rem,3vw,2.6rem); line-height:1.1; letter-spacing:-.02em; }
 .faq .q:last-child{ border-bottom:0; }
 </style>
@@ -72,19 +66,18 @@
 <!-- 1 — Hero -->
 <section class="page-hero"><div class="wrap">
   <span class="s-no reveal">Clarté financière</span>
-  <h1 class="h1">Ce que votre entreprise gagne et vaut — <span class="hl">aujourd'hui</span>, pas au prochain trimestre</h1>
+  <h1 class="h1">Ce que votre entreprise gagne et vaut — <span class="acc">aujourd'hui</span>, pas au prochain trimestre</h1>
   <p class="lead reveal">La plupart des entreprises ne voient les vrais chiffres de l'année écoulée qu'au printemps — ou à la fin de l'année suivante —, quand il est déjà trop tard pour changer quoi que ce soit. Il existe une autre voie : une comptabilité où le bilan, la marge et la solvabilité sont visibles en temps réel — comme les verrait un bon directeur financier.</p>
 </div></section>
 
 <!-- 2 — The problem (shared) -->
 <section class="section"><div class="wrap">
-  <div class="stmt-head reveal"><span class="s-no">Le problème</span><h2 class="h1">Un rapport sur le passé n'est pas une vue du présent</h2></div>
-  <div class="prob-cols reveal"><p>En Suisse, presque rien n'incite à clôturer les comptes à temps : le fisc n'inflige aucune pénalité pour un dépôt jusqu'à la fin de l'année, et la comptabilité est par habitude vue comme un outil pour l'impôt, non pour la gestion. Résultat : de nombreux dirigeants découvrent les résultats de l'année écoulée bien des mois après la fin de celle-ci. Pour la conformité, cela suffit. Pour diriger une entreprise, non : les décisions se prennent à l'aveugle pendant que les chiffres « mûrissent ».</p></div>
+  <div class="splitrow reveal problem-row"><div class="sr-head"><span class="s-no">Le problème</span><h2 class="h1">Un rapport sur le passé n'est pas une vue du présent</h2></div><div class="sr-body"><p>En Suisse, presque rien n'incite à clôturer les comptes à temps : le fisc n'inflige aucune pénalité pour un dépôt jusqu'à la fin de l'année, et la comptabilité est par habitude vue comme un outil pour l'impôt, non pour la gestion. Résultat : de nombreux dirigeants découvrent les résultats de l'année écoulée bien des mois après la fin de celle-ci. Pour la conformité, cela suffit. Pour diriger une entreprise, non : les décisions se prennent à l'aveugle pendant que les chiffres « mûrissent ».</p></div></div>
 </div></section>
 
 <!-- 3 — What the approach gives (result, not mechanics) -->
 <section class="section"><div class="wrap">
-  <div class="stmt-head reveal"><span class="s-no">Notre approche</span><h2 class="h1">Une comptabilité sur laquelle s'appuyer pour décider</h2><p class="lead sub">Arvut tient les livres autrement — l'image de gestion naît des mêmes données que les comptes légaux et se met à jour à mesure que les pièces arrivent. Ce que cela apporte à la direction :</p></div>
+  <div class="s-head reveal"><span class="s-no">Notre approche</span><div><h2 class="h1">Une comptabilité sur laquelle s'appuyer pour décider</h2><p class="lead sub">Arvut tient les livres autrement — l'image de gestion naît des mêmes données que les comptes légaux et se met à jour à mesure que les pièces arrivent. Ce que cela apporte à la direction :</p></div></div>
   <div class="index">
     <div class="item reveal"><div class="it-main"><h3><span class="no" style="margin-right:.8rem">01</span>Solvabilité en temps réel.</h3><p>Ce que vaut l'entreprise et ce qu'elle détient — maintenant, pas dans un rapport trimestriel.</p></div></div>
     <div class="item reveal"><div class="it-main"><h3><span class="no" style="margin-right:.8rem">02</span>La vraie marge.</h3><p>Ce que chaque activité gagne réellement, débarrassé des distorsions du coût historique.</p></div></div>
