@@ -37,6 +37,17 @@
 .doors .b .door-label{ display:block; margin-bottom:.7rem; }
 .doors .b p{ margin:0 0 1.4rem; }
 .doors .b .btn{ margin-top:auto; }
+/* --- clarity redesign: differentiate top blocks, full-width text --- */
+.h1 .hl{ background:var(--teal); color:var(--on-teal); padding:.02em .26em; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+.stmt-head{ margin-bottom:clamp(1.6rem,3vw,2.6rem); }
+.stmt-head .s-no{ display:block; margin-bottom:1.1rem; }
+.stmt-head .h1{ max-width:26ch; }
+.stmt-head .sub{ margin-top:1.2rem; max-width:none; font-size:clamp(1.05rem,1.2vw,1.2rem); line-height:1.6; color:var(--ink-2); }
+.prob-cols{ columns:2; column-gap:clamp(2.4rem,4.6vw,4.6rem); }
+.prob-cols p{ margin:0; color:var(--ink-2); font-size:clamp(1.05rem,1.2vw,1.2rem); line-height:1.62; }
+@media (max-width:760px){ .prob-cols{ columns:1; } }
+.band-statement{ font-size:clamp(1.5rem,3vw,2.6rem); line-height:1.1; letter-spacing:-.02em; }
+.faq .q:last-child{ border-bottom:0; }
 </style>
 </head>
 <body>
@@ -61,19 +72,19 @@
 <!-- 1 — Hero -->
 <section class="page-hero"><div class="wrap">
   <span class="s-no reveal">Finanzielle Klarheit</span>
-  <h1 class="h1">Was Ihr Unternehmen verdient und wert ist — heute, nicht nächstes Quartal</h1>
+  <h1 class="h1">Was Ihr Unternehmen verdient und wert ist — <span class="hl">heute</span>, nicht nächstes Quartal</h1>
   <p class="lead reveal">Die meisten Unternehmen sehen die echten Zahlen des Vorjahres erst im Frühling — oder am Ende des Folgejahres —, wenn sich kaum noch etwas ändern lässt. Es geht anders: eine Buchhaltung, in der Bilanz, Marge und Zahlungsfähigkeit in Echtzeit sichtbar sind — so, wie ein starker CFO sie sehen würde.</p>
 </div></section>
 
 <!-- 2 — The problem (shared) -->
 <section class="section"><div class="wrap">
-  <div class="s-head reveal"><span class="s-no">Das Problem</span><div><h2 class="h1">Ein Bericht über die Vergangenheit ist kein Blick auf die Gegenwart</h2></div></div>
-  <p class="prose reveal" style="max-width:72ch;margin-top:1.4rem">In der Schweiz drängt kaum etwas dazu, die Bücher rechtzeitig abzuschliessen: Das Steueramt sanktioniert eine Einreichung bis zum Jahresende nicht, und Buchhaltung gilt gewohnheitsmässig als Werkzeug für die Steuer, nicht für die Führung. Die Folge: Viele Führungskräfte erfahren die Vorjahresergebnisse viele Monate nach Jahresende. Für die Compliance reicht das. Um ein Unternehmen zu führen, nicht: Entscheidungen fallen blind, während die Zahlen «reifen».</p>
+  <div class="stmt-head reveal"><span class="s-no">Das Problem</span><h2 class="h1">Ein Bericht über die Vergangenheit ist kein Blick auf die Gegenwart</h2></div>
+  <div class="prob-cols reveal"><p>In der Schweiz drängt kaum etwas dazu, die Bücher rechtzeitig abzuschliessen: Das Steueramt sanktioniert eine Einreichung bis zum Jahresende nicht, und Buchhaltung gilt gewohnheitsmässig als Werkzeug für die Steuer, nicht für die Führung. Die Folge: Viele Führungskräfte erfahren die Vorjahresergebnisse viele Monate nach Jahresende. Für die Compliance reicht das. Um ein Unternehmen zu führen, nicht: Entscheidungen fallen blind, während die Zahlen «reifen».</p></div>
 </div></section>
 
 <!-- 3 — What the approach gives (result, not mechanics) -->
 <section class="section"><div class="wrap">
-  <div class="s-head reveal"><span class="s-no">Unser Ansatz</span><div><h2 class="h1">Eine Buchhaltung, auf die Sie sich bei Entscheidungen stützen können</h2><p class="lead sub">Arvut führt die Bücher anders — so entsteht das Führungsbild aus denselben Daten wie der gesetzliche Abschluss und aktualisiert sich, sobald Belege eintreffen. Was das der Führung gibt:</p></div></div>
+  <div class="stmt-head reveal"><span class="s-no">Unser Ansatz</span><h2 class="h1">Eine Buchhaltung, auf die Sie sich bei Entscheidungen stützen können</h2><p class="lead sub">Arvut führt die Bücher anders — so entsteht das Führungsbild aus denselben Daten wie der gesetzliche Abschluss und aktualisiert sich, sobald Belege eintreffen. Was das der Führung gibt:</p></div>
   <div class="index">
     <div class="item reveal"><div class="it-main"><h3><span class="no" style="margin-right:.8rem">01</span>Zahlungsfähigkeit in Echtzeit.</h3><p>Was das Unternehmen wert ist und was es hat — jetzt, nicht im Quartalsbericht.</p></div></div>
     <div class="item reveal"><div class="it-main"><h3><span class="no" style="margin-right:.8rem">02</span>Echte Marge.</h3><p>Was jeder Bereich tatsächlich verdient, bereinigt um Verzerrungen der Bewertung zu historischen Kosten.</p></div></div>

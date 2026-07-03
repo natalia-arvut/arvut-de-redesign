@@ -37,6 +37,17 @@
 .doors .b .door-label{ display:block; margin-bottom:.7rem; }
 .doors .b p{ margin:0 0 1.4rem; }
 .doors .b .btn{ margin-top:auto; }
+/* --- clarity redesign: differentiate top blocks, full-width text --- */
+.h1 .hl{ background:var(--teal); color:var(--on-teal); padding:.02em .26em; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+.stmt-head{ margin-bottom:clamp(1.6rem,3vw,2.6rem); }
+.stmt-head .s-no{ display:block; margin-bottom:1.1rem; }
+.stmt-head .h1{ max-width:26ch; }
+.stmt-head .sub{ margin-top:1.2rem; max-width:none; font-size:clamp(1.05rem,1.2vw,1.2rem); line-height:1.6; color:var(--ink-2); }
+.prob-cols{ columns:2; column-gap:clamp(2.4rem,4.6vw,4.6rem); }
+.prob-cols p{ margin:0; color:var(--ink-2); font-size:clamp(1.05rem,1.2vw,1.2rem); line-height:1.62; }
+@media (max-width:760px){ .prob-cols{ columns:1; } }
+.band-statement{ font-size:clamp(1.5rem,3vw,2.6rem); line-height:1.1; letter-spacing:-.02em; }
+.faq .q:last-child{ border-bottom:0; }
 </style>
 </head>
 <body>
@@ -61,19 +72,19 @@
 <!-- 1 — Hero -->
 <section class="page-hero"><div class="wrap">
   <span class="s-no reveal">Финансовая ясность</span>
-  <h1 class="h1">Сколько ваша компания зарабатывает и стоит — сегодня, а не через квартал</h1>
+  <h1 class="h1">Сколько ваша компания зарабатывает и стоит — <span class="hl">сегодня</span>, а не через квартал</h1>
   <p class="lead reveal">Большинство компаний видят настоящие цифры прошлого года лишь весной или в конце следующего — когда менять что-либо уже поздно. Есть другой способ: учёт, в котором баланс, маржа и платёжеспособность видны в реальном времени — как их видел бы сильный финансовый директор.</p>
 </div></section>
 
 <!-- 2 — The problem (shared) -->
 <section class="section"><div class="wrap">
-  <div class="s-head reveal"><span class="s-no">Проблема</span><div><h2 class="h1">Отчёт о прошлом — не то же самое, что взгляд на настоящее</h2></div></div>
-  <p class="prose reveal" style="max-width:72ch;margin-top:1.4rem">В Швейцарии почти ничто не подталкивает закрывать книги вовремя: налоговая не штрафует за подачу вплоть до конца года, а бухгалтерию по привычке считают инструментом для налоговой, а не для управления. В результате многие руководители узнают свои прошлогодние результаты спустя много месяцев после того, как год закончился. Для соблюдения закона этого достаточно. Для управления компанией — нет: решения принимаются вслепую, пока цифры «дозревают».</p>
+  <div class="stmt-head reveal"><span class="s-no">Проблема</span><h2 class="h1">Отчёт о прошлом — не то же самое, что взгляд на настоящее</h2></div>
+  <div class="prob-cols reveal"><p>В Швейцарии почти ничто не подталкивает закрывать книги вовремя: налоговая не штрафует за подачу вплоть до конца года, а бухгалтерию по привычке считают инструментом для налоговой, а не для управления. В результате многие руководители узнают свои прошлогодние результаты спустя много месяцев после того, как год закончился. Для соблюдения закона этого достаточно. Для управления компанией — нет: решения принимаются вслепую, пока цифры «дозревают».</p></div>
 </div></section>
 
 <!-- 3 — What the approach gives (result, not mechanics) -->
 <section class="section"><div class="wrap">
-  <div class="s-head reveal"><span class="s-no">Наш подход</span><div><h2 class="h1">Учёт, на который можно опереться при решении</h2><p class="lead sub">Arvut ведёт учёт иначе — так, что управленческая картина возникает из тех же данных, что и легальная отчётность, и обновляется по мере поступления документов. Что это даёт руководству:</p></div></div>
+  <div class="stmt-head reveal"><span class="s-no">Наш подход</span><h2 class="h1">Учёт, на который можно опереться при решении</h2><p class="lead sub">Arvut ведёт учёт иначе — так, что управленческая картина возникает из тех же данных, что и легальная отчётность, и обновляется по мере поступления документов. Что это даёт руководству:</p></div>
   <div class="index">
     <div class="item reveal"><div class="it-main"><h3><span class="no" style="margin-right:.8rem">01</span>Платёжеспособность в реальном времени.</h3><p>Сколько компания стоит и сколько у неё есть — сейчас, а не в квартальном отчёте.</p></div></div>
     <div class="item reveal"><div class="it-main"><h3><span class="no" style="margin-right:.8rem">02</span>Настоящая маржа.</h3><p>Что действительно зарабатывает каждое направление, очищенное от искажений учёта по себестоимости.</p></div></div>

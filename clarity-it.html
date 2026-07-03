@@ -37,6 +37,17 @@
 .doors .b .door-label{ display:block; margin-bottom:.7rem; }
 .doors .b p{ margin:0 0 1.4rem; }
 .doors .b .btn{ margin-top:auto; }
+/* --- clarity redesign: differentiate top blocks, full-width text --- */
+.h1 .hl{ background:var(--teal); color:var(--on-teal); padding:.02em .26em; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+.stmt-head{ margin-bottom:clamp(1.6rem,3vw,2.6rem); }
+.stmt-head .s-no{ display:block; margin-bottom:1.1rem; }
+.stmt-head .h1{ max-width:26ch; }
+.stmt-head .sub{ margin-top:1.2rem; max-width:none; font-size:clamp(1.05rem,1.2vw,1.2rem); line-height:1.6; color:var(--ink-2); }
+.prob-cols{ columns:2; column-gap:clamp(2.4rem,4.6vw,4.6rem); }
+.prob-cols p{ margin:0; color:var(--ink-2); font-size:clamp(1.05rem,1.2vw,1.2rem); line-height:1.62; }
+@media (max-width:760px){ .prob-cols{ columns:1; } }
+.band-statement{ font-size:clamp(1.5rem,3vw,2.6rem); line-height:1.1; letter-spacing:-.02em; }
+.faq .q:last-child{ border-bottom:0; }
 </style>
 </head>
 <body>
@@ -61,19 +72,19 @@
 <!-- 1 — Hero -->
 <section class="page-hero"><div class="wrap">
   <span class="s-no reveal">Chiarezza finanziaria</span>
-  <h1 class="h1">Quanto guadagna e quanto vale la vostra azienda — oggi, non il prossimo trimestre</h1>
+  <h1 class="h1">Quanto guadagna e quanto vale la vostra azienda — <span class="hl">oggi</span>, non il prossimo trimestre</h1>
   <p class="lead reveal">La maggior parte delle aziende vede i numeri reali dell'anno scorso solo in primavera — o a fine dell'anno successivo —, quando cambiare qualcosa è ormai tardi. C'è un'altra via: una contabilità in cui bilancio, margine e solvibilità sono visibili in tempo reale — come li vedrebbe un bravo direttore finanziario.</p>
 </div></section>
 
 <!-- 2 — The problem (shared) -->
 <section class="section"><div class="wrap">
-  <div class="s-head reveal"><span class="s-no">Il problema</span><div><h2 class="h1">Un rapporto sul passato non è uno sguardo sul presente</h2></div></div>
-  <p class="prose reveal" style="max-width:72ch;margin-top:1.4rem">In Svizzera quasi nulla spinge a chiudere i libri per tempo: il fisco non sanziona la presentazione fino a fine anno, e la contabilità è per abitudine vista come uno strumento per le imposte, non per la gestione. Il risultato: molti dirigenti conoscono i risultati dell'anno scorso molti mesi dopo la fine dell'anno. Per la conformità basta. Per guidare un'azienda, no: le decisioni si prendono alla cieca mentre i numeri «maturano».</p>
+  <div class="stmt-head reveal"><span class="s-no">Il problema</span><h2 class="h1">Un rapporto sul passato non è uno sguardo sul presente</h2></div>
+  <div class="prob-cols reveal"><p>In Svizzera quasi nulla spinge a chiudere i libri per tempo: il fisco non sanziona la presentazione fino a fine anno, e la contabilità è per abitudine vista come uno strumento per le imposte, non per la gestione. Il risultato: molti dirigenti conoscono i risultati dell'anno scorso molti mesi dopo la fine dell'anno. Per la conformità basta. Per guidare un'azienda, no: le decisioni si prendono alla cieca mentre i numeri «maturano».</p></div>
 </div></section>
 
 <!-- 3 — What the approach gives (result, not mechanics) -->
 <section class="section"><div class="wrap">
-  <div class="s-head reveal"><span class="s-no">Il nostro approccio</span><div><h2 class="h1">Una contabilità su cui appoggiarsi per decidere</h2><p class="lead sub">Arvut tiene i libri in modo diverso — l'immagine gestionale nasce dagli stessi dati dei conti legali e si aggiorna man mano che arrivano i documenti. Cosa dà alla direzione:</p></div></div>
+  <div class="stmt-head reveal"><span class="s-no">Il nostro approccio</span><h2 class="h1">Una contabilità su cui appoggiarsi per decidere</h2><p class="lead sub">Arvut tiene i libri in modo diverso — l'immagine gestionale nasce dagli stessi dati dei conti legali e si aggiorna man mano che arrivano i documenti. Cosa dà alla direzione:</p></div>
   <div class="index">
     <div class="item reveal"><div class="it-main"><h3><span class="no" style="margin-right:.8rem">01</span>Solvibilità in tempo reale.</h3><p>Quanto vale l'azienda e quanto ha — ora, non in un rapporto trimestrale.</p></div></div>
     <div class="item reveal"><div class="it-main"><h3><span class="no" style="margin-right:.8rem">02</span>Il margine vero.</h3><p>Quanto guadagna davvero ogni ramo, ripulito dalle distorsioni del costo storico.</p></div></div>
